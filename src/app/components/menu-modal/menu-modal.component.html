@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar [ngStyle]="{'background': color}">
+    <ion-title style="text-align: center; text-transform: uppercase;">{{ titulo }}</ion-title>
+
+    <ion-buttons slot="end">
+        <ion-button icon-only color="royal" id="toggle" (click)="closeModal($event)" >
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

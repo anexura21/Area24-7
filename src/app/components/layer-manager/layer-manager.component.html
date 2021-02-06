@@ -1,0 +1,42 @@
+<ion-fab *ngIf="getCurrentLayer()" vertical="top" horizontal="end"  
+            width="100vw" style="overflow-x: scroll;overflow-y: hidden;width:100%;white-space: nowrap; left: 0; top: 55px;">
+    <div class="item-ordenamiento" style="text-align:center;background-color: #efefef; overflow: scroll; box-shadow: none">
+        <div *ngFor="let category of getCurrentLayer().children" style="display: inline;">
+            <fusion-layer [layer]="category" [layerLevel]="'CATEGORIA'" [fixedActionRadius]="getFixedActionRadius(app.id, category.id)"
+                [color]="app.color" (tapLayer)="onTapLayer($event)" style="display: inline"></fusion-layer>
+        </div>
+    </div>
+</ion-fab>
+<ion-footer>
+    <ion-buttons>
+        <div *ngFor="let layer of app.children" style="display: inline">
+            <fusion-layer *ngIf="isLayerTypeOf(layer, 'AVISTAMIENTO') 
+            || isLayerTypeOf(layer, 'MAPA') 
+            || isLayerTypeOf(layer, 'MIS PUBLICACIONES')
+            || isLayerTypeOf(layer, 'MAPA DE AGUA')
+            || isLayerTypeOf(layer, 'MAPA DE AIRE')
+            || isLayerTypeOf(layer, 'MAPA DE INVENTARIO DE FLORA')
+            || isLayerTypeOf(layer, 'MAPA DE CLIMA')"
+                          [layer]="layer"  
+                          [layerLevel]="'CAPA'" 
+                          [color]="app.color" 
+                          [fixedActionRadius]="getFixedActionRadius(app.id, layer.id)"
+                          style="display: inline;" 
+                          (tapLayer)="onTapLayer($event)"></fusion-layer>
+
+            <other-layer *ngIf="isInstanceOf(layer)=='OtherLayer'" 
+                         [layer]="layer" 
+                         [layerLevel]="'CAPA'"
+                         style="display: inline;"
+                         (tapLayer)="onTapLayer($event)" 
+                         [color]="app.color"></other-layer>
+
+            <layer *ngIf="isInstanceOf(layer)=='Layer'" 
+                   [layer]="layer" 
+                   [layerLevel]="'CAPA'" 
+                   style="display: inline;"
+                   (tapLayer)="onTapLayer($event)" 
+                   [color]="app.color"></layer>
+        </div>
+    </ion-buttons>
+</ion-footer>

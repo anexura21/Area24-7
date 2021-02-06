@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="end" class="volver">
+          <ion-button icon-only button-toogle (click)="goBack()">
+              <ion-icon color="light" name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-color: #96c93d;color:#ffffff;text-align:center;">
+  <h2>Crea tu cuenta</h2>
+  <form [formGroup]="formGroup" (ngSubmit)="enrollWithForm()" novalidate>
+
+      <ion-list>
+          <ion-item>
+              <i class="fas fa-user fa-lg fa-fw" item-left></i>
+              <ion-label stacked>Nombre de usuario</ion-label>
+              <ion-input formControlName="username" placeholder="Nombre de usuario" type="text" text-lowercase></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="formGroup.get('username').errors && formGroup.get('username').dirty">
+              <p *ngIf="formGroup.get('username').hasError('required')">Campo obligatorio</p>
+              <p *ngIf="formGroup.get('username').hasError('minlength')">Mínimo 5 caracteres</p>
+              <p *ngIf="formGroup.get('username').hasError('maxlength')">Máximo 255 caracteres</p>
+              <p *ngIf="formGroup.get('username').hasError('pattern')">Contiene caracteres inválidos</p>
+          </ion-item>
+
+          <ion-item>
+              <i class="fas fa-envelope fa-lg fa-fw" item-left></i>
+              <ion-label stacked>Correo electr&oacute;nico</ion-label>
+              <ion-input formControlName="email" placeholder="Correo electr&oacute;nico" type="email" text-lowercase></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="formGroup.get('email').errors && formGroup.get('email').dirty">
+              <p *ngIf="formGroup.get('email').hasError('required')">Campo obligatorio</p>
+              <p *ngIf="formGroup.get('email').hasError('pattern')">Formato de correo incorrecto</p>
+              <p *ngIf="formGroup.get('email').hasError('minlength')">Mínimo 5 caracteres</p>
+              <p *ngIf="formGroup.get('email').hasError('maxlength')">Máximo 255 caracteres</p>
+          </ion-item>
+
+          <ion-item>
+              <i class="fas fa-mobile-alt fa-lg fa-fw" item-left></i>
+              <ion-label stacked>Celular</ion-label>
+              <ion-input formControlName="phone"
+                         placeholder="Celular"
+                         type="tel"
+                         [only-numbers]="formGroup.get('phone')" ></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="formGroup.get('phone').errors && formGroup.get('phone').dirty">
+              <p *ngIf="formGroup.get('phone').hasError('required')">Campo obligatorio</p>
+              <p *ngIf="formGroup.get('phone').hasError('minlength')">Mínimo 10 caracteres</p>
+              <p *ngIf="formGroup.get('phone').hasError('maxlength')">Máximo 255 caracteres</p>
+          </ion-item>
+
+          <div formGroupName="matchingPasswords">
+              <ion-item>
+                  <i class="fas fa-eye fa-lg fa-fw" item-left></i>
+                  <ion-label stacked>Contrase&ntilde;a</ion-label>
+                  <ion-input formControlName="password" placeholder="Contrase&ntilde;a" type="password"></ion-input>
+              </ion-item>
+
+              <ion-item *ngIf="formGroup.get('matchingPasswords').get('password').errors && formGroup.get('matchingPasswords').get('password').dirty">
+                  <p *ngIf="formGroup.get('matchingPasswords').get('password').hasError('required')">Campo obligatorio</p>
+                  <p *ngIf="formGroup.get('matchingPasswords').get('password').hasError('minlength')">Mínimo 8 caracteres</p>
+                  <p *ngIf="formGroup.get('matchingPasswords').get('password').hasError('maxlength')">Máximo 255
+                      caracteres</p>
+              </ion-item>
+
+              <ion-item>
+                  <i class="fas fa-eye-slash fa-lg fa-fw" item-left></i>
+                  <ion-label stacked>Confirmar contrase&ntilde;a</ion-label>
+                  <ion-input formControlName="passwordConfirmation" placeholder="Confirmar contrase&ntilde;a" type="password"></ion-input>
+              </ion-item>
+
+              <ion-item *ngIf="formGroup.get('matchingPasswords').get('passwordConfirmation').errors && formGroup.get('matchingPasswords').get('passwordConfirmation').dirty">
+                  <p *ngIf="formGroup.get('matchingPasswords').get('passwordConfirmation').hasError('required')">Campo obligatorio</p>
+                  <p *ngIf="formGroup.get('matchingPasswords').get('passwordConfirmation').hasError('matchValidator')">Las contraseñas no son iguales</p>
+              </ion-item>
+          </div>
+
+      </ion-list>
+      <ion-row>
+          <ion-col size="4">
+              <ion-item>
+                  <ion-checkbox formControlName="termsConditions" [checked]="check" item-right></ion-checkbox>
+              </ion-item>
+
+          </ion-col>
+          <ion-col>
+              <ion-item (click)="terminosCondiciones()">
+                  <ion-label>
+                      T&eacute;rminos y condiciones
+                  </ion-label>
+              </ion-item>
+          </ion-col>
+      </ion-row>
+      <ion-buttons slot="end">
+          <ion-button block color="btnLogin" type="submit" [disabled]="!formGroup.valid">
+              Aceptar
+          </ion-button>
+      </ion-buttons>
+  </form>
+</ion-content>

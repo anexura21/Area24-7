@@ -1,0 +1,54 @@
+.divConfiguration {
+  background: #1B6893;
+  height: 198px;
+
+  .lblVolver {
+    font-size: smaller;
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+
+  .configuration-avatar {
+    margin-left: 70px;
+    margin-top: 30px;
+
+    .configuration-avatar-image {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  .subTitleRango {
+    font-size: smaller;
+  }
+
+}
+
+.formLogrosInsignias {
+  max-width: 300px;
+  margin-left: 35px;
+  margin-top: 25px;
+
+  .subTitleLogrosInsignias {
+    color: #78BE21;
+  }
+
+  .setAvatar {
+    margin-left: 30px
+  }
+
+  .divSubtitleLogrosInsignias {
+    margin-top: -10px
+  }
+
+  .subtitleLogrosInsignias {
+    color: #1B6893;
+    font-family: "Roboto Light";
+    font-size: 20px;
+  }
+}
+
+
+
+
+

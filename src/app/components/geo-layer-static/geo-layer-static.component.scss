@@ -1,0 +1,29 @@
+button {
+        border: 0 !important;
+        span {
+            display: block !important;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .badge {
+        height: 0.2rem;
+        width: 4rem;
+        border-radius: 1rem;
+        margin: 0 auto
+    }
+    .fab {
+        contain: layout;
+        line-height: 0;
+        vertical-align: sub;
+        padding-top: 0.4rem;
+    }
+    .fab-label {
+        display: block;
+        font-size: 0.7rem;
+        white-space: normal;
+    }
+    .badge-label{
+        font-size: 0.7rem;
+    }

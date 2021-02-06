@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar [ngStyle]="{'background': color}" [color]="color">
+    <ion-title text-center>{{layer._name}}</ion-title>
+    <ion-buttons slot="start" class="mini">
+      <ion-back-button defaultHref="/inicio" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (ngSubmit)="identificarReporte()">
+      <ion-list>
+          <ion-list-header>
+              <div>
+                  <ion-slides pager="true" *ngIf="pictureUri.length > 0">
+                      <ion-slide *ngFor="let picture of pictureUri; let i = index">
+                          <div>
+                              <img [src]="picture.url" alt="" *ngIf="picture.tipo == 'image'">
+                          </div>
+                          <div>
+                              <video controls="controls" preload="metadata" webkit-playsinline="webkit-playsinline"
+                                  *ngIf="picture.tipo == 'video'">
+                                  <source [src]="picture.url" />
+                              </video>
+                          </div>
+                          <div class="audioFit">
+                              <audio controls *ngIf="picture.tipo == 'audio'"
+                                  style="max-width:300px;min-width:200px;height:100px;width:250px ">
+                                  <source [src]="picture.url" style="width:250px">
+                              </audio>
+                          </div>
+                      </ion-slide>
+                  </ion-slides>
+                  <ion-button (click)="presentActionSheet()" expand="full">
+                    <ion-icon slot="end" name="camera" class="icon-cam" *ngIf="pictureUri.length == 0"
+                      ></ion-icon>
+                  </ion-button>
+              </div>
+
+              <ion-fab top right edge *ngIf="pictureUri.length > 0" style="top: 5%">
+                  <ion-fab-button color="danger" mini (click)="deleteMedia(i)" type="button"
+                      [ngStyle]="{'background':color}">
+                      <ion-icon name="trash"></ion-icon>
+                  </ion-fab-button>
+              </ion-fab>
+          </ion-list-header>
+          <p>{{pictureUri.length}} de 5 archivos disponibles.</p>
+          <ion-button expand="full" *ngIf="pictureUri.length > 0" (click)="presentActionSheet()"
+              [ngStyle]="{'background':color}" type="button">
+              +
+              <ion-icon slot="end" name="camera"></ion-icon>
+          </ion-button>
+          <ion-item (click)="selectLocationFromMap()">
+              <!-- <ion-button (click)="selectLocationFromMap()" expand="full" fill="outline">Agregar ubicación</ion-button> -->
+
+              <ion-label positio="floating">Agregar ubicación</ion-label>
+              <ion-input (click)="selectLocationFromMap()"
+                    formControlName="locationFormCtrl" type="text" value="Readonly" readonly>
+              </ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="formGroup.get('locationFormCtrl').errors && formGroup.get('locationFormCtrl').dirty">
+              <p *ngIf="formGroup.get('locationFormCtrl').hasError('required')">Campo requerido</p>
+          </ion-item>
+
+          <ion-item *ngIf="vigiaLayers && vigiaLayers.length > 1">
+              <ion-label floating>Tipo de reporte</ion-label>
+              <ion-select formControlName="vigiaTypeFormCtrl" [selectOptions]="{ title: 'Tipo Cuidame' }"
+                  okText="Aceptar" cancelText="Cancelar">
+                  <ion-option *ngFor="let vigiaLayer of vigiaLayers" [value]="vigiaLayer">{{vigiaLayer.name}}
+                  </ion-option>
+              </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="formGroup.get('vigiaTypeFormCtrl').errors && formGroup.get('vigiaTypeFormCtrl').dirty">
+              <p *ngIf="formGroup.get('vigiaTypeFormCtrl').hasError('required')">Campo requerido</p>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating>Detalle</ion-label>
+              <ion-textarea rows="5" formControlName="descriptionFormCtrl" type="text"></ion-textarea>
+          </ion-item>
+
+          <ion-item *ngIf="formGroup.get('descriptionFormCtrl').errors && formGroup.get('descriptionFormCtrl').dirty">
+              <p *ngIf="formGroup.get('descriptionFormCtrl').hasError('required')">Debe ingresar un detalle.</p>
+              <p *ngIf="formGroup.get('descriptionFormCtrl').hasError('minlength')">Mínimo 3 caracteres</p>
+              <p *ngIf="formGroup.get('descriptionFormCtrl').hasError('maxlength')">Máximo 2000 caracteres</p>
+          </ion-item>
+      </ion-list>
+      <!-- <button type="submit" [ngStyle]="{'background-color': color}" full ion-button>Siguiente</button> -->
+
+      <ion-button type="submit" [ngStyle]="{'background-color': color}" [color]="color" expand="full"
+          [disabled]="!formGroup.valid || pictureUri.length == 0">Siguiente</ion-button>
+  </form>
+</ion-content>

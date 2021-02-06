@@ -1,0 +1,11 @@
+<ion-button *ngIf="layerLevel=='CAPA'" 
+            class="vertical-divider"
+            ion-fab
+            (click)="onTapLayer()" 
+            [color]="layerActive()"
+            [ngStyle]="{'background': layerActive()}" 
+            [ngClass]="isLayerActive()">
+
+  <img style="height: 2rem; width: 2rem" [src]="layer.urlIcon" />
+  <label class="fab-label">{{layer.name}}</label>
+</ion-button>

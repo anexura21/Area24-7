@@ -1,0 +1,214 @@
+mixed-typeahead {
+    pointer-events: all;
+    position: relative;
+    max-width: 83vw;
+    max-height: 78vh;
+    top: 6.5rem;
+}
+div {
+    ion-list {
+        button {
+            pointer-events: all;
+        }
+    }
+}
+ion-searchbar {
+    background-color: #ffffff!important;
+    color: gray;
+    /*max-width: 50rem;*/
+    max-width: 100vw;
+    margin: 0 auto;
+    border: 0.4px solid #ccc;
+    top: 0px;
+}
+.searchbar-md .searchbar-input {
+    box-shadow:unset;
+}
+input .searchbar-input,
+input .searchbar-md {
+    background-color: red;
+}
+.toolbar-background-md {
+    background: linear-gradient(to bottom right, rgba(251, 252, 252, .8), rgba(251, 252, 252, .6));
+}
+.bar-button-default-md {
+    color: #fff;
+}
+.searchbar-md .searchbar-input {
+    background: linear-gradient(to bottom right, rgba(251, 252, 252, .8), rgba(251, 252, 252, .6));
+}
+input::-webkit-input-placeholder {
+    color: red;
+}
+input:-moz-placeholder {
+    color: red;
+}
+input:-ms-input-placeholder {
+    /* IE10+ */
+    color: red;
+}
+.toolbar-title-md {
+    padding: 0 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+}
+.close-filters {
+    color: #fff;
+    width: 52px;
+    font-size: 22px;
+    background-color: transparent;
+    box-shadow: none !important;
+}
+.slide-fade-hide {
+    transition: 1s all linear;
+    opacity: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    z-index: -10;
+}
+.slide-fade-show {
+    transition: all 1.2s ease-in;
+    opacity: 1;
+    height: 2em;
+    z-index: 1;
+}
+.list-md, .list-ios {
+    margin: -5px 0px 0px 0;
+    button {
+        background-color:#ffffff!important;
+    }
+}
+.scroll-up {
+    margin-top: 20px;
+}
+.menu-title {
+    padding: 1px 95px 1px 10px;
+}
+.menu-toolbar {
+    padding: 35px;
+}
+.menu-content {
+    position: relative !important;
+}
+.item-search-wanted {
+    padding-left: 1px;
+}
+.item-search-offered {
+    padding-left: 1px;
+}
+.job-content-offered {
+    background-color: white !important;
+}
+.job-content-wanted {
+    background-color: white !important;
+}
+.search-button-star {
+    background-color: #009196;
+}
+.search-input-keyword {
+    /*max-width: 50rem;*/
+    max-width: 100vw;
+    margin: 0 auto;
+    display: flex;
+}
+.search-input {
+    width: 125%;
+}
+.toolbar-content {
+    display: flex;
+}
+.extra-search-col {
+    padding: 0px;
+}
+ion-col {
+    padding: 2px;
+}
+// ion-title {
+//     z-index: 11;
+// }
+ion-avatar img {
+    border-radius: 2.8rem;
+    max-height: 5.6rem;
+    max-width: 5.6rem;
+}
+.small-text-search {
+    font-size: 75% !important;
+    color: grey !important;
+    padding-top: 4px;
+}
+.small-text-search-desc {
+    font-size: 85%;
+}
+.small-text-search-rating {
+    padding-top: inherit;
+    padding-left: inherit;
+}
+.small-text-search-starrating {
+    padding-top: 2px;
+    font-size: 100% ! important;
+}
+.search-category {
+    float: right;
+}
+.job-tite {
+    width: 250px;
+}
+.job-timestamp {
+    white-space: nowrap;
+}
+.search-rating {
+    float: left;
+}
+.search-popover-button {
+    width: 75px;
+    height: 75px;
+}
+.button-icon-only ion-icon.search-popover-icon {
+    font-size: 2.8em;
+}
+.filter-image {
+    -webkit-filter: hue-rotate(-30deg) opacity(100%);
+    filter: hue-rotate(-30deg) opacity(100%);
+}
+.icon-text {
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+.icon-text-no {
+    padding-left: 5px;
+}
+ion-list {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: inherit;
+    width: 100%;
+    z-index: 999;
+    ion-list-header {
+        margin-bottom: 0 !important;
+        ion-checkbox {
+            margin-right: 8px !important;
+        }
+    }
+    button {
+        font-size: 1.4rem !important;
+    }
+    label {
+        vertical-align: super;
+        span{
+            text-transform: lowercase;
+            display:inline-block;
+        }
+        
+        span.mayus:first-letter {
+            text-transform: uppercase;
+        }
+    }
+}
+.searchbar-input-container {
+    z-index: 999;
+}
+.item.item-block.item {
+    background-color: rgba(255, 255, 255, .8);
+}

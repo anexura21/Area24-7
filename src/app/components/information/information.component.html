@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar color="primary" style="background-color: var(--ion-color-primary);">
+      <ion-title>Acerca de</ion-title>
+      <ion-buttons slot="start">
+          <ion-button button-toggle (click)="goBack()" icon-only>
+            <ion-icon color="light" style="background-color: #f4f4f4;"
+                       name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="imgWraper">
+      <img src="assets/logoAmva.jpeg" style="width: 50%">
+  </div>
+  <h3 ion-text color="primary" text-center style="font-weight: bold;">Versión: {{version}}</h3>
+
+  <p style="text-align: justify">
+      El Área Metropolitana del Valle de Aburrá, es el resultado de un esquema asociativo
+      territorial entre los diez municipios del Valle de Aburrá: Barbosa, Girardota, Copacabana, Bello, Medellín,
+      Itagüí, Envigado, La Estrella, Sabaneta y Caldas; que respeta la autonomía de cada uno de ellos y que tiene
+      como base la generación de alianzas y proyectos estratégicos que impulsan el desarrollo autónomo y
+      autosostenible de las comunidades a partir de un principio de redistribución y equidad territorial.
+  </p>
+  <br>
+
+  <div class="pWraper">
+      <div class="puntico">
+      </div>
+      <p style="text-align: justify">
+          Función de Planificación y coordinación territorial.
+      </p>
+  </div>
+  <br>
+
+  <div class="pWraper">
+      <div class="puntico">
+      </div>
+      <p style="text-align: justify">
+          Función de Autoridad ambiental urbana.
+      </p>
+  </div>
+  <br>
+
+  <div style="display: flex">
+      <div class="puntico" style="width: 8px !important;margin-top: 5px;">
+      </div>
+      <p style="text-align: justify">
+          Función de Autoridad de Transporte público metropolitano y masivo.
+      </p>
+  </div>
+  <br>
+
+  <div class="pWraper">
+      <div class="puntico">
+      </div>
+      <p style="text-align: justify">
+          Gestión de Seguridad y Convivencia.
+      </p>
+  </div>
+
+
+  <br><br>
+
+
+  <p style="text-align: justify">
+      <strong class="colorPrimary">Nuestra visión:</strong> Una región articulada, con oportunidades de desarrollo
+      sostenible para todos sus habitantes, altos niveles de calidad de vida, con una ciudadanía responsable y
+      participativa, que cree y confía en sus instituciones.
+  </p>
+
+  <br>
+
+  <div text-center lines="none">
+      <a (click)="navigate()" style="text-decoration: underline;">Tips 24/7</a>
+  </div>
+  <br>
+  <div text-center lines="none">
+      <ion-button outline size="small" icon-only item-left
+                              color="primary"  clear 
+                              (click)="openFacebook('Areametropol')">
+                  <ion-icon style="color: clear" name="logo-facebook"></ion-icon>
+                  <!-- <i class="fab fa-facebook-square" style="font-size: 1em;"></i> -->
+      </ion-button>
+      <ion-button outline size="small" icon-only item-left
+                              color="primary" clear 
+                              (click)="openInstagram('areametropol')">
+                  <ion-icon style="color: clear" name="logo-instagram"></ion-icon>
+                  <!-- <i class="fab fa-instagram-square" style="font-size: 1em;"></i> -->
+      </ion-button>
+      <ion-button outline size="small" icon-only item-left
+                              color="primary"  clear 
+                              (click)="openTwitter('Areametropol')">
+                  <ion-icon style="color: clear" name="logo-twitter"></ion-icon>
+                  <!-- <i class="fab fa-twitter" style="font-size: 1em;"></i> -->
+      </ion-button>
+  </div>
+  <br>
+  <div class="info" text-center style="font-style: italic;">
+      Producto del Área Metropolitana del Valle de Aburrá
+  </div>
+  <!-- <div class="imgWraper">
+      <img src="assets/adalogo.png" style="width: 50%">
+  </div> -->
+  <br><br>
+
+
+</ion-content>

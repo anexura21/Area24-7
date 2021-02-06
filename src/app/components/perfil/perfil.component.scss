@@ -1,0 +1,40 @@
+.item-md p {
+    color: var(--ion-color-dark-red);
+}
+ion-select {
+    max-width: 100%;
+    width: 100%;
+}
+.spinner-md-crescent circle{
+    stroke: #444444;
+}
+/// ESTILO ICONOS LISTAS DESPLEGABLES
+.select .select-icon {
+    background-color: var(--ion-color-primary);
+    width: 20px;
+    height: 20px;
+    top: auto;
+    .select-icon-inner {
+        border-top: 5px solid;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        color: white;
+    }
+}
+/// ESTILO ICONOS LISTAS DESPLEGABLES
+ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.fas {
+    color: var(--ion-color-primary);
+}
+.item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    border-bottom-color: transparent;
+    box-shadow: none;
+}

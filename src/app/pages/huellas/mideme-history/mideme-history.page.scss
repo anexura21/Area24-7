@@ -1,0 +1,93 @@
+mideme-history {
+    font-size: 1.7rem;
+}
+.icon{
+        width: 35px;
+        height: 35px;
+    }
+    .colu {
+        margin-top: -2%;
+        text-align: center;
+        .bold {
+            text-align: center;
+            font-weight: 400;
+        }
+        .descripcion{
+            margin: 0px;
+        }
+    }
+    
+    .scroll-content {
+        .arriba {
+            margin-top:-30px!important;
+        }
+        .bold {
+            font-weight: 400;
+        }
+    }
+    .cont {
+        margin: 40px auto;
+        width: 95%;
+        position:relative;
+        .redLabel {
+            border-radius: 8px;
+            padding: 6px 13px 15px;
+            position: absolute;
+            top: -42%;
+            right: -2.45%;
+            color: #fff;
+            font-size: 1.4rem;
+        }
+        .contenedor {
+          display: flex;
+          border:1px solid var(--ion-color-light-gray );
+          border-radius:8px;
+          padding:10px;
+          position:relative;
+          background:#fff;
+          font-size:1.7rem;
+          span{
+            float:right;
+            font-weight:bold;
+          }
+
+          .nivelConsumo{
+            position: absolute;
+            top: 0px;
+            margin-left: 1rem;
+            color: #00f;
+            margin-right: 3rem;
+            margin-top: 1rem;
+        }
+        }
+        i {
+            font-size:2rem;
+        }
+        &.good {
+            color:var(--ion-color-btnGreen);
+            .redLabel {
+                background:var(--ion-color-btnGreen);
+            }
+            .fas::before {
+                content: "\f5b8";
+            }
+        }
+        &.meh {
+            color:var(--ion-color-huellas);
+            .redLabel {
+                background:var(--ion-color-huellas);
+            }
+            .fas::before {
+                content: "\f11a";
+            }
+        }
+        &.bad {
+            color:var(--ion-color-btnRed);
+            .redLabel {
+                background:var(--ion-color-btnRed);
+            }
+            .fas::before {
+                content: "\f5b4";
+            }
+        }
+    }

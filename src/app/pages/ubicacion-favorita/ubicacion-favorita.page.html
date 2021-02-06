@@ -1,0 +1,33 @@
+<ion-header>
+  <barra-navegabilidad [titulo]="titulo" [color]="appLayer.color" ></barra-navegabilidad>
+</ion-header>
+
+<ion-content mapa>
+<div contenido-mapa style="background: rgba(255, 255, 255, 0.77);">
+
+  <ion-item class="itemBorder">
+      <div style="text-align: center;">
+          <span class="compTitle" [ngStyle]="{'color': appLayer.color}">Agregar Ubicación</span>
+      </div>
+  </ion-item>
+  <!-- [selected]="idCategoriaSelected==categoria.id"  -->
+  <ion-item>
+          <ion-input [(ngModel)]="item.nombre" placeholder="Nombre" class="selecMapa"></ion-input>
+          <ion-select id="select" class="selecMapa" [(ngModel)]="idCategoriaSelected" #selCategoria (ionChange)="onChange(selCategoria.value)" placeholder="Categoría" okText="Aceptar" cancelText="Cancelar">
+              <ion-select-option *ngFor="let categoria of categorias let i=index" 
+                        [value]="categoria.id" >{{categoria.nombre}}</ion-select-option>
+          </ion-select>
+  </ion-item>
+  
+  <ion-item class="itemBorder" style="margin-top:0px">
+      <div class="divButton">
+          <buscar-ubicacion [ubicacion]="item.ubicacion" [root]="appLayer" (clickSeleccionarUbicacionMapa)="clickSeleccionarUbicacionMapa($event)" ></buscar-ubicacion>
+      </div>
+  </ion-item>
+  <ion-item>
+      <div class="divButton">
+          <ion-button ion-button class="saveBtn" [ngStyle]="{'background': appLayer.color }" (click)="guardar()">Guardar</ion-button>
+      </div>
+  </ion-item>
+</div>
+</ion-content>

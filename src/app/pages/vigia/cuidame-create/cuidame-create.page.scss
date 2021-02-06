@@ -1,0 +1,84 @@
+ion-slides{
+    height: 250px;
+}
+.item.item.list-header {
+    border-bottom: 1px solid #CCCCCC;
+    background-color: whitesmoke;
+    border-radius: 5px 5px 0 0;
+}
+.toolbar-background {
+    background: inherit;
+}
+.toolbar-title {
+    color: var(--ion-color-light);
+}
+.bar-button {
+    color: var(--ion-color-light);
+}
+ion-select {
+    max-width: 100%;
+    .select-text {
+        color: #333;
+    }
+}
+
+.icon-cam{
+    font-size: 5rem;
+    width: 100%;
+    text-align: center;
+}
+.toolbar-ios ion-title{
+    padding: 0;
+}
+.button {
+    border-radius: 6px;
+    margin: 0 10%;
+    text-transform:none;
+    width:80%;
+    &.small {
+        width:25%;
+        margin:0;
+    }
+}
+.swiper-slide {
+    ion-fab {
+        top:0!important;
+    }
+}
+.slide-zoom{
+    max-height:300px;
+    display:inline;
+    img, video, audio {
+        height:-webkit-fill-available;
+        // padding-bottom: 20px;
+    }
+    .audioFit {
+        position: absolute;
+        bottom: 50%;
+        max-width:300px;
+        min-width:200px;
+        width:270px;
+        height:80px;
+        margin-left: 5%;
+    }
+    video {
+        max-width: 100%;
+    }
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom:0
+}
+.text-input {
+    color: #333;
+}
+.mapaUbicacion {
+@media only screen and (min-height: 768px) and (min-width: 768px) {
+    .modal-wrapper {
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+}

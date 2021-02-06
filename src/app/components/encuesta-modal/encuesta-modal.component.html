@@ -1,0 +1,21 @@
+<ion-content padding>
+
+  <ion-buttons slot="end">
+      <ion-button class="close" icon-only  (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+
+  <div>
+    <div class="check"><i class="fas fa-edit"></i></div>
+   
+    <h1 [ngStyle]="{'color': color}">{{titulo}}</h1>
+   
+
+    <p>{{mensaje}}<strong> {{nombreEncuesta}}</strong></p>
+  </div>
+
+  <div class="botones">
+      <ion-button (click)="irEncuesta()">{{boton}}</ion-button>
+    </div>
+</ion-content>

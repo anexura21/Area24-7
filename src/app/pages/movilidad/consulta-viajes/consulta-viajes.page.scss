@@ -1,0 +1,174 @@
+#header {
+    background-color: #006fac;
+    color: white;
+  }
+
+  .btn-buscar {
+    button {
+        // background-color: #0060B6 !important;
+    }
+    position: absolute;
+    right:5px;
+    bottom: 5rem;
+    z-index:500
+  }
+
+  #map-selection {
+    width:100vw;
+    height:100vh;
+}
+
+
+  .card-rutas{
+    background: #006FAC;
+    color: white;
+    width: 90px;
+    height: 30px;
+  }
+  .cardViajes{
+    padding-left: 10px;
+    padding-right:10px;
+
+  }
+  .headerViaSug{
+    background-color: #006fac;
+    color: white;
+    text-align: center;
+    height: 40px;
+  }
+  .iconsearch {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 9px;
+    right: 0;
+    bottom: 0;
+    width:1.7rem;
+    filter: grayscale(100%);
+  }
+
+  .iconsearch2 {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 9px;
+    right: 0;
+    bottom: 0;
+    width:1rem;
+  }
+
+  .iconsearch3 {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left:10px;
+    right: 0;
+    bottom: 0;
+    width:4rem;
+    filter: grayscale(100%);
+  }
+
+  .iconsViajes {
+    width:1.88rem;
+    vertical-align: middle;
+  }
+
+  .contenedor{
+  background-color: rgba(255, 255, 255, 0.74);
+    // margin-top: 31px;
+    width: 106%;
+    margin-left: -11px;
+    position: relative;
+
+  }
+
+  #inputCustom{
+    padding-left: 10px;
+    padding-right: 55px;
+    padding-top: 0px;
+    padding-bottom: 6px;
+    border-radius: 2px;
+    height: 3.5rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    background-position: 8px center;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 99% !important;
+  }
+
+  .inputBtn {
+    padding: 3px 5px;
+    border-radius: 2px;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1rem;
+    color: #141414;
+    background-color: #fff;
+    background-position: 8px center;
+    box-shadow: none;
+    width: 85% !important;
+  }
+
+  .searchbar-md .searchbar-search-icon, .searchbar-md .searchbar-md-cancel {
+    background-repeat:no-repeat;
+    background-size: 43px;
+    margin-right: 30px;
+  }
+
+  .text-input[disabled] {
+    opacity: 1;
+  }
+  .inputBtn .text-input-md, .inputBtn .text-input-ios {
+    margin: 8px 10px;
+    width: calc(100% - 16px);
+  }
+
+  .btn-search, .btn-position{
+    position: absolute;
+    right: 6%;
+    top: -7px;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-position: center;
+    background-size: cover;
+    margin-top:1.2rem;
+  }
+
+  .toolbar-background-ios, .toolbar-background{
+    background: none;
+  }
+
+  .toolbar-title-md, .toolbar-title-ios {
+    color:#ffffff;
+}
+  
+  ion-header{
+    color:white
+  }
+
+  .btn-search, .btn-position{
+    width: 4rem;
+    height: 4rem;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+  #destinoContainer{
+  width: 100%;
+  height: 5rem;
+  }
+
+  #btn-destino{
+    .searchbar-search-icon{
+      display: none;
+    }
+
+  }

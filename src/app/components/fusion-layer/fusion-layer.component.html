@@ -1,0 +1,28 @@
+<button size="small" *ngIf="layerLevel=='CATEGORIA'" class="vertical-divider categoria" (click)="onTapLayer()" color="light-gray">
+    <img style="height: 1.5rem; width: 1.5rem" [style.font-weight]="layer.visible ? 700 : null" class="encendida"
+            *ngIf="isLoading == false && layer.visible" [src]="layer.urlIcon" />
+    <img style="height: 1.5rem; width: 1.5rem" [style.font-weight]="layer.visible ? 700 : null" class="apagada"
+            *ngIf="isLoading == false && !layer.visible" [src]="layer.urlIcon" />
+    <!-- <img style="height: auto; width: 3rem;" [style.font-weight]="layer.visible ? 700 : null" [ngClass]="{'encendida': layer.visible == true, 'apagada':layer.visible == false}" *ngIf="isLoading == false" [src]="layer.urlIcon" /> -->
+
+    <!-- <img style="height: auto; width: 3rem;" [style.font-weight]="layer.visible ? 700 : null" [className]="layer.visible ? 'encendida' : 'apagada'" *ngIf="isLoading == false" [src]="layer.urlIcon" /> -->
+    <!-- {{ getLegendColor(layer.id) }} -->
+    <ion-spinner [color]="getLegendColor(layer.id)" *ngIf="isLoading"></ion-spinner>
+    <br />
+    <ion-label class="badge-label" [style.font-weight]="layer.visible ? 700 : null"
+        [style.color]="getColorSelectedLayer()">
+        {{ layer.name }}
+    </ion-label>
+    <div *ngIf="layer.polygons && layer.polygons.length > 0 && layer.visible" class="badge"
+        style="height: 0.2rem; width: 4rem; border-radius: 1rem; margin: 0 auto" [style.background-color]="colorLegend">
+    </div>
+    <!-- <div *ngIf="layer.polygons && layer.polygons.length > 0" class="badge" style="height: 0.2rem; width: 4rem; border-radius: 1rem; margin: 0 auto"
+            [style.background-color]="getLegendColor(layer.id)"></div> -->
+</button>
+<ion-button *ngIf="layerLevel=='CAPA'" [id]="layer.id" class="vertical-divider"
+            (click)="onTapLayer()" [ngStyle]="{'background': layerActive()}" 
+            [ngClass]="isLayerActive()" [color]="layerActive()">
+    <img style="height: 2rem; width: 2rem" [src]="layer.urlIcon" *ngIf="!isLoading" >
+    <ion-spinner *ngIf="isLoading"></ion-spinner>
+    <label class="fab-label"> {{ layer.name }} </label>
+</ion-button>

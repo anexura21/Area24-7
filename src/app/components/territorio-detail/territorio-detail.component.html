@@ -1,0 +1,28 @@
+<ion-header [style.background]="currentApp.color"> 
+  <ion-toolbar [color]="currentApp.color">
+    <img class="icon-header" [src]="iconoCapa" alt=""> 
+  <ion-title >
+    {{info.nombre}}
+  </ion-title>
+  <ion-buttons  slot="end">
+    <ion-button icon-only (click)="closeModal()">
+      <ion-icon name="close" style="color: white;"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <img class="imagen-modal" [src]="info.rutaImagen2"alt="">
+    <p class="ubicacion-modal"><br/>
+      <strong>{{info.direccion}} {{info.nombreMunicipio}}</strong>
+    </p>
+  <p class="descripcion-modal">{{info.descripcion}}</p>
+
+  <ion-row class="ion-align-items-center" *ngIf="info.ir == true">  
+    <ion-col class="ion-align-self-center"> 
+    <ion-button color="Recórreme" class="buttonIr" (click)="goToMovilidad()" >Ir</ion-button>
+    </ion-col>
+</ion-row>
+</ion-content>

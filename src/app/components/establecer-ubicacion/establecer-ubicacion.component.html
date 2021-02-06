@@ -1,0 +1,20 @@
+<ion-header>
+  <menu-modal [titulo]="titulo" [color]="root.color"></menu-modal>
+</ion-header>
+
+<ion-content mapa>
+<div contenido-mapa>
+  <buscar-ubicacion [ubicacion]="ubicacion" [dismissComponent]="true" [root]="root" [animate]="animate" (clickSeleccionarUbicacionMapa)="clickSeleccionarUbicacionMapa($event)" (clickSeleccionarPrediccion)="clickSeleccionarPrediccion($event)">
+  </buscar-ubicacion>
+  <ion-card *ngIf="ubicacion.descripcion=='' || !ubicacion.descripcion">
+      <ubicaciones-favoritas [app]='root'  (onEstablecerUbicacion)="establecerUbicacion($event)" ></ubicaciones-favoritas>
+  </ion-card>
+</div>
+
+
+<div class="btn-buscar"  >
+      <button ion-fab mini right (click)="obtenerUbicacionActual()" [ngStyle]="{'background': root.color}">
+          <ion-icon name="locate" ></ion-icon>
+      </button>
+</div>
+</ion-content>

@@ -1,0 +1,26 @@
+<div *ngIf="currentApp" class="container">
+  <ion-toolbar [color]="currentApp.color" [style.background]="currentApp.color">
+      <ion-title>
+          Ficha de caracterización
+      </ion-title>
+      <ion-buttons slot="end">
+          <ion-button icon-only end (click)="closeModal()">
+              <ion-icon name="close"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+  <div id="texto-modal" class="tag">
+      <div class="contenido">
+
+          <p>Municipio: {{ characterizationCard.nombreMunicipio | titlecase }}</p>
+          <div class="capa" *ngFor="let capa of characterizationCard.capas">
+              <img src={{capa.urlIcono}}>
+              <span>{{ capa.nombreCapa }}</span>
+              <div class="categoria" *ngFor="let categoria of capa.categorias">
+                  <img src={{categoria.urlIcono}}>
+                  <span>{{ categoria.nombreCategoria }}: {{ categoria.nombreMarcador }}</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

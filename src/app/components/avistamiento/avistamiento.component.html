@@ -1,0 +1,20 @@
+
+
+<ion-fab horizontal="end" 
+vertical="center" edge slot="fixed">
+<ion-fab-button ion-fab size="small" style="pointer-events: all;" [color]="app.color" 
+(click)="onShowSearchView()" [ngStyle]="{'background': app.color}">
+<ion-icon name="search"></ion-icon>    
+</ion-fab-button>
+</ion-fab>
+<my-location [color]="app.color" 
+[actionRadius]="app.radius" 
+(clickPedestrian)="onClickPedestrian($event)" 
+(clickMyLocationButton)="onClickMyLocationButton($event)" 
+(dragendPedestrian)="onDragendPedestrian($event)"></my-location>
+<!-- <fusion-layer style="visibility: hidden; width: 0; height: 0;"
+[layer]="layerSearch"
+[layerLevel]="'CAPA'"
+[color]="app.color"
+[fixedActionRadius]="getNumberMaxValue()"></fusion-layer>  -->
+<layer-manager [app]="app"></layer-manager>

@@ -1,0 +1,40 @@
+<header>
+    <ion-row class="divConfiguration">
+        <ion-row>
+            <ion-label name="close" color="light" class="lblVolver"> Volver</ion-label>
+            <ion-title color="light" class="title-configuration">Configuración</ion-title>
+        </ion-row>
+    </ion-row>
+</header>
+
+
+<ion-item class="itemMenu" (click)="perfilUsuario()">
+    <ion-icon name="person-circle"></ion-icon>
+    <ion-label> Perfil</ion-label>
+</ion-item>
+
+<!--<ion-item *ngIf="showUpdatePasswordOption()" class="itemMenu" (click)="updatePassword()">
+  <ion-icon name="lock-closed"></ion-icon>
+  <ion-label> Actualizar Contraseña </ion-label>
+</ion-item> -->
+
+<ion-item class="itemMenu" (click)="policyModal()">
+    <!--<ion-icon name="receipt"></ion-icon>-->
+    <ion-label> Políticas de Privacidad</ion-label>
+</ion-item>
+
+<ion-item class="itemMenu" (click)="openModal()">
+    <!--<ion-icon name="information-circle"></ion-icon>-->
+    <ion-label> Acerca de</ion-label>
+</ion-item>
+
+<ion-item class="itemMenu" (click)="qualify()">
+    <ion-icon name="star"></ion-icon>
+    <ion-label> Califícanos</ion-label>
+</ion-item>
+
+<div item-rigth class="help"><span (click)="helpModal()">Ayuda</span></div>
+
+<ion-item class="ion-text-center" (click)="logout()">
+    <a class="ion-text-center cerrarSesion" href="">Cerrar sesión</a>
+</ion-item>

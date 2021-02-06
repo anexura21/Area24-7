@@ -1,0 +1,131 @@
+.retosItemActive {
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.retosItem {
+    color: #000 !important;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.iconoConsumo {
+    width: 20%;
+    height: 20%;
+    display: -webkit-inline-box;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.grayText {
+    color: var(--ion-color-texto);
+    font-size: 1.3rem;
+}
+
+.center {
+    text-align: center !important;
+}
+
+div.resp {
+    p {
+        font-size: 2rem;
+
+        span {
+            font-size: 2.3rem;
+        }
+    }
+
+    i {
+        font-size: 50px;
+    }
+
+    &.good {
+        color: var(--ion-color-btnGreen);
+
+        .fas::before {
+            content: "\f5b8";
+        }
+    }
+
+    &.meh {
+        color: var(--ion-color-huellas);
+
+        .fas::before {
+            content: "\f11a";
+        }
+    }
+
+    &.bad {
+        color: var(--ion-color-btnRed);
+
+        .fas::before {
+            content: "\f5b4";
+        }
+    }
+}
+
+.toolbar-title,
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 500;
+    margin-top: 0rem;
+}
+
+.retos {
+    margin-top: 2rem;
+
+    ion-item {
+        border-bottom: none !important;
+
+        .label {
+            margin: 8px;
+        }
+
+        h1 {
+            color: initial;
+            font-weight: 500;
+
+            i {
+                border: 1px solid var(--ion-color-texto);
+                border-radius: 50%;
+                vertical-align: middle;
+                padding: 2px;
+                font-size: 8px;
+                color: white;
+                margin-top: -3px;
+            }
+        }
+
+        span {
+            margin-left: 2rem;
+            font-size: 1.3rem;
+            color: initial;
+        }
+    }
+}
+
+.botones {
+    // width: 50%;
+    display: flex;
+    justify-content: center;
+
+    // display: inline-flex;
+    // padding: 0 0 2rem;
+    .button {
+        width: 50%;
+        height: 40px;
+        text-align: left !important;
+        font-size: 1.4rem;
+        text-transform: unset;
+
+        &:first-of-type {
+            margin-right: 20px;
+        }
+    }
+}

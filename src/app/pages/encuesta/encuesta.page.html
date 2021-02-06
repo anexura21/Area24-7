@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar style="background:#96c93d" color="#96c93d">
+    <ion-title *ngIf="modal == false">ENCUESTA</ion-title>
+    <ion-title *ngIf="modal == true">FORMULARIO</ion-title>
+    <ion-buttons slot="start" *ngIf="modal == true">
+      <ion-button icon-only color="royal" (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center" padding>
+  <div class="colu">
+    <span class="bold" [ngStyle]="{'color': color}">{{encuesta.nombre}}</span>
+    <p class="grayText">{{encuesta.descripcion}}</p>
+  </div>
+
+
+  <div>
+    <ion-spinner *ngIf="loading == false"></ion-spinner>
+  </div>
+
+  <dynamic-form #dynamicForm="dynamicForm" [controls]="controls" [desde]="desde" [form]="form" *ngIf="loading == true">
+  </dynamic-form>
+
+  <div padding-top text-center>
+    <ion-button [ngStyle]="{'background': color}" (click)="crearPregunta()">{{boton}}</ion-button>
+    <ion-button (click)="closePage()" class="buttonOmitir" text-lowercase>
+      <p>omitir encuesta</p>
+    </ion-button>
+  </div>
+</ion-content>

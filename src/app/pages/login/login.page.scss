@@ -1,0 +1,70 @@
+ion-content {
+  --background: url("../../../assets/login-Background.png") no-repeat 30% 70%;
+}
+
+form {
+  --ion-background-color: transparent;
+}
+
+.imgLogo {
+  max-height: 140px;
+  max-width: 140px;
+  margin-top: 90px;
+  margin-left: 110px;
+}
+
+.form {
+  max-width: 220px;
+  margin-left: 70px;
+  text-align: center;
+
+  .inputForm {
+    margin-top: 15px;
+    color: #ffffff;
+    border-bottom: 2px solid white;
+  }
+
+  .buttonForm {
+    --background: #ffffff !important;
+    margin-top: 50px;
+    color: grey;
+    margin-top: 15px;
+  }
+
+  .aForm {
+    margin-top: 6px;
+    color: #ffffff;
+  }
+
+  .iconSets {
+    color: white;
+    width: 30px;
+    height: 30px;
+  }
+
+  .facebook {
+    margin-left: -5px;
+  }
+
+  .google {
+    margin-left: 30px;
+  }
+
+  .buttonRegis {
+    --background: transparent !important;
+    border-bottom: solid #ffffff;
+    border-left: solid #ffffff;
+    border-right: solid #ffffff;
+    border-top: solid #ffffff;
+    border-radius: 10px 10px;
+  }
+  .aTerminos {
+    color: #ffffff;
+  }
+}
+
+ion-input::placeholder {
+  color: red;
+}
+
+

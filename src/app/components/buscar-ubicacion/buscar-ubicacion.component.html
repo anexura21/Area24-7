@@ -1,0 +1,31 @@
+<div id="container-busqueda">
+  <ion-grid style="width:99vw;">
+      <ion-row style="width:100%;">
+          <ion-col class="col-btn-busqueda" size="1" *ngIf="botonAtras">
+              <ion-icon style="margin-left: 4px;" class="btn-busquedas" name="ios-arrow-back"></ion-icon>
+          </ion-col>
+          <ion-col class="colsearch"> 
+              <ion-searchbar id="sbDireccion" (click)="setEmpty($event)"  (keydown)="buscarDireccion($event)" [(ngModel)]="ubicacion.descripcion" (ionInput)="updateSearch()" type="text" mode="md" animated="true" placeholder="Ubicación" *ngIf="editable">
+              </ion-searchbar>
+              <div class="btn-search" (click)="search($event)" [ngStyle]="{'background-color': root.color }"></div>
+
+              <div deshabilitar-searchbar>
+                  <ion-searchbar [(ngModel)]="ubicacion.descripcion" (ionInput)="updateSearch()" id="searchbarDirecciones" type="text" mode="md" animated="true" placeholder="Ubicación" *ngIf="!editable">
+                  </ion-searchbar>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <div *ngIf="showSeleccionarEnMapa && (ubicacion.descripcion=='' || !ubicacion.descripcion)" style="width: 100%; display: flex; justify-content: center;">
+      <ion-button class="ion-button" id="btnSeleccionarMapa"  (click)="seleccionarUbicacionMapa()" [ngStyle]="{background: root.color}">Seleccionar en el mapa</ion-button> 
+  </div>
+
+  <ion-list [ngSwitch]="ubicacion.modoBusqueda" class="listaDir">
+      <div *ngSwitchCase="modos.PREDICCION_GOOGLE">
+          <ion-item *ngFor="let item of autocompleteItems" (click)="seleccionarPrediccion(item)" style="border-bottom: 1px solid #ccc;">
+              <span class="labelLisDir"><img src="assets/movilidad/iconos/marcadorMap.png" style="width:10px; float:Left; margin-left: 5px" > {{ item.description }}</span>
+          </ion-item>
+      </div>
+  </ion-list>
+</div>

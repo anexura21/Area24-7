@@ -1,0 +1,237 @@
+#header {
+    //        background-color: #006fac;
+    color: #006fac;
+    margin-top: 12px;
+}
+.card-rutas {
+    background: #006FAC;
+    color: white;
+    width: 90px;
+    height: 30px;
+}
+.cardViajes {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.headerViaSug {
+    background-color: #006fac;
+    color: white;
+    text-align: center;
+    height: 40px;
+}
+.mensajeInfo {
+    font-size: 11px !important;
+    color: #858585 !important;
+    text-align: justify;
+    margin-left: 15px;
+    margin-right: 15px;
+    line-height: 12px;
+}
+.iconsearch {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 2.3rem;
+}
+
+.svgIconArrow{
+    max-width:20px;
+    max-heigth:20px;
+}
+
+
+.card-md {
+    margin: 0px;
+    border-radius: 1px;
+    width: calc(100% - 0px);
+    font-size: 1.4rem;
+    background: rgba(255, 255, 255, 0.77);
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.item-md {
+    padding-left: 10px;
+    padding-right: 0;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: none;
+    color: #000;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.iconsViajesConLabel {
+    width: 3.5rem;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+    right: 3px;
+}
+.iconsViajes {
+    width: 3rem;
+    vertical-align: middle;
+    position: relative;
+    right: -2px;
+    max-height: 4rem;
+}
+.rowIcons {
+    width: 100%;
+    margin: 0 auto;
+}
+.blockIcon {
+    width: 100px;
+    float: left;
+}
+.iconFlecha {
+    width: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: 6px;
+}
+
+.item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img {
+    width: 3rem;
+    height: 3rem;
+    margin: 0px auto;
+}
+
+.iconDbFlecha {
+    width: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.iconsInc {
+    width: 2rem;
+    vertical-align: middle;
+}
+.btnViajesSug {
+    padding-left: 0px;
+}
+.divFondo {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    width: 66px;
+    height: auto;
+    position: relative;
+    top: -3px;
+}
+.item-md ion-thumbnail[item-start] {
+    margin: 2px -2px 1px 0;
+}
+.item-md ion-thumbnail {
+    min-width: 20px;
+    min-height: 20px;
+}
+.item-md ion-thumbnail {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -4px;
+}
+.col {
+    padding: 2px;
+}
+.card-content-md {
+    padding: 0px 0px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+.labelTras {
+    font-size: 9px;
+    background-color: #006fac;
+    color: #fff;
+    position: relative;
+    top: 2px;
+    left: -5px;
+    padding-right: 3px;
+}
+.item-md ion-thumbnail ion-img,
+.item-md ion-thumbnail img {
+    width: 30px;
+    height: 30px;
+    margin: 0px auto;
+}
+.labelInfoCu {
+    font-size: 11px;
+    color: #fff;
+    margin: 5px auto;
+}
+.labelParr {
+    font-size: 10px;
+    color: #858585;
+}
+.rowTexdown {
+    height: 10px;
+    margin-left: 9px;
+}
+.rowViaje {
+    height: 33px;
+    margin-left: 9px;
+    margin-top: 6px;
+    width: 85%;
+}
+.gridViaje {
+    width: 96% !important;
+}
+.slideIcons {
+    width: 40px !important;
+}
+.slideFlecha {
+    width: 20px !important;
+}
+.dobleFlecha {
+    position: relative;
+    left: 225px;
+    top: -21px;
+}
+//Media querys para slider
+@media only screen and (min-width: 320px) {
+    .rowViaje {
+        height: 45px;
+        margin-left: 9px;
+        margin-top: 6px;
+        width: 90%;
+    }
+    .dobleFlecha {
+        position: relative;
+        left: 218px;
+        top: -26px;
+    }
+}
+@media only screen and (min-width: 360px) {
+    .rowViaje {
+        height: 45px;
+        margin-left: 9px;
+        margin-top: 6px;
+        width: 88%;
+    }
+    .dobleFlecha {
+        position: relative;
+        left: 248px;
+        top: -26px;
+    }
+}
+@media only screen and (min-width: 384px) {
+    .rowViaje {
+        height: 45px;
+        margin-left: 9px;
+        margin-top: 6px;
+        width: 88%;
+    }
+    .dobleFlecha {
+        position: relative;
+        left: 275px;
+        top: -26px;
+    }
+}
+
+.bar-button-md, .bar-button-ios {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}

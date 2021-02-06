@@ -1,0 +1,12 @@
+<ion-grid *ngIf="lsItemCheckBoxModoTransporte.length>0">
+  <ion-row *ngIf="modoTransporteSelected!=''">
+     <ion-col class="txtcenter"><label class="txtprefer">{{modoTransporteSelected}}</label></ion-col>
+  </ion-row>
+   <ion-row>
+     <ion-col  *ngFor="let item of lsItemCheckBoxModoTransporte" (click)="onClickItem(item)">
+       <ion-avatar item-start="">
+         <img style="width:auto; height: 3rem;" src="{{item.iconOff}}">
+        </ion-avatar>
+     </ion-col>
+   </ion-row>
+ </ion-grid>

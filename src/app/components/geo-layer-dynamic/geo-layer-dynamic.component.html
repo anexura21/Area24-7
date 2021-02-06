@@ -1,0 +1,14 @@
+<ion-button *ngIf="layerLevel=='CAPA'" class="vertical-divider" style="border-radius:0;" ion-fab (click)="onTapLayer()" [ngStyle]="{'background-color':color}">
+  <img style="height: auto; width: 3rem" [src]="layer.urlIcon" *ngIf="!isLoading">
+  <ion-spinner *ngIf="isLoading"></ion-spinner>
+  <label class="fab-label"> {{ layer.name }} </label>
+</ion-button>
+
+<ion-button *ngIf="layerLevel=='CATEGORIA'" class="vertical-divider categoria" (click)="onTapLayer()">
+  <img style="height: auto; width: 3rem" *ngIf="!isLoading" [src]="layer.urlIcon"/>
+  <ion-spinner color="{{ getLegendColor(layer.id) }}" *ngIf="isLoading"></ion-spinner>
+  <label style="font-size:1rem" class="badge-label" [style.font-weight]="layer.visible ? 700 : null" [style.color]="getColorSelectedLayer()" style="white-space: pre-line">
+      {{layer.name}}
+  </label>
+  <div *ngIf="layer.polygons && layer.polygons.length > 0" class="badge" style="height: 0.2rem; width: 4rem; border-radius: 1rem; margin: 0 auto" [style.background-color]="getLegendColor(layer.id)"></div>
+</ion-button>

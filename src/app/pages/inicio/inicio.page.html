@@ -1,0 +1,83 @@
+<ion-header class="anim" [ngClass]="currentApp.name">
+    <!-- TODO: Revisar el color  -->
+    <ion-toolbar [color]="currentApp.color" [ngStyle]="{'background-color': currentApp.color}">
+              <!-- <div> -->
+                  <!-- <ion-img item-left src="assets/logo2.png" (click)="onClickHome()"></ion-img> -->
+                  <img id="imgHome" width="45px" height="45px" item-left src="./assets/logo2.png" (click)="onClickHome()">
+              <!-- </div> -->
+        <ion-title item-right>
+            {{ currentApp.name | uppercase }} <br>
+        </ion-title>
+  
+        <ion-buttons slot="end" class="mini">
+            <ion-menu-button menuToggle icon-only color="clear" class="mini" id="toggle">
+                <ion-icon name="settings" clear></ion-icon>
+            </ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="norm">
+  <div *ngIf="!common.submenu.sEntorno && !common.submenu.sHuellas && !common.submenu.sVigias 
+          && !common.submenu.sAvistamientos && !common.submenu.sMovilidad 
+          && !common.submenu.sOrdenamiento  && !common.submenu.sInformate
+          && !common.submenu.sEcociudadanos && !common.submenu.sEmprendedores">
+          <ion-list class="app-list">
+              <ion-reorder-group disabled="false" (ionItemReorder)="reorderApps($event)">
+              <ion-item *ngFor="let app of apps; let appIndex=index" [color]="app.color" 
+                      [id]="app.id" [ngStyle]="{'background': app.color}">
+                  <!-- <div> -->
+                      <!--app.children && app.children.length > 0 && -->
+                      <ion-card *ngIf="app.active" [style.background-color]="app.color" 
+                                  style="width: auto;height:70px;margin-inline-start: 0px;margin-inline-end: 0px;
+                                          padding-bottom: 0px;box-shadow: none;">
+                          <ion-grid style="width: auto;height: 70px;">
+                              <ion-row>
+                                  <ion-col size="2" (click)="swtAplicacion(app.id)" >
+                                      <img [src]="app.urlIcon" height="30px" width="30px">
+                                  </ion-col>
+  
+                                  <ion-col size="9" (click)="swtAplicacion(app.id)" style="color: white;">
+                                      <ion-row  class="ion-justify-content-center">
+                                          <span style="white-space: normal;">{{ app.name | uppercase }}</span>
+                                      </ion-row>
+  
+                                      <ion-row style="margin-top: -15px;">
+                                          <p style="font-size: small;" *ngIf="app.recommendation && app.recommendation.description">
+                                              {{ app.recommendation.description }}
+                                          </p>
+                                      </ion-row>
+                                  </ion-col>
+  
+                                  <ion-col size="1" (click)="switchNotification(app)">
+                                              <ion-icon *ngIf="app.notification"
+                                                  name="notifications-sharp"
+                                                  style="font-size: 25px;margin-bottom: 1rem; pointer-events: all"></ion-icon>
+                                              <ion-icon *ngIf="!app.notification" 
+                                                      name="notifications-off-sharp"
+                                                      style="color: white;font-size: 25px;margin-bottom: 1rem; pointer-events: all"></ion-icon>
+                                  </ion-col>
+                              </ion-row>
+                          </ion-grid>
+                      </ion-card>
+                  <!-- </div> -->
+                  <ion-reorder slot="start"></ion-reorder>
+              </ion-item>
+          </ion-reorder-group>
+          </ion-list>
+      </div>
+      <mapa [ngClass]="absolute()"></mapa>
+      
+  </ion-content>
+  <movilidad *ngIf="common.submenu.sMovilidad" [app]="getApp('1')" class="anim"></movilidad>
+  <vigia *ngIf="common.submenu.sVigias" [app]="getApp('2')" class="anim"> </vigia>
+  
+  <avistamiento *ngIf="common.submenu.sAvistamientos" [app]="getApp('3')" class="anim"></avistamiento>
+  <territorio *ngIf="common.submenu.sOrdenamiento" [app]="getApp('4')" class="anim"></territorio>
+  <mi-entorno *ngIf="common.submenu.sEntorno" [app]="getApp('5')" class="anim"></mi-entorno>
+  
+  <huellas *ngIf="common.submenu.sHuellas" [app]="getApp('6')" class="anim"></huellas>
+  <territorio *ngIf="common.submenu.sEcociudadanos" [app]="getApp('9')" class="anim"></territorio>
+  <informate  *ngIf="common.submenu.sInformate" [app]="getApp('8')" class="anim"></informate>
+  <emprende-eco *ngIf="common.submenu.sEmprendedores" [app]="getApp('10')" class="anim"></emprende-eco>
+  

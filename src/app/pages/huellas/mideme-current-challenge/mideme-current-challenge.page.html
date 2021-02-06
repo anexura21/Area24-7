@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar [ngStyle]="{'background': color}" [color]="color">
+    <ion-title>RETO ACTUAL</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="center">
+  <div class="colu">
+    <span class="bold" *ngIf="encabezado?.titulo != null">{{encabezado?.titulo}}</span>
+    <p class="grayText" style="margin-top: 2%;">{{encabezado?.descripcion}}</p>
+  </div>
+
+  <div>
+    <h1>{{ reto.tipoRetoTexto }}</h1>
+    <p text-wrap>{{ textoReto}}</p>
+  </div>
+  <div class="wrap">
+    <div [ngClass]="progressdias" class="progress-radial" id="barra">
+      <div class="overlay"></div>
+    </div>
+    <h1 class="dcolor" [ngStyle]="{'color': color, 'border-bottom-color': color}">Día {{ reto.diaEnCurso }} de 21</h1>
+  </div>
+  <div class="inline">
+    <h1 class="green">Cumplido<br/><span>{{reto.diasCumplidos}} días</span></h1>
+    <h1 class="red">No cumplido<br/><span>{{diasNoCumplidos}} días</span></h1>
+  </div>
+  <div>
+  <ion-button ion-button (click)="cancelChallenge()">Cancelar reto</ion-button>
+  </div>
+</ion-content>

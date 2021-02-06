@@ -1,0 +1,57 @@
+.toolbar-background-ios, .toolbar-background-md {
+    background:transparent;
+}
+.toolbar-title-md, .toolbar-title-ios {
+    padding: 0 12px;
+    color: #ffffff;
+    text-align: center;
+}
+.searchBar{
+    border-radius: 6px;
+    background: gainsboro;
+    height: 40px;
+    .icon {
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .item-inner {
+        margin-left:10px!important;
+    }
+}
+.button {
+    border-radius: 6px;
+    margin: 10px 10%;
+    text-transform:none;
+    width:80%;
+}
+ion-item.item.item-block {
+    border:none!important;
+}
+.item {
+    padding-left:0;
+    padding-right:0;
+    .grid {
+        padding:0;
+        .noPadding {
+            .col:last-child {
+                padding-left:5px;
+            }
+            .col {
+                padding:0;
+                h5 {
+                    margin-top: 0px;
+                    font-weight:500;
+                }
+            }
+        }
+    }
+}
+.lineTop {
+    border-top:1px solid grey;
+    margin-top:15px;
+    padding-top:20px;
+}
+
+.reports{
+    text-decoration: underline;
+}

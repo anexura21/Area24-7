@@ -1,0 +1,16 @@
+<ion-app>
+  <ion-split-pane contentId="content">
+    <ion-menu side="end" 
+              contentId="content" 
+              type="overlay"
+              (ionDidClose)="onCloseMenu()">
+        <ion-content style="background-color:  #F5F5F5">
+            <side-menu></side-menu>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<!-- <ion-nav [root]="rootPage" id="content"></ion-nav> -->
+

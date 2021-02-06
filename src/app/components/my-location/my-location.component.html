@@ -1,0 +1,11 @@
+<!-- <button ion-fab mini right (click)="onMyLocationClick()" [color]="color" 
+  [ngStyle]="{'background-color':color}">
+  <ion-icon name="locate"></ion-icon>  
+</button> -->
+<ion-fab horizontal="end" 
+          vertical="bottom" slot="fixed">
+  <ion-fab-button size="small"
+      [color]="color" [ngStyle]="{'background-color':color}">
+    <ion-icon name="locate"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

@@ -1,0 +1,293 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, forkJoin, Observable, of } from 'rxjs';
+import { DisponibilidadEnciclaRequest } from '../../entities/movilidad/disponibilidad-encicla-request.model';
+import { RutasCercanasRequest } from '../../entities/movilidad/rutas-cercanas-request.model';
+import { UbicacionFavorita } from '../../entities/movilidad/ubicacion-favorita.model';
+import { CONFIG_ENV } from '../../shared/config-env-service/const-env';
+import { map } from 'rxjs/operators';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class WsMovilidadService {
+  private urlApi: string;
+  private options: {};
+  public ubicacionesFavoritas: UbicacionFavorita[];
+  public ubicacion: BehaviorSubject<UbicacionFavorita[]> = new BehaviorSubject([]);
+
+  constructor(private http: HttpClient) {
+    const envQuipux = false;
+    if (envQuipux) {
+      this.setEnvironment(1);
+      CONFIG_ENV.REST_BASE_URL = this.urlApi;
+    }
+  }
+
+  getUbicacionesFavoritas(){
+    return this.ubicacion.asObservable();
+  }
+
+
+  setUbicacionesFavoritas(ubicacionesFavoritas: UbicacionFavorita[]){
+    this.ubicacion.next(ubicacionesFavoritas);
+  }
+
+  obtenerRutasCercanas(data: RutasCercanasRequest) {
+    this.resetRequestOptions( 'application/json' );
+    return this.http.get(CONFIG_ENV.REST_BASE_URL +
+      '/rutas/viajes/' +
+      data.fecha +
+      '/' +
+      data.latitudOrigen +
+      '/' +
+      data.longitudOrigen +
+      '/' +
+      data.radio +
+      '/' +
+      data.modosTransporte, this.options);
+  }
+
+  obtenerDisponibilidadEncicla(data: DisponibilidadEnciclaRequest) {
+    this.resetRequestOptions( 'application/json' );
+    return this.http
+      .get(
+        CONFIG_ENV.REST_BASE_URL +
+          '/rutas/encicla/disponibilidad/' +
+          data.idEstacion,
+        this.options
+      );
+  }
+
+  obtenerDisponibilidadEnciclaPromise(data: DisponibilidadEnciclaRequest){
+    this.resetRequestOptions( 'application/json' );
+    return new Promise((resolve, reject) => {
+      this
+        .http
+          .get(CONFIG_ENV.REST_BASE_URL + '/rutas/encicla/disponibilidad/' + data.idEstacion, this.options)
+            .subscribe((result: any) => {
+              resolve(result);
+            }, error => {
+              reject(error);
+            });
+    });
+  }
+
+  public obtenerRutasyLineas(data: any) {
+    this.resetRequestOptions( 'application/json' );
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/rutas/lineas/' + data, this.options);
+  }
+
+  public obtenerRutaLineaDetalle(tipo: any, id: any) {
+    this.resetRequestOptions( 'application/json;charset=UTF-8' );
+    return this.http
+      .get(
+        CONFIG_ENV.REST_BASE_URL + '/rutas/lineas/' + id + '/' + tipo,
+        this.options
+      );
+  }
+
+  public obtenerRutasyLineasAutocompletado(data: any) {
+    this.resetRequestOptions( 'application/json' );
+    return this.http
+      .get(
+        CONFIG_ENV.REST_BASE_URL + '/rutas/autocompletado/' + data,
+        this.options
+      );
+  }
+
+  public crearUbicacionFavorita(data: UbicacionFavorita) {
+    const urlSearchParams = new URLSearchParams();
+    urlSearchParams.append('nombre', data.nombre);
+    urlSearchParams.append('descripcion', data.descripcion);
+    urlSearchParams.append('latitud', data.coordenada[1]);
+    urlSearchParams.append('longitud', data.coordenada[0]);
+    urlSearchParams.append('idUsuario', '' + data.idUsuario);
+    urlSearchParams.append('idCategoria', '' + data.idCategoria);
+    const body = urlSearchParams.toString();
+    this.resetRequestOptions('application/x-www-form-urlencoded');
+
+    return this.http
+      .post(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/add', body, this.options);
+  }
+
+  public updateListUbicaciones(id){
+    this.obtenerUbicacionesFavoritas(id).toPromise()
+      .then((data: UbicacionFavorita[]) => {
+        this.setUbicacionesFavoritas(data);
+      })
+      .catch(err => console.log(err));
+  }
+
+  public obtenerUbicacionesFavoritas(data: any) {
+    this.resetRequestOptions('application/json');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/' + data, this.options);
+  }
+
+  public eliminarUbicacionFavorita(data: any) {
+    this.resetRequestOptions('application/json');
+
+    return this.http
+      .delete(
+        CONFIG_ENV.REST_BASE_URL + '/ubicaciones/delete/' + data,
+        this.options
+      );
+  }
+
+  public actualizarUbicacionFavorita(data: any) {
+    this.resetRequestOptions('application/x-www-form-urlencoded');
+
+    const urlSearchParams = new URLSearchParams();
+    urlSearchParams.append('id', data.id);
+    urlSearchParams.append('nombre', data.nombre);
+    urlSearchParams.append('descripcion', data.descripcion);
+    urlSearchParams.append('latitud', data.coordenada[1]);
+    urlSearchParams.append('longitud', data.coordenada[0]);
+    urlSearchParams.append('idUsuario', '' + data.idUsuario);
+    urlSearchParams.append('idCategoria', '' + data.idCategoria);
+    const body = urlSearchParams.toString();
+
+    return this.http
+        .put(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/update', body, this.options);
+  }
+
+  obtenerPosiblesViajes(data) {
+    this.resetRequestOptions('application/json;charset=UTF-8');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/viajes/' + data, this.options);
+  }
+
+  obtenerPronosticoSiata(data) {
+    console.log('obtenerPronostico', data);
+    // debugger;
+    this.resetRequestOptions('application/json;charset=UTF-8');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/pronostico/' + data, this.options);
+  }
+
+  public obtenerHuellaCarbno(data: any) {
+    this.resetRequestOptions('application/json');
+    return this.http
+      .post(
+        CONFIG_ENV.REST_BASE_URL + '/api/huellas/carbono/emision',
+        data,
+        this.options
+      );
+  }
+
+  obtenerHuellaCarbonoPronostico(dataHuella, dataPronositco){
+    const obsList = [this.obtenerHuellaCarbno(dataHuella), this.obtenerPronosticoSiata(dataPronositco)];
+    return forkJoin(obsList);
+  }
+
+  // consumir servicios relacionados a la funcionalidad de ciclo parqueaderos de puntos cercanos
+  obtenerPuntosCicloParqueaderos(){
+    const obsList = [
+      this.obtenerPuntosEspacioPublico(),
+      this.obtenerEstacionesSITVA(),
+      this.obtenerEspaciosDeportivos(),
+      this.obtenerEquipamientos(),
+      this.obtenerParques()
+    ];
+  }
+
+  // servicio para consultar estaciones de encicla y ciclo rutas
+  obtenerInformacionEncicla(){
+    this.resetRequestOptions('application/json');
+    return this.http
+      .get(
+        // "http://104.42.236.218/ApiEstacionesEncicla/estaciones",
+        CONFIG_ENV.REST_BASE_URL + '/rutas/encicla/',
+        this.options
+      );
+      // .pipe( map (res => res['obj'].test));
+  }
+
+  obtenerPuntosEspacioPublico(){
+    this.resetRequestOptions('application/json;charset=UTF-8');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/861', this.options);
+  }
+
+  obtenerEstacionesSITVA(){
+    this.resetRequestOptions('application/json;charset=UTF-8');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/863', this.options);
+  }
+
+  obtenerEspaciosDeportivos(){
+    this.resetRequestOptions('application/json;charset=UTF-8');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/864', this.options);
+  }
+
+  obtenerEquipamientos(){
+    this.resetRequestOptions('application/json;charset=UTF-8');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/881', this.options);
+  }
+
+  obtenerParques(){
+    this.resetRequestOptions('application/json;charset=UTF-8');
+    return this.http
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/882', this.options);
+  }
+
+  obtenerCategoriasUbcacionFavorita() {
+    const body = {};
+    this.resetRequestOptions('application/json');
+    return this.http.post(
+      CONFIG_ENV.REST_BASE_URL + '/ubicaciones/categorias',
+      body,
+      this.options
+    );
+  }
+
+  removerUbicacionFavorita(idUbicacionFavorita: number) {
+    const ubicaciones = this.ubicacionesFavoritas;
+    ubicaciones.forEach((item, index) => {
+      if (item.id === idUbicacionFavorita){
+        ubicaciones.splice(index, 1);
+      }
+      this.setUbicacionesFavoritas(ubicaciones);
+    });
+  }
+
+  // fin consumir servicios relacionados a la funcionalidad de ciclo parqueaderos de puntos cercanos
+
+  private resetRequestOptions( contentType: string ){
+    this.options = {
+      'Content-Type': contentType,
+      Authorization: localStorage.getItem('bearer')
+    };
+  }
+
+  private setEnvironment(env: number) {
+    switch (env) {
+      case 1: // Ambiente desarrollo publico
+        this.urlApi = 'http://apptest.quipux.com/amva';
+        console.log('Enviroment desarrollo');
+        break;
+
+      case 2: // Ambiente desarrollo local
+        // this.urlApi = 'http://10.125.30.27:9090';
+        this.urlApi = '/api';
+        console.log('Enviroment desarrollo');
+        break;
+
+      case 3: // Ambiente local
+        this.urlApi = 'http://localhost:9090';
+        console.log('Enviroment local');
+        break;
+
+      case 4: // Ambiente desarrollo ada
+        this.urlApi =   'http://201.184.243.195:9095';
+        console.log('Enviroment desarrollo ada');
+        break;
+    }
+  }
+
+}

@@ -1,0 +1,129 @@
+.checkbox-md .checkbox-icon,
+    .checkbox-ios .checkbox-icon {
+        border-color: #ffffff;
+    }
+    .bar-buttons,
+    .row {
+        ion-item.item.item-block {
+            border-bottom: none;
+            .label{
+                text-decoration: underline;
+                color: #fff;
+            }
+        }
+    }
+    .item {
+        .fas {
+            color: var(--ion-color-gray);
+        }
+    }
+    .item p {
+        color: var(--ion-color-dark-red);
+    }
+    .item-input-has-focus .label[stacked],
+    .input-has-focus .label[stacked],
+    .item-input-has-focus .label[floating],
+    .input-has-focus .label[floating] {
+        color: var(--ion-color-primary);
+    }
+    .list
+        .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+        box-shadow: none;
+        border-bottom-color: var(--ion-color-light-gray);
+    }
+    ion-select {
+        max-width: 100%;
+        width: 100%;
+    }
+    /// ESTILO ICONOS LISTAS DESPLEGABLES
+    .select .select-icon {
+        background-color: var(--ion-color-primary);
+        width: 20px;
+        height: 20px;
+        top: auto;
+        .select-icon-inner {
+            border-top: 5px solid;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            color: white;
+        }
+    }
+    /// ESTILO ICONOS LISTAS DESPLEGABLES
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    /*kud*/
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        background-image: none;
+    }
+
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+        border:none;
+    }
+    ion-buttons.volver {
+        position:absolute;
+        left:10px;
+    }
+    ion-item.item.item-block.item-input.item-label-stacked {
+        border: none!important;
+        background: #ffffff;
+        margin: 10px auto;
+        max-height: 35px;
+        min-height: 35px;
+        .label-md, .label-ios {
+            margin: 0px 8px 0px 0;
+            color:#aaaaaa;
+
+        }
+    }
+    ion-item.item.item-block {
+        border:none!important;
+    }
+    .item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .list .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+    .list.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .item.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+        box-shadow: unset;
+    }
+    .button-md-btnLogin, .button-ios-btnLogin {
+        background-color: #ffffff;
+        height: 2em;
+        font-size: 1.8rem;
+        width: 60%;
+        margin-left:20%;
+        span {
+          color:#888888;
+          text-transform: none;
+        }
+    }
+    .checkbox-md .checkbox-checked {
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+    .checkbox-md .checkbox-checked .checkbox-inner {
+        border-color:  var(--ion-color-primary);
+    }
+    .list.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .item.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+        border-bottom-color: transparent;
+        -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+        box-shadow: inset 0 -1px 0 0 transparent;
+    }
+    ::-webkit-input-placeholder {
+        text-transform: initial;
+     }
+     
+     :-moz-placeholder { 
+        text-transform: initial;
+     }
+     
+     ::-moz-placeholder {  
+        text-transform: initial;
+     }
+     
+     :-ms-input-placeholder { 
+        text-transform: initial;
+     }

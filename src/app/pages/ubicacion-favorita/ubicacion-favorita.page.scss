@@ -1,0 +1,130 @@
+.imputName {
+    border-width: 0px;
+}
+
+.text-input-wp {
+    margin: 0px 0px;
+    margin-left: 17px;
+    margin-right: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding: 0 8px;
+    width: 89%;
+    border: 2px none rgba(0, 0, 0, 0);
+    line-height: 3rem;
+    background-color: #fff;
+    height: 35px;
+}
+
+buscar-ubicacion .searchbar-md .searchbar-input {
+    padding-left: 10px;
+    padding-right: 55px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 2px;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    background-position: 8px center;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    max-width: 90%;
+}
+
+.item-radio.item ion-label {
+  color: red; //your color here
+}
+
+.item-radio-checked.item ion-label {
+color: gray !important; //your color here for selected option
+}
+
+
+.ion-ios-locate:before {
+    content: "\f1ae";
+    color: gray;
+}
+
+.navbarFav {
+    background-color: gray !important;
+    color: white;
+}
+
+
+
+
+@media only screen and (min-width: 320px) {}
+
+
+ion-item.item-ios.item.item-block,
+ion-item.item-md.item.item-block,
+ion-item.item-wp.item.item-block {
+    border-bottom: 0px none #ccc;
+}
+
+.gridContent {
+    background-color: rgba(255, 255, 255, 0.82);
+    padding: 0px;
+}
+
+.selecMapa {
+    background-color: white;
+    margin-top: -11px;
+    margin-left: 18px;
+    width: 100% !important;
+}
+.divButton {
+    // margin-top:-10px;
+    width: 100%;
+    text-align: center
+}
+
+.btn-search {
+    right: 10% !important;
+}
+
+
+.saveBtn {
+    height: 30px !important  ;
+    width: 100px !important;
+    border-radius: 5px !important;
+    font-weight: 200;
+    font-size: 1.6rem !important;
+}
+
+.compTitle {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
+
+
+.item-md {
+    background-color: transparent !important;
+}
+
+.itemBorder {
+    .inputContainer {
+        background-color: white;
+        height: 35px
+    }
+}
+
+.item-md.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: 1px none transparent;
+}
+
+.select .text-input-md,
+.select .text-input-ios {
+    margin: 8px 10px;
+    width: calc(100% - 16px);
+}
+
+ion-input {
+    padding-left: 1rem;
+}
