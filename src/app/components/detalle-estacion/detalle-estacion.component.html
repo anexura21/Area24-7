@@ -1,0 +1,43 @@
+<ion-header [ngStyle]="{'background-color': color}">
+  <ion-title >
+      <img class="icon-header" src="{{icono}}" alt="">
+      <ion-label [ngStyle]="{'color': colorClass}" *ngIf="detalleItems" text-wrap>
+          <span>{{ aireDescripcion[0] }}</span><span class="normal" *ngIf="aireDescripcion.length > 1">, {{ aireDescripcion[1] }}</span>
+      </ion-label>
+    </ion-title>
+    <ion-button  icon-only end  (click)="closeModal()">
+                  <ion-icon [ngStyle]="{'color': colorClass}" name="close"></ion-icon>
+     </ion-button>
+</ion-header>
+
+<ion-content  >
+<div class="loading" *ngIf="!detalleItems">
+  <ion-spinner></ion-spinner>
+  <h4>Cargando informaci&oacute;n ...</h4>
+</div>
+<div *ngIf="detalleItems" class="detalle">
+  <ion-grid padding>
+      <ion-row>
+          <ion-label text-wrap>
+              <span class="bold"> {{ nombre }} </span>
+              <p class="grayText"> {{ interpretacion }}</p>
+          </ion-label>
+      </ion-row>
+      <ion-row class="pm25">
+          <ion-label text-wrap>
+              <span class="bold"> PM 2.5 </span>
+              <p class="grayText"> Partículas de tamaño inferior a 2.5 micrómetros que son originadas en su mayoría por procesos de combustión fósil.</p>
+          </ion-label>
+      </ion-row>
+
+      <ng-container >
+          <h6 [ngStyle]="{'color': toolbar}" style="padding-top: 1rem; padding-left: 1rem"><i class="fa fa-list-ul" aria-hidden="true"></i>Recomendaciones:</h6>
+          <div class="categoria" *ngFor="let recomendacion of recomendaciones">
+              <img src={{recomendacion.urlIcono}}/>
+              <span class="grayText">{{ recomendacion.texto }}</span>
+          </div>
+      </ng-container>
+
+  </ion-grid>
+</div>
+</ion-content>

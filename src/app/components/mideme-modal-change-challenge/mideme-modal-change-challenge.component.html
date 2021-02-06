@@ -1,0 +1,24 @@
+<ion-content padding>
+  <ion-buttons slot="end">
+      <ion-button icon-only  (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+<div>
+      <div class="warn"></div>
+</div>
+<br>
+
+<div>
+<h1>{{titulo?.titulo}}</h1>
+</div>
+
+<div>
+<p>{{titulo?.descripcion}}</p>
+</div>
+
+<div class="botones">
+  <ion-button (click)="cancel()">Sí</ion-button>
+  <ion-button (click)="closeModal()">No</ion-button>
+</div>
+</ion-content>

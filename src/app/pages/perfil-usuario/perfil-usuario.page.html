@@ -1,0 +1,97 @@
+<header>
+    <ion-row class="divConfiguration ion-no-padding">
+        <ion-row>
+            <ion-label name="close" color="light" class="lblVolver"> Volver</ion-label>
+        </ion-row>
+
+        <ion-avatar class="ion-text-center configuration-avatar">
+            <ion-icon name="person-circle" class="configuration-avatar-image"></ion-icon>
+        </ion-avatar>
+        <br><br>
+        <ion-title color="light" class="ion-text-center">{{ nombreUsuario }}</ion-title>
+    </ion-row>
+</header>
+<ion-content>
+    <ion-segment class="ion-no-padding" [(ngModel)]="selectedTab">
+        <ion-segment-button class="configuration-segment-button ion-no-padding" value="datos">
+            <ion-label class="configuration-segment-label ion-no-padding"> Datos</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="configuration-segment-button ion-no-padding" value="logros">
+            <ion-label class="configuration-segment-label"> Logros</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="configuration-segment-button ion-no-padding" value="insignias">
+            <ion-label class="configuration-segment-label ion-no-padding"> Insignias</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <div class="formDatos" *ngIf="selectedTab == 'datos'">
+        <div style="text-align: left">
+            <ion-input type="text" class="inputFormDatos" required placeholder="Nombre de usuario:"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Nombres"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Apellidos"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Correo electrónico"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Fecha de nacimiento"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Género"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Nivel educativo"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Pais o Región"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Departamento"></ion-input>
+            <ion-input type="text" class="inputFormDatos" required placeholder="Ciudad"></ion-input>
+            <ion-button type="submit" class="buttonGuardar ion-text-center">Guardar</ion-button>
+        </div>
+    </div>
+    <div *ngIf="selectedTab == 'logros'">
+        <div class="formLogros">
+            <h3 class="subTitleLogros">Nivel de usuario</h3>
+            <ion-grid class="divLogros">
+                <ion-label class="subtitleDivLogros">{{ nivel }}</ion-label>
+                <br>
+                <ion-label class="subtitleDivLogros" style="font-size: 30px"><b>{{ rango }}</b></ion-label>
+                <br>
+                <ion-label class="subtitleDivLogros">{{ puntos }} puntos</ion-label>
+            </ion-grid>
+        </div>
+        <div class="formLogros">
+            <h3 class="subTitleLogros">Suma puntos cumpliendo desafios</h3>
+            <ion-grid class="divLogros" *ngFor="let puntosLogros of gridPuntosLogros">
+                <ion-row>
+                    <ion-col style="max-width: 80px">
+                        <ion-img [src]="puntosLogros.image"></ion-img>
+                    </ion-col>
+                    <ion-col>
+                        <ion-text class="subtitleDivLogrosDesafios"> {{ puntosLogros.descrption }}</ion-text>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div class="formLogros">
+            <h3 class="subTitleLogros">Actividad reciente</h3>
+            <ion-grid class="divLogros" *ngFor="let actividadReciente of gridActividadReciente">
+                <ion-row>
+                    <ion-col style="max-width: 80px">
+                        <ion-img [src]="actividadReciente.image"></ion-img>
+                    </ion-col>
+                    <ion-col>
+                        <ion-text class="subtitleDivLogrosDesafios"> {{ actividadReciente.descrption }}</ion-text>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+    </div>
+    <div *ngIf="selectedTab == 'insignias'">
+        <div class="formInsignias">
+            <ion-grid>
+                <ion-row>
+                    <ion-col *ngFor="let insignias of gridInsignias" class="ion-text-center">
+                        <ion-avatar class="setAvatar">
+                            <ion-img [src]="insignias.image"></ion-img>
+                        </ion-avatar>
+                        <div class="divSubtitleInsignias"><br>
+                            <ion-label class="subtitleInsignias"> {{ insignias.descrption }}</ion-label>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</ion-content>

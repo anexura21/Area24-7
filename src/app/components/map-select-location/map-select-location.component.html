@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar [ngStyle]="{'background':color}" [color]="color"
+      class="titulo">
+      <ion-buttons left>
+          <ion-button icon-only (click)="closeModal()">
+              <ion-icon name="arrow-back" style="color: white"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title text-center
+          [ngClass]="{'avistamiento-title': fromOriginPage == 'Avistamiento', 'vigia-title': fromOriginPage == 'Vigia'}">
+          Seleccionar ubicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <p class="instruction">Por favor haga clic en el mapa para seleccionar una ubicación. Arrastre el mapa para
+      cambiar su ubicación.</p>
+  <div class="direction">
+
+      <ion-item no-lines box-shadow (click)="emptyDirection()">
+          <ion-label>
+              <ion-icon name="search"></ion-icon>
+          </ion-label>
+          <ion-input no-margin type="text" placeholder="Buscar dirección..." clearInput [(ngModel)]="ubication"
+              (keyup)="searchDirection($event)"></ion-input>
+      </ion-item>
+  </div>
+  <div class="direction-list" [hidden]="autocompleteItemsUbicacion.length == 0">
+      <ion-list>
+          <ion-item *ngFor="let item of autocompleteItemsUbicacion" tappable (click)="selectDirection(item)"
+              text-wrap>
+              <p class="text-list"> {{ item.description }}</p>
+          </ion-item>
+      </ion-list>
+  </div>
+
+  <!--map div-->
+  <div id="map-selection"></div>
+
+  <my-location [color]="color" [actionRadius]="actionRadius" (clickPedestrian)="onClickPedestrian($event)"
+      (clickMyLocationButton)="onClickMyLocationButton($event)" (dragendPedestrian)="onDragendPedestrian($event)">
+  </my-location>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="selectLocation()" [color]="color"
+        class="buttonCheck" [ngStyle]="{'background':color}">
+        <ion-icon name="checkmark"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+</ion-content>

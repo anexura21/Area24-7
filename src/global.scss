@@ -1,0 +1,1079 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+inicio {
+  // inicio {
+  .list.app-list {
+    margin-top: 2%;
+  }
+  // }
+  .content {
+    background: sienna;
+  }
+  .toolbar-title {
+    color: #fff;
+  }
+  .toolbar-title {
+    color: #fff;
+  }
+
+  // modal horarios encicla
+  .cargaModalHorario {
+    .modal-wrapper {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      display: block;
+      width: 90%;
+      height: 50%;
+      border-radius: 8px;
+      //border-top-right-radius: 10px;
+      //border-top: solid 0.4px $gris-border-color;
+      //border-bottom: solid 1px $gris-border-color;
+      //border-right: solid 1px $gris-border-color;
+      //border-left: solid 1px $gris-border-color;
+      //-moz-box-shadow: 0 3px 10px -2px $color-gris-texto-icons-claro !important;
+      //-webkit-box-shadow: 0 3px 10px -2px $color-gris-texto-icons-claro !important;
+      //box-shadow: 0 3px 10px -2px $color-gris-texto-icons-claro !important;
+    }
+  }
+
+  my-location {
+    float: right;
+    margin-right: 0.5rem;
+    margin-bottom: 60px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    span .ion-ios-locate {
+      margin-left: 0px;
+    }
+  }
+
+  @media only screen and (min-height: 600px) and (min-width: 768px) {
+    .md .modal-wrapper {
+      box-shadow: none;
+    }
+  }
+
+  .social-button {
+    font-size: 2.5rem !important;
+    vertical-align: middle;
+    margin: 0 0.5rem;
+    &.facebook-button {
+      color: #3b5998;
+    }
+    &.twitter-button {
+      color: #1da1f2;
+    }
+    &.instagram-button {
+      color: #f56040;
+    }
+  }
+
+  // .item.item {
+  // background-color: transparent;
+  // }
+
+  .button-md {
+    box-shadow: none;
+    }
+
+    .alert-wrapper {
+    border-radius: 10px;
+    }
+
+//Anteriormente
+/*.social-button {
+font-size: 2.5rem !important;
+vertical-align: middle;
+margin: 0 0.5rem;
+&.facebook-button {
+    color: #3b5998;
+}
+&.twitter-button {
+    color: #1da1f2;
+}
+&.instagram-button {
+    color: #f56040;
+}
+}*/
+
+.alert-md,
+.alert-ios {
+  .alert-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .alert-message {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  input[type="email"] {
+    text-align: center;
+    margin: 0;
+  }
+  .alert-input-group,
+  .alert-message {
+    padding: 0 24px 1rem 24px;
+  }
+}
+.alert-ios .alert-wrapper {
+  padding: 10px;
+}
+/// RIPPLE EFFECT
+.button-effect {
+  // background: map-get($colors, primary);
+  background: transparent;
+}
+
+.alert .alert-button.activated {
+  background-color: rgba(150, 201, 61, 0.2);
+}
+
+/// RIPPLE EFFECT
+/// ESTILO DE LAS VALIDACIONES EN LOS FORMULARIOS
+.item.item-input.item-input-has-focus .item-inner,
+.item.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.item.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.list
+  .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+.list
+  .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+  border-bottom-color: #96c93d;
+  box-shadow: inset 0 -1px 0 0#96c93d;
+}
+
+.list.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+.list.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+.item.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.list-md
+  .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+  border-bottom-color: #bb0000;
+  box-shadow: inset 0 -1px 0 0 #bb0000;
+}
+
+/// ESTILO DE LAS VALIDACIONES EN LOS FORMULARIOS
+
+//Info window styles
+/*style
+  the
+  box
+  which
+  holds
+  the
+  text
+  of
+  the
+  information
+  window*/
+  .gm-style
+  .gm-style-iw {
+  // background-color: #fff !important;
+  top: 0 !important;
+  left: 0 !important;
+  display: block !important;
+}
+
+/*style the paragraph tag*/ .gm-style .gm-style-iw #google-popup p {
+  padding: 10px;
+}
+
+/* close-button(note that there may be a scrollbar) */
+
+.custom-iw > div:last-child {
+  top: 0px !important;
+  right: 0 !important;
+}
+
+/* padding of the content */
+.description {
+  width: 100%;
+}
+
+.styleHeader {
+  // background-color: map-get($colors, Conóceme);
+  height: auto;
+  text-align: center;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(188, 188, 188, 0.75);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(188, 188, 188, 0.75);
+  box-shadow: 0px 5px 5px 0px rgba(188, 188, 188, 0.75);
+  margin-bottom: 1rem;
+}
+.styleHeaderMovilidad {
+  height: auto;
+  text-align: center;
+  background-color: #006fac;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.styleTitleMovilidad {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.styleDireccion {
+  font-size: 1.5rem;
+  // color: map-get($colors, Conóceme);
+  color: black;
+  font-weight: 200;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.styleNombreMovilidad {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  margin-top: 0.8rem;
+  margin-bottom: -2px;
+}
+
+.infoGeneral {
+  font-size: 1.4rem;
+  margin: 1rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.styleInfoImp {
+  font-size: 12px;
+  color: #006fac;
+  font-weight: bold;
+}
+
+.ocultarDiv {
+  display: none;
+  height: 0;
+  overflow: visible;
+}
+
+.ocultarDiv2 {
+  visibility: hidden;
+  height: 0;
+  overflow: visible;
+}
+
+ion-loading {
+  // ion-backdrop {
+  //     background-color: white !important;
+  // }
+  .loading-wrapper {
+    //     justify-content: center !important;
+    opacity: 1 !important;
+    background-color: white !important;
+  }
+  .spinner-crescent circle {
+    stroke: #96c93d !important;
+    font-size: 80px;
+  }
+  .spinner-ios line,
+  .spinner-ios-small line {
+    stroke: #96c93d !important;
+  }
+  ion-spinner {
+    width: 40px;
+    height: 40px;
+    fill: white;
+  }
+}
+
+ion-header {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: 45px;
+}
+
+.toolbar-md {
+  padding: 4px;
+  min-height: 45px;
+}
+
+ion-alert {
+  display: flex !important;
+  &.alert-danger {
+    .alert-title {
+      color: #96c93d;
+    }
+    .alert-head {
+      background: white;
+      color: #71a600;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .alert-button-group {
+      background-color: white;
+      text-align: center;
+    }
+    .alert-button {
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: white;
+      background-color: transparent;
+      font-size: 13pt;
+      background: #71a600;
+    }
+  }
+}
+
+.alert-md [aria-checked="true"] .alert-checkbox-icon {
+  border-color: #71a600;
+  background-color: #71a600;
+}
+
+ion-header.header.header,
+ion-header .toolbar {
+  height: 5rem;
+  max-height: 5rem;
+  min-height: 5rem;
+  &ion-toolbar {
+    border-radius: 6px 6px 0 0;
+  }
+}
+
+ion-title img {
+  height: 5rem;
+}
+.anim {
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+}
+.anim.Área {
+  animation-name: nada;
+  // animation-name: moveImg;
+  // animation-duration: .7s;
+  // animation-timing-function: linear;
+  // animation-delay: .0001;
+}
+.initial.anim #map,
+.anim.Recórreme,
+.anim.Asómbrate,
+.anim.Conóceme,
+.anim.Mídeme,
+.anim.Cuídame,
+.anim.Disfrútame {
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+}
+
+#imgHome {
+  animation-name: moveImg;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-delay: 0.0001;
+}
+@keyframes moveImg {
+  from {
+    top: 250px;
+    left: 150px;
+    width: 140px;
+    height: 140px;
+  }
+  to {
+    top: 102px;
+    left: 150px;
+    width: 140px;
+    height: 140px;
+  }
+  to {
+    top: 51px;
+    left: 75px;
+    width: 45px;
+    height: 45px;
+  }
+  to {
+    top: 0px;
+    left: 5px;
+    width: 72px;
+    height: 45px;
+  }
+}
+
+/* The animation code */
+@keyframes example {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0vw;
+  }
+}
+@keyframes example2 {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0vw;
+  }
+}
+.custom-loading {
+  display: unset !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+
+  .loading-wrapper {
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 0;
+  }
+  .loading-content {
+    background-image: url(./assets/splash2.png);
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    min-width: 100vw;
+    img {
+      position: fixed;
+      width: 129px;
+      height: 166px;
+      top: calc(50% - 83px);
+      left: calc(50% - 64.5px);
+    }
+  }
+}
+.warning,
+.success {
+  .alert-wrapper {
+    z-index: 10004;
+    .alert-head {
+      &::before {
+        height: 40px;
+        width: 40px;
+        position: relative;
+        left: calc(50% - 20px);
+        top: 0px;
+        z-index: 20004;
+      }
+    }
+  }
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+/*******Alertas*******/
+.warning {
+  .alert-head {
+    &::before {
+      font-family: "Ionicons";
+      content: "\f3a5";
+      font-size: 50px;
+      color: #d4002d;
+    }
+  }
+}
+.success {
+  .alert-head {
+    &::before {
+      font-family: "Ionicons";
+      content: "\f149";
+      font-size: 50px;
+      color: #1eb600;
+    }
+  }
+}
+
+/* Haz seleccionado una opción', '¿Estás seguro? una vez aceptes se generará el reporte.*/
+.sGenRep,
+.sGenRep.alertAv {
+  .alert-wrapper {
+    .alert-head {
+      &::before {
+        // /left: 0;/
+      }
+      h3.alert-sub-title {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+  }
+  .alert-button-group {
+    padding: 8px;
+    justify-content: center;
+    button {
+      background: #1eb600;
+      color: #ffffff;
+      height: 2.2em;
+      margin: 0.4rem 1.2rem;
+      min-width: 100px;
+      text-transform: capitalize;
+      border-radius: 6px;
+      &.closeBt {
+        min-width: 20px;
+      }
+      .button-inner {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+    }
+    button:first-of-type {
+      background: #d4002d;
+    }
+  }
+}
+.sGenRep.btnSolo,
+.sGenRep.alertAv.btnSolo {
+  .alert-button-group {
+    button {
+      background: #96c93d;
+    }
+  }
+}
+
+.searchbar-md .searchbar-search-icon {
+  position: absolute;
+  left: 0%;
+  top: 0px;
+  background-image: none !important;
+  width: 43px;
+  height: 35px;
+}
+
+.menu-content-open {
+  .ion-page.show-page {
+    opacity: 0.35;
+  }
+  &.menu-content-overlay .ion-page.show-page {
+    opacity: 1 !important;
+  }
+}
+mideme-options,
+mideme-calculator,
+mideme-result,
+mideme-current-challenge,
+mideme-history,
+mideme-challenge,
+encuesta,
+cuidame-form {
+  font-size: 1.7rem;
+  ion-header {
+    .toolbar-background-md,
+    .toolbar-background-ios {
+      background: transparent;
+    }
+    .toolbar-title,
+    .bar-button {
+      color: #ffffff;
+    }
+    .toolbar-content {
+      margin-right: 50px;
+      text-align: center;
+    }
+  }
+
+  ion-content {
+    .colu {
+      padding: 5px;
+      position: relative;
+      width: 100%;
+      margin: 0;
+      min-height: 1px;
+      -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+      ol,
+      ul {
+        text-align: left;
+      }
+    }
+    .button {
+      border-radius: 6px;
+      text-transform: capitalize;
+      text-align: left;
+      font-size: 2rem;
+      i {
+        margin-right: 10px;
+      }
+    }
+    .scroll-content {
+      margin-top: 60px !important;
+    }
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .grayText {
+    color: #808080;
+    font-weight: 400;
+  }
+  .center {
+    text-align: center !important;
+  }
+}
+.centrado {
+  text-align: center;
+}
+.no-historia {
+  color: grey;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.select-popover {
+  .popover-arrow {
+    display: none;
+  }
+  ion-backdrop {
+    //opacity:0!important;
+  }
+  .popover-content {
+    width: calc(100% - 40px);
+    border: 1px solid #9e9e9e;
+    left: 20px !important;
+    border-radius: 0 0 6px 6px;
+    margin-top: 45px;
+  }
+  &.popover-ios {
+    .popover-content {
+      margin-top: 0px;
+    }
+  }
+  .item.item-radio {
+    border-bottom: none !important;
+    min-height: 40px !important;
+    ion-label {
+      margin: 5px 8px 0 0;
+    }
+  }
+  ion-radio {
+    position: absolute !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+  .input-wrapper {
+    margin-left: 24px;
+  }
+  .radio-icon {
+    border: 2px solid #9e9e9e !important;
+    border-radius: 50%;
+    width: 20px !important;
+    height: 20px !important;
+    .radio-inner {
+      left: 3px;
+      top: 3px;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #9e9e9e !important;
+      transform: initial;
+    }
+    &.radio-checked {
+      border: 2px solid #96c93d !important;
+      .radio-inner {
+        left: 3px;
+        top: 3px;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #96c93d !important;
+      }
+    }
+  }
+}
+ion-action-sheet .action-sheet-group {
+  height: 30%;
+  bottom: 0;
+  top: unset;
+  -webkit-box-shadow: 0px -2px 5px 0px rgba(128, 128, 128, 0.75);
+  -moz-box-shadow: 0px -2px 5px 0px rgba(128, 128, 128, 0.75);
+  box-shadow: 0px -2px 5px 0px rgba(128, 128, 128, 0.75);
+  &.action-sheet-group-cancel {
+    display: none;
+  }
+  .action-sheet-button {
+    span.button-inner {
+      justify-content: center !important;
+      color: black;
+    }
+  }
+  .action-sheet-group-cancel {
+    border-top: 1px solid grey;
+  }
+}
+/*alertas botones*/ .alertAv.alert-md,
+.alertAv.alert-ios {
+  .alert-button-group-vertical {
+    -webkit-flex-direction: unset;
+    -ms-flex-direction: unset;
+    flex-direction: unset;
+    flex-wrap: unset;
+  }
+  .alert-button-group {
+    justify-content: center;
+    padding: 8px;
+    .alert-button {
+      height: 40px;
+      border-radius: 4px;
+      text-transform: unset;
+      color: #fff;
+      background-color: #1eb600;
+      margin: 0 0px 0 5px;
+      &:only-child {
+        margin: 0;
+      }
+      &.alertAvR {
+        background-color: #d4002d;
+        margin: 0 5px 0 0px;
+      }
+      .button-inner {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+/*cambios alerts*/ .btnTxtGris {
+  span {
+    color: #808080;
+  }
+}
+.picker-toolbar-cancel button.picker-button {
+  color: #808080;
+}
+.alert-button:first-child {
+  color: #808080;
+}
+.alert-button:only-child {
+  color: #96c93d;
+}
+.closeBt {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  color: #333 !important;
+  background-color: transparent !important;
+  font-size: 20px;
+}
+/*conoceme back arrow*/
+// .back-button {
+//     max-width: 30px;
+//     min-width: 30px;
+//     margin: 0;
+//     padding: 0;
+// }
+/* instagram icono*/
+.instagram-button.icon.ion-logo-instagram::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f16d";
+}
+/*iconos de cerrar*/ [icon-only] ion-icon.ion-ios-close,
+[icon-only] ion-icon.ion-md-close,
+.closeBt,
+ion-icon.ion-ios-close,
+ion-icon.ion-md-close {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+.closeBt::before {
+  font-family: "Ionicons";
+  content: "\f2c0";
+  font-weight: bold;
+}
+/*este
+  estilo
+  no
+  va
+  esperando
+  correccion
+  de
+  quipux*/
+  .gm-style
+  .gm-style-iw-t::after {
+  height: 0 !important;
+  color: transparent !important;
+}
+/*celulares ios*/
+.ios {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    mideme-modal-select-challenge
+      ion-content
+      div.listRadio
+      .row
+      .radio
+      .radio-inner {
+      left: 40%;
+      top: 20%;
+      background-color: white;
+      .radio-ios .radio-icon {
+        position: relative;
+        display: block;
+        width: 21px;
+        height: 21px;
+      }
+    }
+    mideme-modal-select-challenge ion-content {
+      .radio-ios .radio-icon {
+        position: relative;
+        display: block;
+        width: 21px;
+        height: 21px;
+      }
+    }
+    .toolbar-ios {
+      padding: 2.5px;
+      min-height: 45px;
+      padding-top: 2.5px !important;
+      ion-title {
+        padding-top: 2.5px !important;
+      }
+    }
+    my-location {
+      span .ion-ios-locate {
+        margin-left: -3px;
+      }
+    }
+    decision-tree ion-content {
+      top: 20px;
+    }
+    .closeBt {
+      min-width: 20px !important;
+    }
+    .warning,
+    .success {
+      .alert-wrapper {
+        .alert-head {
+          &::before {
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+    }
+    .alertAv.alert-md .alert-button-group .alert-button .button-inner,
+    .alertAv.alert-ios .alert-button-group .alert-button .button-inner {
+      font-size: 0.7em;
+    }
+    .alertAv.alert-ios .alert-button-group .alert-button .button-inner {
+      font-size: 0.7em;
+    }
+    .item-ordenamiento {
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
+  }
+  /*ipad mini*/
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    my-location {
+      span .ion-ios-locate {
+        margin-left: -3px !important;
+      }
+    }
+    mideme-modal-select-challenge
+      ion-content
+      div.listRadio
+      .row
+      .radio
+      .radio-inner {
+      left: 40%;
+      top: 20%;
+      background-color: white;
+      .radio-ios .radio-icon {
+        position: relative;
+        display: block;
+        width: 21px;
+        height: 21px;
+      }
+    }
+    mideme-modal-select-challenge ion-content {
+      .radio-ios .radio-icon {
+        position: relative;
+        display: block;
+        width: 21px;
+        height: 21px;
+      }
+    }
+    // inicio {
+    .list.app-list {
+      margin-top: 0%;
+    }
+    // }
+    .content-ios .gm-style .box-card {
+      left: 0 !important;
+    }
+    .alertAv.alert-md .alert-button-group .alert-button .button-inner,
+    .alertAv.alert-ios .alert-button-group .alert-button .button-inner {
+      font-size: 0.7em;
+    }
+    .alertAv.alert-ios .alert-button-group .alert-button .button-inner {
+      font-size: 0.7em;
+    }
+    cuidame-create {
+      .slide-zoom .audioFit {
+        position: absolute;
+        bottom: 50%;
+        max-width: 300px;
+        min-width: 200px;
+        width: 270px;
+        height: 80px;
+        margin-left: 31%;
+      }
+    }
+  }
+  /*ipad*/
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    mideme-modal-select-challenge
+      ion-content
+      div.listRadio
+      .row
+      .radio
+      .radio-inner {
+      left: 40%;
+      top: 20%;
+      background-color: white;
+      .radio-ios .radio-icon {
+        position: relative;
+        display: block;
+        width: 21px;
+        height: 21px;
+      }
+    }
+    mideme-modal-select-challenge ion-content {
+      .radio-ios .radio-icon {
+        position: relative;
+        display: block;
+        width: 21px;
+        height: 21px;
+      }
+    }
+    my-location {
+      span .ion-ios-locate {
+        margin-left: -2px;
+      }
+    }
+    // inicio {
+    .list.app-list {
+      margin-top: 2%;
+    }
+    // }
+    .item-ordenamiento {
+      padding-top: 10px;
+    }
+    .content-ios .gm-style .box-card {
+      left: 0 !important;
+    }
+    .alertAv.alert-md .alert-button-group .alert-button .button-inner,
+    .alertAv.alert-ios .alert-button-group .alert-button .button-inner {
+      font-size: 0.7em;
+    }
+    .alertAv.alert-ios .alert-button-group .alert-button .button-inner {
+      font-size: 0.7em;
+    }
+    cuidame-create {
+      .slide-zoom .audioFit {
+        position: absolute;
+        bottom: 50%;
+        max-width: 300px;
+        min-width: 200px;
+        width: 270px;
+        height: 80px;
+        margin-left: 37%;
+      }
+    }
+  }
+}
+
+.custom-popover {
+  .popover-content {
+    border-radius: 10px;
+  }
+  ion-backdrop {
+    opacity: 0.8 !important;
+  }
+}
+}
+
+.custom-class .action-sheet-group .action-sheet-button .button-inner {
+  color: #93c97d;
+}
+//Side menu
+side-menu {
+  transform: translate3d(0, 0, 0);
+  .help {
+    text-align: right;
+    padding: 5px;
+    color: #9b9b9a;
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+}
+cuidame-detail {
+  top: 6% !important;
+  position: absolute !important;
+  display: block !important;
+  min-width: 200px;
+  max-width: 600px;
+  width: 89% !important;
+  border-radius: 10px 10px 10px 10px !important;
+  height: calc(100vh - 1rem) !important;
+  max-height: 900px;
+  min-height: 360px;
+}
+
+cuidame-detail {
+  top: 6% !important;
+  position: absolute !important;
+  display: block !important;
+  min-width: 200px;
+  max-width: 600px;
+  width: 89% !important;
+  border-radius: 10px 10px 10px 10px !important;
+  height: calc(100vh - 1rem) !important;
+  max-height: 900px;
+  min-height: 360px;
+}

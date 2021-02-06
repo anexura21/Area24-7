@@ -1,0 +1,100 @@
+.divConfiguration {
+  background: #1B6893;
+  height: 150px;
+
+  .title {
+    color: #ffffff;
+  }
+
+  .lblVolver {
+    font-size: smaller;
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+
+  .configuration-avatar {
+    margin-left: 70px;
+    margin-top: 30px;
+
+    .configuration-avatar-image {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
+
+.configuration-segment-button {
+  background: #1B6893;
+}
+
+.configuration-segment-label {
+  color: #989aa2;
+}
+
+.formDatos {
+  max-width: 280px;
+  margin-left: 35px;
+
+  .inputFormDatos {
+    color: #989aa2;
+    border-bottom: 1px solid #989aa2;
+  }
+
+  .buttonGuardar {
+    --background: #78BE21 !important;
+    border: solid #ffffff;
+    border-radius: 10px 10px;
+    margin-left: 84px;
+  }
+}
+
+.formLogros {
+  max-width: 280px;
+  margin-left: 35px;
+
+  .subTitleLogros {
+    color: #78BE21;
+  }
+
+  .divLogros {
+    background: #e7e7ec;
+    max-width: 280px;
+    max-height: 280px;
+    border-radius: 5px;
+
+    .subtitleDivLogros {
+      margin-left: 10px;
+      color: #1B6893;
+      font-family: "Roboto Light";
+      font-size: 20px;
+    }
+
+    .subtitleDivLogrosDesafios {
+      margin-left: 10px;
+      color: #808183;
+      font-family: "Roboto Light";
+      font-size: 18px;
+    }
+  }
+}
+
+.formInsignias {
+  max-width: 280px;
+  margin-left: 35px;
+  margin-top: 25px;
+
+  .setAvatar {
+    margin-left: 30px
+  }
+.divSubtitleInsignias{
+  margin-top: -10px
+}
+  .subtitleInsignias {
+    color: #1B6893;
+    font-family: "Roboto Light";
+  }
+}
+
+
+
+

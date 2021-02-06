@@ -1,0 +1,16 @@
+<ion-fab *ngIf="layerManagerComponent && layerManagerComponent.getCurrentLayer() && layerManagerComponent.getCurrentLayer().children" 
+        vertical="top" horizontal="end"  
+            width="100vw" style="overflow-x: scroll;overflow-y: hidden;width:100%;white-space: nowrap; left: 0; top: 105px;">
+    <div class="item-ordenamiento" style="text-align:center;background-color: #efefef; overflow: scroll; box-shadow: none">
+        <mixed-typeahead 
+                    [color]="app.color"
+                    (clickGoogleSuggestion)="onClickGoogleSuggestion($event)"
+                    (clickApiSuggestion)="onClickApiSuggestion($event)"></mixed-typeahead>
+    </div>
+</ion-fab>
+<my-location [color]="app.color" 
+            [actionRadius]="app.radius" 
+            (clickPedestrian)="onClickPedestrian($event)" 
+            (clickMyLocationButton)="onClickMyLocationButton($event)" 
+            (dragendPedestrian)="onDragendPedestrian($event)"></my-location>
+<layer-manager [app]="app"></layer-manager>

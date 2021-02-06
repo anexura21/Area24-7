@@ -1,0 +1,21 @@
+$primary: var(--ion-color-primary);
+$dark: var(--ion-color-dark);
+
+h3{
+    color: black;
+    font-size: 12px;
+    text-align: center;
+}
+p{
+    font-size: 9px;
+}
+
+.buttons{
+    border-radius: 5px;
+    font-size: 1.8rem;
+}
+
+.footerPage{
+    background-color: #ffffff !important;
+    height: 60px;
+}

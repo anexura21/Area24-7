@@ -1,0 +1,48 @@
+encuesta-modal {
+    left: calc(50% - 150px)!important;
+    top: 26%!important;
+    position: absolute!important;
+    display: block!important;
+    width: 300px!important;
+    border-radius:6px;
+  }
+    ion-content {
+        text-align: center!important;
+        height: 350px!important;
+        border-radius:5px;
+        top: 0px;
+        div {
+            width:100%;
+            h1 {
+                font-size:2rem;
+                margin:1.5rem;
+                width:95%;
+            }
+            p {
+                font-size:1.7rem;
+            }
+            .check {
+                margin-top:-2rem;
+                .fa-edit::before {
+                    font-size:50px;
+                    font-weight:900;
+                    color:var(--ion-color-primary);
+                }
+            }
+        }
+        .close {
+            background: transparent;
+            position:relative;
+            height:20px;
+            width:20px;
+            top:-15px;
+            right:-15px;
+            color:black;
+        }
+        .botones {
+            position: absolute;
+            margin-left: -16px;
+            bottom: 20px;
+        }
+    }
+  

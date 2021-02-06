@@ -1,0 +1,294 @@
+.fas {
+    color: var(--ion-color-primary);
+}
+div > div > ion-item > ion-icon.header-icon {
+    color: #f5f5f5;
+    font-size: 2rem;
+}
+.toolbar-background {
+    background: inherit;
+}
+.toolbar-title {
+    color: white;
+}
+.toolbar-ios ion-title {
+    padding: 0;
+}
+[menuClose] {
+    font-size: 1.8em;
+}
+.scroll-content > .list {
+    margin-top: 5rem;
+}
+.help {
+    text-align: right;
+    padding: 5px;
+    color: #9b9b9a;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+.action-radius:first-child {
+    border-bottom: none !important;
+}
+.item:nth-child(2) {
+    .label {
+        margin: 0 0 1rem;
+    }
+}
+.range {
+    padding: 0;
+}
+.subtitulo {
+    font-weight:normal;
+    font-size:1.2rem;
+    margin:0;
+}
+.prefTrans{
+    background-color: #f2f2f2;
+    ion-item.item-ios.item.item-block, ion-item.item-md.item.item-block, ion-item.item-wp.item.item-block {
+        border-bottom: none;
+        max-height: 45px;
+        min-height: 45px;
+    }
+    .toggle-ios .toggle-checked .toggle-icon {
+        background-color: rgba(128,128,128,.4);
+    }
+    .toggle-ios {
+        height: 26px;
+        .toggle-icon {
+            border: 1px solid rgba(0,0,0,.4);
+        }
+        .toggle-inner {
+            left: 4px;
+            top: 0px;
+            border-radius: 14px;
+            width: 24px;
+            height: 24px; 
+            background-color: #f2f2f2; 
+        } 
+    }
+    
+    .toggle-checked .toggle-icon {
+        background-color: rgba(128,128,128,.4);
+        .toggle-inner {
+            background-color: rgba(128,128,128,.8);   
+        }
+    }
+    .toggle-md .toggle-icon {
+        border: 1px solid rgba(0,0,0,.4);
+    }
+}
+
+.fas {
+    color: #96c93d;
+}
+div > div > ion-item > ion-icon.header-icon {
+    color: #f5f5f5;
+    font-size: 2rem;
+}
+.toolbar-background {
+    background: inherit;
+}
+.toolbar-title {
+    color: white;
+}
+.toolbar-ios ion-title {
+    padding: 0;
+}
+[menuClose] {
+    font-size: 1.8em;
+}
+.scroll-content > .list {
+    margin-top: 5rem;
+}
+.action-radius:first-child {
+    border-bottom: none !important;
+}
+.item:nth-child(2) {
+    .label {
+        margin: 0 0 1rem;
+    }
+}
+.range {
+    padding: 0;
+}
+.subtitulo {
+    font-weight:normal;
+    font-size:1.2rem;
+    margin:0;
+}
+.prefTrans{
+    background-color: #f2f2f2;
+    ion-item.item-ios.item.item-block, ion-item.item-md.item.item-block, ion-item.item-wp.item.item-block {
+        border-bottom: none;
+        max-height: 45px;
+        min-height: 45px;
+    }
+    .toggle-ios .toggle-checked .toggle-icon {
+        background-color: rgba(128,128,128,.4);
+    }
+    .toggle-ios {
+        height: 26px;
+        .toggle-icon {
+            border: 1px solid rgba(0,0,0,.4);
+        }
+        .toggle-inner {
+            left: 4px;
+            top: 0px;
+            border-radius: 14px;
+            width: 24px;
+            height: 24px; 
+            background-color: #f2f2f2; 
+        } 
+    }
+    
+    .toggle-checked .toggle-icon {
+        background-color: rgba(128,128,128,.4);
+        .toggle-inner {
+            background-color: rgba(128,128,128,.8);   
+        }
+    }
+    .toggle-md .toggle-icon {
+        border: 1px solid rgba(0,0,0,.4);
+    }
+}
+
+// RANGE PIN IOS COLOR APP
+.range-md, .range-ios {
+.range-pin, .range-pin::before, .range-bar-active, .range-knob  {
+    background-color: #aaaaaa !important;
+    background:  #aaaaaa;
+    color: #ffffff;
+}
+}
+
+// COLOR DE LOS TOGGLE DE PREFERENCIAS DE TRANSPORTE
+ion-scroll {
+ion-item {
+    .toggle.toggle-checked .toggle-icon {
+        background-color: rgba(12, 87, 131, 0.6);
+    }
+    .toggle.toggle-checked .toggle-inner {
+        // background: #0c6faa;
+    }
+    .toggle-md .toggle-icon {
+        // background: map-get($colors, light-gray);
+    }
+}
+}
+
+// ALINEACION DE ELEMENTOS EN EL MENU
+.item-ios .toggle-ios {
+padding: 5px 1px;
+}
+
+.item ion-avatar[item-left],
+.item ion-thumbnail[item-left],
+.item ion-avatar[item-start],
+.item ion-thumbnail[item-start] {
+margin: 8px 0;
+}
+
+.item [item-left],
+.item [item-start] {
+margin: 8px 8px 8px 0;
+}
+
+// BORDE DE LOS SWITCH EN IOS
+.toggle-ios.toggle-checked .toggle-icon {
+box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 1);
+}
+
+.toggle-md .toggle-icon {
+background: #f4f4f4;
+}
+
+.toggle input:checked + .track {
+background-color: #8577b5;
+border-color: #8577b5;
+}
+
+// ------------------------------------ //
+// Global variables                     //
+// ------------------------------------ //
+$item-color-bg: #ccc;
+$header-color-bg: #f5f5f5;
+$animation-duration: 0.4s;
+// ------------------------------------ //
+// Hide scroll bar in the side menu     //
+// ------------------------------------ //
+ion-menu ion-content .scroll-content::-webkit-scrollbar {
+display: none;
+transform: translate3d(0, 0, 0);
+}
+
+// ------------------------------------ //
+// Simple items                         //
+// ------------------------------------ //
+ion-item {
+padding-right: 0;
+&.item.item-block {
+    border-bottom: 1px solid $item-color-bg;
+}
+& [item-left],
+& [item-right] {
+    margin-left: 0;
+}
+& ion-icon[item-left] + .item-inner,
+& ion-icon[item-left] + .item-input {
+    margin-left: 8px;
+}
+&.item.item-range {
+    height: 8rem;
+    .label.label {
+        margin: 8px 0;
+    }
+}
+}
+
+// ------------------------------------ //
+// Multi level items                    //
+// ------------------------------------ //
+
+ion-list.accordion-menu {
+ion-item.header {
+    background-color: $header-color-bg;
+    ion-icon.header-icon {
+        color: #9b9b9a;
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+div.options {
+    will-change: height;
+    transition: height $animation-duration ease;
+    overflow-y: hidden;
+    height: 0;
+}
+ion-label {
+    color: #9b9b9a;
+    font-size: 1.6rem;
+}
+.itemMenu {
+    background-color: #f5f5f5;
+    ion-label {
+        color: #9b9b9a;
+        font-size: 1.4rem;
+    }
+    color: #f5f5f5;
+}
+}
+
+.item-md,
+.item-ios {
+background-color: #f4f4f4;
+color: #9b9b9a;
+font-size: 1.6rem;
+}
+
+ion-list > div > ion-item > .item-inner > .input-wrapper > ion-label {
+font-size: 1.4rem;
+}
+

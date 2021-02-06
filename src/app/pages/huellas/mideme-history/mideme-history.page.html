@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar [ngStyle]="{'background': color}" [color]="color">
+    <ion-buttons slot="start" class="mini">
+      <ion-back-button defaultHref="/inicio" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>HISTORIAL</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="colu" tex-center>
+    <span class="bold" *ngIf="titulo?.titulo != null">{{titulo?.titulo}}</span>
+    <p class="grayText descripcion">{{titulo?.descripcion}}</p>
+  </div>
+
+  <div *ngFor="let item of history">
+    <div [ngClass]="item.class" class="cont">
+      <span class="redLabel" [ngStyle]="{'background': item.color}">{{item.dateCreate}}</span>
+      <div class="contenedor">
+          <img src="{{item.urlIcon}}" alt="" class="icon" >
+        <div style="display: flex">
+            <p class="nivelConsumo" 
+              [ngStyle]="{'color': item.color,'margin-top':item.class}" 
+              style="margin-left: 1rem;">{{item.descriptionLevel}}</p>
+          <span style="position: absolute;bottom:30%;right: 5%;" [ngStyle]="{'color': item.color}">{{item.result}}L</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

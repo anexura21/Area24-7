@@ -1,0 +1,63 @@
+.container {
+    img {
+      border: 4px solid #009a37;
+      max-width: 6.5rem;
+      max-height: 6.2rem;
+      top: -5.5rem;
+      border-radius: 50%;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+
+  ion-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .container {
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.3px solid gray;
+    width: 85%;
+    max-height: 95%;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    .scroll-content {
+      border-radius: 8px;
+    }
+    // img {
+    // }
+  }
+
+  .bar {
+    height: 4rem;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #009a37;
+    box-shadow: -1px 2px 16px 0px rgba(59, 57, 59, 1);
+  }
+
+  .texto {
+    text-align: center;
+    margin: 2.5rem;
+    margin-top: -6rem;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    overflow-y: auto;
+    // text-shadow: 1px 1px #F2F2F2;
+  }
+
+  .ios,
+  .md {
+    content-drawer {
+      background-color: #34495e !important;
+    }
+    content-drawer .content {
+      padding: 20px;
+    }
+  }

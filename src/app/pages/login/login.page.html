@@ -1,0 +1,27 @@
+<ion-content>
+    <div class="divBackground">
+        <div class="imgLogo">
+            <ion-img src="../../../assets/logo2.png"></ion-img>
+        </div>
+        <form class="form" [formGroup]="formGroup" (ngSubmit)="loginWithForm()">
+            <div style="text-align: left">
+                <ion-input  type="text" name="username" formControlName="username" class="inputForm" required placeholder="Usuario:"></ion-input>
+                <ion-input type="password" name="contrasena" formControlName="contrasena" class="inputForm" required placeholder="Contraseña"></ion-input>
+            </div>
+            <ion-button type="submit" [disabled]="!formGroup.valid" class="buttonForm">Entrar</ion-button>
+            <br><br>
+            <a class="aForm" (click)="restorePasswordDialog()"> Olvidé mi contraseña</a>
+            <br><br>
+            <b class="aForm">Iniciar con:</b>
+            <br><br>
+            <div>
+            <ion-icon (click)="loginWithFacebook()" name="logo-facebook" class="iconSets facebook"></ion-icon>
+            <ion-icon (click)="loginWithGoogle()" name="logo-Google" class="iconSets google"></ion-icon>
+            </div>
+            <ion-button type="submit" (click)="enrollWithForm()" class="buttonRegis">Registrate aquí</ion-button>
+            <br><br><br>
+            <a class="aTerminos" (click)="terminosCondiciones()">Términos y condiciones</a>
+        </form>
+
+    </div>
+</ion-content>

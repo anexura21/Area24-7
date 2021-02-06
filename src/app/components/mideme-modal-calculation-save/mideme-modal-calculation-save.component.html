@@ -1,0 +1,13 @@
+<ion-content padding>
+  <ion-buttons slot="end">
+    <ion-button ion-button icon-only (click)="closeModal()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <div>
+    <div class="check"></div>
+    <h1 [ngStyle]="{'color': color}">{{msg?.titulo}}</h1>
+    <p>{{msg?.descripcion}}</p>
+  </div>
+</ion-content>

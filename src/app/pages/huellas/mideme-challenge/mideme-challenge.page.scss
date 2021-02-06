@@ -1,0 +1,51 @@
+.retosItemActive{
+    margin-bottom: 5px!important;
+    margin-left: 20px;
+}
+.retosItem{
+    color: #000 !important;
+    margin-bottom: 5px!important;
+    margin-left: 20px;
+}
+.cargador{
+    position: absolute;
+    bottom: 50%;
+    text-align: center;
+    left: 19%;
+  }
+.toolbar-title, h1 {
+    font-size:2rem;
+    font-weight:400;
+}
+h1 {
+    font-weight:500;
+    margin-top:0rem;
+}
+.retos {
+    margin-top:2rem;
+    ion-item {
+        border-bottom:none!important;
+        .label {
+            margin:8px;
+        }
+        h1,p {
+            color:initial;
+            font-weight:500;
+            i {
+                border: 1px solid var(--ion-color-texto );
+                border-radius: 50%;
+                vertical-align: middle;
+                padding: 2px;
+                font-size: 8px;
+                color: white;
+                margin-top: -3px;
+                margin-right: 5px;
+            }
+        }
+        span {
+            margin-left:2rem;
+            font-size: 1.3rem;
+            color:initial;
+        }
+    }
+}

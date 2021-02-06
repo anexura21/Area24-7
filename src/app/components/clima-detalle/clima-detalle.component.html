@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar [color]="color" [ngStyle]="{'background': color}">
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="inicio" color="light"></ion-back-button> -->
+      <ion-button icon-only (click)="cerrarClimaDetalle()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Pronóstico precipitación</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <!-- <div class="loading" *ngIf="!data">
+      <ion-spinner></ion-spinner>
+      <h4>Cargando informaci&oacute;n ...</h4>
+  </div> -->
+
+  <div padding class="loading" *ngIf="!data">
+      <ion-spinner style="vertical-align: middle"></ion-spinner>
+      <span style="color: #444444; font-size: 1.4rem;">Cargando informaci&oacute;n ...</span>
+  </div>
+<hr>
+
+  <div *ngIf="data">
+      <ion-list>
+          <ion-grid class="center">
+              <ion-row>
+                  <ion-col style="box-shadow: none">                   
+                      <ion-label>
+                          {{ data.municipio | capitalize }}<span class="normal">{{ nombreEstacion }}</span>
+                      </ion-label>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col style="box-shadow: none">
+                      <img src="{{urlIcon}}">
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col style="box-shadow: none">                   
+                      <ion-label>                              
+                          <span class="smallGray">{{  currentDay }}</span><br/>
+                          {{ precipitacion | capitalize }} precipitación
+                      </ion-label>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col style="box-shadow: none">
+                      <ion-label class="temperatura">
+                          {{ data.temperaturaMinima }}C<br/>
+                          <p class="smallGray">Temperatura<br/>Mínima.</p>
+                      </ion-label>
+                  </ion-col>
+                  <ion-col col-1 style="box-shadow: none">
+                      <ion-label>
+                          <span class="separar">|</span>
+                      </ion-label>
+                  </ion-col>
+                  <ion-col  style="box-shadow: none">
+                      <ion-label class="temperatura">
+                          {{ data.temperaturaMaxima }}C<br/>
+                          <p class="smallGray">Temperatura<br/>Máxima.</p>
+                      </ion-label>
+                  </ion-col>
+              </ion-row>
+              
+          </ion-grid>
+      </ion-list>
+      <ion-list>
+          <ion-grid class="center">
+              <ion-row>
+                  <ion-col style="box-shadow: none">                   
+                      <ion-label>
+                          <span class="smallGray">{{ currentDay }}</span><br/>
+                      </ion-label>
+                  </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let item of currentForecast">
+                  <ion-col col-1></ion-col>
+                  <ion-col style="background-color: #a0a0a0">
+                      <ion-label class="estados">
+                          <img src="{{item.urlIcono}}" class="rIcon">
+                          {{ item.tiempo }}<br/>
+                          <span class="smallWhite">{{ item.descripcion | capitalize }}</span>
+                      </ion-label>
+                  </ion-col>
+                  <ion-col col-1></ion-col>
+              </ion-row>
+
+          </ion-grid>
+      </ion-list>
+      
+      <ion-list>
+          <ion-grid *ngIf="data" class="center">
+              <ion-row>
+                  <ion-col style="box-shadow: none">                   
+                      <ion-label>
+                          <span class="smallGray">{{ tomorrowDay }}</span><br/>
+                      </ion-label>
+                  </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let item of tomorrowForecast">
+                  <ion-col col-1></ion-col>
+                  <ion-col style="background-color: #a0a0a0">
+                      <ion-label class="estados">
+                          <img src="{{item.urlIcono}}" class="rIcon">
+                          {{ item.tiempo }}<br/>
+                          <span class="smallWhite">{{ item.descripcion | capitalize}}</span>
+                      </ion-label>
+                  </ion-col>
+                  <ion-col col-1></ion-col>
+              </ion-row>
+
+          </ion-grid>
+      </ion-list>
+  </div>
+</ion-content>
+

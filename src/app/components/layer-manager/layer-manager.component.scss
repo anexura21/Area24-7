@@ -1,0 +1,81 @@
+layer-manager {
+    pointer-events: all;
+}
+
+
+        
+
+
+    ion-footer {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        overflow-x: scroll;
+        background-color: rgba($color: #7c7c7c, $alpha: 0.85);
+        display: flex;
+        max-height: 60px;
+        height: 60px;
+        overflow-y: hidden;
+
+        ion-buttons {
+            padding-top: 0px;
+            display: flex;
+            margin: 0 auto;
+
+            >div {
+                margin-left: 0;
+                margin-right: 0;
+                display: inline-table !important;
+            }
+
+            .button-inner {
+                color: #fff;
+            }
+
+            .badge-label {
+                font-size: 0.9rem;
+            }
+
+            .fab-label {
+                font-size: 1.26rem;
+                text-align: center;
+                white-space: normal;
+                padding-left: 5px;
+                display: inline;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                    'Helvetica Neue', sans-serif;
+            }
+
+            other-layer,
+            fusion-layer {
+                .fab-label {
+                    padding-right: 0;
+     
+                }
+
+                .button-inner {
+                
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .layer-active {
+        border-radius: 3px !important;
+        box-shadow: 0 0 1rem 1px rgba($color: #000000, $alpha: 0.3) !important;
+    }
+
+    .layer-unactive {
+        border-radius: 0px !important;
+        box-shadow: none !important;
+    }
+
+    @media screen and (orientation: landscape) {
+        .footer {
+            .fab {
+                min-width: 13rem;
+            }
+        }
+    }

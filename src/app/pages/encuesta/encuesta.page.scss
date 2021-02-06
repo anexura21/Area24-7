@@ -1,0 +1,152 @@
+encuesta {
+    color:var(--ion-color-texto );
+}
+    .button{
+        width:100%;
+        height:40px;
+        text-align: center !important;
+    }
+    .colu {
+        color:var(--ion-color-primary );
+        p {
+            font-size:1.4rem;
+        }
+    }
+
+    dynamic-form {
+        .label {
+            text-align: center;
+        }
+        .input-wrapper {
+            .label {
+                color:var(--ion-color-texto );
+            }
+        }
+        .item-radio-checked .input-wrapper ion-label, .item-checkbox-checked .input-wrapper ion-label{
+            color:var(--ion-color-primary )!important;
+        }
+        .item.item {
+            background:rgba(204,204,204,0.4);
+            border-radius: 6px;
+            margin-bottom: 5px;
+            border-bottom: 0!important;
+            &.item-radio-checked, &.item-checkbox-checked {
+                background: rgba(150, 201, 61, 0.4);
+            }
+        }
+        .itemsSelect {
+            margin-bottom: 5px;
+  
+            input ~ label{
+                font-weight:bold;
+                color:var(--ion-color-texto );
+                background:rgba(204,204,204,0.4);
+                border-radius: 6px;             
+                padding: 15px 15px 15px 15px;
+                position: relative;
+                display: -webkit-box;
+                left: 0px;
+                width: calc(100vw - 45px);
+            }
+            input:checked ~ label {
+                color: var(--ion-color-primary );
+                background:rgba(150, 201, 61, 0.4);              
+            }
+            input{
+                position: relative;
+                top: 15px;
+                left: 0px;
+                z-index: 99999;
+            }
+            span  {
+                display: -webkit-box;
+                width:calc(100% - 20px);
+            }
+            &.buttons [type="checkbox"] {
+                opacity:0;
+                display: none;
+              }
+              
+              /* create container to take role of checkbox */
+              &.buttons label::before {
+                content: "";
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                font-size: 1.2rem;
+                border: 2px solid var(--ion-color-texto);
+                border-radius: 3px;
+                vertical-align: middle;
+                position: relative;
+                left: 0px;
+                top: 0px;
+                margin-right:5px;
+              }
+              
+              /* add checkmark once the label is clicked */
+              &.buttons [type="checkbox"]:checked + label::before {
+                text-align: center;
+                font-family: "Ionicons";
+                content: "\f2bc";
+                border: 2px solid var(--ion-color-primary );
+                background-color: transparent;
+                color: var(--ion-color-primary )!important;
+                font-weight: bold;
+              }
+        }
+        .checkbox-icon {
+            border: 2px solid #9E9E9E!important;
+            background:transparent!important;
+            &.checkbox-checked {
+                border: 2px solid var(--ion-color-primary )!important;
+                .checkbox-inner {
+                    border-color: var(--ion-color-primary )!important;
+                }
+            }
+        }
+        .item.item.nada.item-checkbox-checked {
+            background: rgba(204,204,204, 0.4);
+            .checkbox-icon.checkbox-checked {
+                border: 2px solid #9E9E9E !important;
+                .checkbox-inner {
+                    border-color: transparent !important;
+                }
+            }
+            .input-wrapper ion-label {
+                color: #808080 !important;
+            }
+        }
+        .item.item.item-checkbox-checkeds.item-checkbox-checked {
+            background: rgba(150, 201, 61, 0.4);
+            .checkbox-icon.checkbox-checked {
+                border: 2px solid #96c93d !important;
+                .checkbox-inner {
+                    border-color: #96c93d !important;
+                }
+            }
+            .input-wrapper ion-label {
+                color: #96c93d !important;
+            }
+        }
+        .item.item.item-checkbox-checkeds {
+            background: rgba(204,204,204, 0.4);
+            .checkbox-icon.checkbox-checked {
+                border: 2px solid #9E9E9E !important;
+                .checkbox-inner {
+                    border-color: transparent !important;
+                }
+            }
+            .input-wrapper ion-label {
+                color: #808080 !important;
+            }
+        }
+    }
+
+    .buttonOmitir{
+        background: #808080,
+
+    }
+
+    .buttonOmitir p:first-letter{
+        text-transform: uppercase;
+    }

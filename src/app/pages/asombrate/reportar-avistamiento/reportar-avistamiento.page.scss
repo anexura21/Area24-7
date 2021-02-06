@@ -1,0 +1,113 @@
+.header-custom {
+  --background: #00ab4e;
+}
+
+ion-content {
+  --ion-background-color: #ffffff;
+
+  .container-custom {
+    width: 112px;
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      padding: 11px 0px 29px 2px;
+
+      .box-button {
+        border: solid 0.01em #898080;
+        color: black;
+        height: 100%;
+        width: 100%;
+        background: white;
+
+        ion-icon {
+          font-size: 32px;
+        }
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .ion-slide-custom {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        button {
+          position: absolute;
+          border-radius: 78px;
+          padding: 5%;
+          margin: 0% 0% 100% 100%;
+          font-size: 100%;
+        }
+      }
+    }
+  }
+
+  .box {
+    border: solid 0.01em #898080;
+    margin: 80px 0px 0px 0px;
+    color: black;
+    height: 70px;
+    width: 100%;
+    background: white;
+
+    ion-icon {
+      font-size: 32px;
+    }
+  }
+
+  .input-row {
+    ion-item {
+      --highlight-color-focused: #00ab4e;
+      --background: white;
+      color: black;
+      --border-color: rgb(182, 182, 182);
+
+      ion-label {
+        color: #00ab4e;
+      }
+      ion-input {
+        --placeholder-color: green;
+      }
+    }
+  }
+
+  .container-buttons {
+    .button-guardar,
+    .button-publicar {
+      font-weight: bold;
+      --border-radius: 10px;
+      border-radius: 10px;
+      --border-color: #00ab4e;
+    }
+
+    .button-guardar {
+      --background: white;
+      color: #00ab4e;
+      border: solid 1px #00ab4e;
+    }
+
+    .button-publicar {
+      --background: #00ab4e;
+      color: white;
+    }
+  }
+}

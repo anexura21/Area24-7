@@ -1,0 +1,24 @@
+<!-- <button class="vertical-divider" style="border-radius:0; padding: 0; display: inline" ion-fab
+    (click)="onTapLayer()" [ngStyle]="{'background': layerActive()}" [ngClass]="isLayerActive()">
+    <img style="height: auto; width: 3rem;" [src]="layer.urlIcon" *ngIf="!isLoading">
+    <ion-spinner *ngIf="isLoading"></ion-spinner>
+    <label class="fab-label">{{layer.name}}</label>
+</button> -->
+<!-- <ion-fab slot="fixed">
+  <ion-fab-button size="small" class="vertical-divider" style="border-radius:0; padding: 0; display: inline" ion-fab
+                  (click)="onTapLayer()" [ngStyle]="{'background': layerActive()}" 
+                  [ngClass]="isLayerActive()"
+      [color]="layerActive()">
+      <img style="height: auto; width: 3rem;" [src]="layer.urlIcon" *ngIf="!isLoading">
+      <ion-spinner *ngIf="isLoading"></ion-spinner>
+      <label class="fab-label">{{layer.name}}</label>
+  </ion-fab-button>
+</ion-fab> -->
+<ion-button size="small" class="vertical-divider"  
+            (click)="onTapLayer()" [ngStyle]="{'background': layerActive()}" 
+            [ngClass]="isLayerActive()"
+            [color]="layerActive()">
+      <img style="height: 2rem; width: 2rem" [src]="layer.urlIcon" *ngIf="!isLoading">
+      <ion-spinner *ngIf="isLoading"></ion-spinner>
+<label class="fab-label">{{layer.name}}</label>
+</ion-button>

@@ -1,0 +1,96 @@
+<ion-header [ngStyle]="{'background':color}">
+    <ion-toolbar [color]="color">
+  <img class="icon-header" [src]="vigia?.rutaIconoVentana" alt="">
+  <ion-title>
+      <span style="color:white" no-margin>{{vigia?.titulo}}</span>
+  </ion-title>
+  <ion-buttons slot="end" >
+      <ion-button icon-only color="light" (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content padding no-bounce style="padding-top: 0px !important;">
+  <div padding class="cargador" *ngIf="loading">
+      <ion-spinner style="vertical-align: middle"></ion-spinner>
+      <span style="color: #444444; font-size: 1.4rem;">Cargando informaci&oacute;n ...</span>
+  </div>
+
+  <div text-center>
+      <ion-label text-wrap class="subtitulo" style="margin-bottom: 0px !important;"><span [ngStyle]="{'color': color}" no-margin >{{vigia?.subtitulo}}</span>
+      </ion-label>
+  </div>
+      <ion-slides pager *ngIf="!loading" class="galeria">
+          <ion-slide *ngFor="let picture of vigia.multimedias; let i = index">
+              <div>
+                  <img [src]="picture.rutaMultimedia" *ngIf="picture.tipoMultimedia == 'Imagen'">
+              </div>
+              <div>
+                  <video controls="true" webkit-playsinline="webkit-playsinline"
+                      *ngIf="picture.tipoMultimedia == 'Video'">
+                      <source [src]="picture.rutaMultimedia">
+                  </video>
+              </div>
+              <div class="audioFit">
+                  <audio controls *ngIf="picture.tipoMultimedia == 'Audio'" style="width:280px">
+                      <source [src]="picture.rutaMultimedia">
+                  </audio>
+              </div>
+          </ion-slide>
+      </ion-slides>
+  <ion-grid *ngIf="!loading">
+      <!-- <ion-row style="min-height: 2.5rem !important;">
+          <ion-label text-wrap class="subtitulo"><span [ngStyle]="{'color': color}"
+                  no-margin>{{vigia?.subtitulo}}</span></ion-label>
+      </ion-row> -->
+      <ion-row>
+          <div class="alinearIcono">
+              <img src="{{vigia.iconoAutoridad}}" alt="" *ngIf="iconoAmva == true" class="iconoAmva">
+              <i *ngIf="iconoAmva == false" class="fa fa-shield" [ngStyle]="{'color': color}"
+                  style="margin-right:5px;"></i>
+              <span class="nan"><span [ngStyle]="{'color': color}">Autoridad competente:</span>
+                  {{vigia?.nombreAutoridadCompetente}}</span>
+          </div>
+      </ion-row>
+      <ion-row>
+          <div class="alinearIcono">
+              <ion-icon name="person" [ngStyle]="{'color': color}"></ion-icon>
+              <span class="nan"><span [ngStyle]="{'color': color}">Nombre:</span> {{vigia.username}}<br />
+                  <!-- <span class="nan"><span [ngStyle]="{'color': color}">Dirección:</span> {{vigia.direccion}}<br /> -->
+                  <span [ngStyle]="{'color': color}">Fecha y hora:</span> {{vigia.fechaReporte}}</span>
+          </div>
+      </ion-row>
+      <ion-row>
+          <div class="alinearIcono">
+              <i class="fa fa-list-ul" aria-hidden="true" [ngStyle]="{'color': color}" style="margin-right:5px;"></i>
+              <span class="nan"><span [ngStyle]="{'color': color}">Descripción:</span>
+                  {{vigia?.recorridoArbol}}</span>
+          </div>
+      </ion-row>
+      <ion-row>
+          <div class="alinearIcono">
+              <ion-icon name="create" [ngStyle]="{'color': color}"></ion-icon>
+              <div style="text-align: justify;width: 90%;">
+                  <span class="nan"><span [ngStyle]="{'color': color}">Detalle:</span>{{vigia?.descripcion}}</span>
+              </div>
+          </div>
+      </ion-row>
+      <ion-row class="centerText" *ngIf="vigia.radicadoSim != null">
+          <ion-label text-wrap [ngStyle]="{'text-decoration-color':color}">
+              <strong [ngStyle]="{'color': color}" (click)="showState()">Consulta aquí el estado de este
+                  reporte</strong>
+          </ion-label>
+      </ion-row>
+
+  </ion-grid>
+  <ion-grid text-center class="segundo" *ngIf="!loading">
+      <ion-row *ngIf="comentarios == true">
+          <ion-button full [ngStyle]="{'background-color': color}" [color]="color" (click)="newComment()">
+              <span *ngIf="!vigia.hasStories">Comentarios</span>
+          </ion-button>
+      </ion-row>
+  </ion-grid>
+</ion-content>

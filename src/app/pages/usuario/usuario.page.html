@@ -1,0 +1,40 @@
+<header>
+    <ion-row class="divConfiguration ion-no-padding">
+        <ion-row>
+            <ion-label name="close" color="light" class="lblVolver"> Volver</ion-label>
+        </ion-row>
+
+        <ion-avatar class="ion-text-center configuration-avatar">
+            <ion-icon name="person-circle" class="configuration-avatar-image"></ion-icon>
+        </ion-avatar>
+        <br><br>
+        <ion-title color="light" class="ion-text-center">{{ nombreUsuario }}</ion-title>
+        <ion-title color="light" class="ion-text-center ">{{ nivel }} - {{ rango }}</ion-title>
+    </ion-row>
+</header>
+<ion-content>
+    <div>
+        <div class="formLogrosInsignias">
+            <div>
+                <p style="color: grey">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate debitis dicta dolorem
+                    est eveniet, ex illo molestias non perferendis possimus, quam quo repellendus saepe soluta, tempore
+                    temporibus veniam voluptatum!
+                </p>
+            </div>
+            <h3 class="subTitleLogrosInsignias">Logros e insignias</h3>
+            <ion-grid>
+                <ion-row>
+                    <ion-col *ngFor="let logrosInsignias of logrosInsignias" class="ion-text-center">
+                        <ion-avatar class="setAvatar">
+                            <ion-img [src]="logrosInsignias.image"></ion-img>
+                        </ion-avatar>
+                        <div class="divSubtitleLogrosInsignias"><br>
+                            <ion-label class="subtitleLogrosInsignias"> {{ logrosInsignias.descrption }}</ion-label>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</ion-content>

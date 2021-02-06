@@ -1,0 +1,16 @@
+<ion-header>
+<ion-toolbar [ngStyle]="{ 'background-color' : color}"  [color]="color">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/" color="clear"></ion-back-button>
+  </ion-buttons>
+  <ion-title style="text-align: center; color:white; text-transform: uppercase;" >{{ titulo }}</ion-title>
+  <ion-buttons slot="end">
+      <!-- <ion-button  *ngIf="showSideMenu" ion-button menuToggle icon-only color="royal" id="toggle">
+          <i class="fas fa-cog fa-lg"></i>
+      <ion-/button> -->
+      <ion-menu-button *ngIf="showSideMenu" menuToggle icon-only color="clear" class="mini" id="toggle">
+        <ion-icon name="settings" clear></ion-icon>
+    </ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>

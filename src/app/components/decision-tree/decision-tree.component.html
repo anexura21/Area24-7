@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar [color]="color" [ngStyle]="{'background':color}">
+      <ion-title *ngIf="decisionTree">{{decisionTree.name}}</ion-title>
+      <ion-buttons end>
+          <ion-button ion-button icon-only color="royal" (click)="closePage()">
+              <ion-icon name="close" style="color: white"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="decisionTree">
+
+  <div *ngIf="decisionTree.hasChildren" padding>
+      <h4 class="title-up">{{decisionTree.instructions}}</h4>
+      <p class="text-up">{{decisionTree.detailedInstructions}}</p>
+      <ion-list *ngIf="flagDropdown == true">
+          <ion-item no-lines>
+              <p (click)="presentAction()"><strong>{{dropDown}}</strong></p>
+              <ion-icon name="ios-arrow-down-outline" item-end (click)="presentAction()" *ngIf="action == false">
+              </ion-icon>
+              <ion-icon name="ios-arrow-up-outline" item-end (click)="presentAction()" *ngIf="action == true">
+              </ion-icon>
+          </ion-item>
+      </ion-list>
+      <div class="arbol-cont" *ngIf="flagDropdown == false">
+          <div class="ionic-button last-specie" *ngFor="let childTree of decisionTree.children"
+              [ngStyle]="{'color':color}">
+
+              <p *ngIf="childTree.name" class="titulo" [ngStyle]="{'color':color}"  (click)="nextNode(childTree)">{{childTree.name}}</p>
+
+              <!-- <button *ngIf="childTree.name" (click)="nextNode(childTree)"
+                  [ngStyle]="{'background':color}">Decisión</button> -->
+
+              <div *ngIf="childTree.tipoAdjunto == 'Multimedia'">
+                  <div *ngFor="let multimedia of childTree.listaMultimedia">
+                      <img (click)="nextNode(childTree)" *ngIf="multimedia.tipoMultimedia.tipo == 'Imagen'" [src]="multimedia.ruta">
+
+                      <div class="videoWraper" *ngIf="multimedia.tipoMultimedia.tipo == 'Video'">
+                          <div class="video-container" *ngIf="multimedia.tipoMultimedia.tipo == 'Video'">
+                              <iframe [src]="multimedia.ruta" frameborder="0" width="auto" height="auto"></iframe>
+                          </div>
+                      </div>
+
+                      <!-- <video *ngIf="multimedia.tipoMultimedia.tipo == 'Video'" controls="controls" preload="metadata"
+                          webkit-playsinline="webkit-playsinline" class="videoPlayer">
+                          <source [src]="multimedia.ruta" type="video/mp4" />
+                      </video>
+   -->
+                      <audio *ngIf="multimedia.tipoMultimedia.tipo == 'Audio'" controls="controls" preload="metadata">
+                          <source [src]="multimedia.ruta" />
+                      </audio>
+                  </div>
+              </div>
+              <p *ngIf="childTree.description" (click)="nextNode(childTree)">{{childTree.description}}</p>
+          </div>
+      </div>
+      <ion-button *ngIf="!fromAvistamientoCreate && flagDropdown == false" ion-button block big
+          [ngStyle]="{'background-color': color}" (click)="isAnotherSpecies()">Finalizar</ion-button>
+
+      <ion-button *ngIf="fromAvistamientoCreate" ion-button block big [ngStyle]="{'background-color': color}"
+          (click)="isAnotherSpecies()">¿Es otra especie?</ion-button>
+  </div>
+
+  <div *ngIf="decisionTree.name && !decisionTree.hasChildren" padding style="text-align: center">
+      <h4 class="titulo" *ngIf="fromAvistamientoCreate">Tu avistamiento es</h4>
+      <h4 class="titulo" *ngIf="!fromAvistamientoCreate" [ngStyle]="{'color':color}">Tu selección es</h4>
+
+
+      <div class="last-specie">
+          <p class="titulo" [ngStyle]="{'color':color}">{{decisionTree.name}}</p>
+          <div *ngIf="decisionTree.tipoAdjunto == 'Multimedia'">
+              <div *ngFor="let multimedia of decisionTree.listaMultimedia">
+                  <img *ngIf="multimedia.tipoMultimedia.tipo == 'Imagen'" [src]="multimedia.ruta">
+                  <div class="videoWraper" *ngIf="multimedia.tipoMultimedia.tipo == 'Video'">
+                      <div class="video-container" *ngIf="multimedia.tipoMultimedia.tipo == 'Video'">
+                          <iframe [src]="multimedia.ruta" frameborder="0" width="auto" height="auto"></iframe>
+                      </div>
+                  </div>
+
+                  <audio *ngIf="multimedia.tipoMultimedia.tipo == 'Audio'" controls="controls" preload="metadata">
+                      <source [src]="multimedia.ruta" />
+                  </audio>
+              </div>
+          </div>
+          <p *ngIf="decisionTree.name">{{decisionTree.description}}</p>
+
+      </div>
+
+      <ion-row padding>
+          <ion-col *ngIf="!fromAvistamientoCreate">
+              <ion-button ion-button block big [ngStyle]="{'background-color': color}" (click)="closeView()">
+                  Finalizar
+              </ion-button>
+          </ion-col>
+          <ion-col *ngIf="fromAvistamientoCreate">
+              <ion-button ion-button block big [ngStyle]="{'background-color': color}" (click)="closeView()">
+                  Finalizar y enviar
+              </ion-button>
+          </ion-col>
+      </ion-row>
+  </div>
+</ion-content>

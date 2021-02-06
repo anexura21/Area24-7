@@ -1,0 +1,44 @@
+img{
+    width: 50%;
+    height: 50%;
+    max-height: 50%;
+}
+
+.puntico{
+    width: 6px;
+    background: var(--ion-color-primary);
+    height: 6px;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+.imgWraper {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.pWraper{
+    align-items: center;
+    display: flex;
+}
+
+h2 {
+    text-align: center;
+}
+
+p{
+    margin: 0px
+}
+
+ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.colorPrimary {
+    color: var(--ion-color-primary);
+}

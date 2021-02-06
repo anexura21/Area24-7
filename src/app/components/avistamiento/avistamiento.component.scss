@@ -1,0 +1,19 @@
+avistamiento {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+ion-fab-button {
+    border-radius: 70%;
+}
+ion-fab-list[side=top] {
+    bottom: 0 !important;
+}
+.fab[mini] {
+    position: absolute;
+    right: 0.6rem;
+    bottom: 11rem;
+}

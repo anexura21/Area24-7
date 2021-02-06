@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar class="header-custom">
+    <img
+      id="imgHome"
+      width="45px"
+      height="45px"
+      style="margin: 10px 15px"
+      item-left
+      src="./assets/logo2.png"
+      slot="start"
+    />
+    <ion-title class="ion-text-center">Reportar</ion-title>
+    <ion-buttons slot="end" class="mini">
+      <ion-menu-button
+        menuToggle
+        icon-only
+        style="color: white"
+        class="mini"
+        id="toggle"
+      >
+        <ion-icon name="settings" clear></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="box" (click)="takePicture()">
+          <ion-icon name="camera-sharp"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="container-custom">
+        <ion-slides class="swiper-container" pager="true" [options]="slideOps">
+          <ion-slide class="swiper-wrapper">
+            <button class="box-button ion-slide-custom" (click)="takePicture()">
+              <ion-icon name="camera-sharp"></ion-icon>
+            </button>
+          </ion-slide>
+          <ion-slide class="ion-slide-custom" *ngFor="let imagen of data">
+            <img class="swiper-slide" [src]="imagen.url" alt="" srcset="">
+            <button>
+              <ion-icon name="create-outline"></ion-icon>
+            </button>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-row">
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Ubicación</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <div class="container-buttons">
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-guardar" expand="block">Guardar</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-publicar" expand="block">Publicar</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+    <ion-row>
+      <ion-col>
+        <img *ngIf="image" [src]="image">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

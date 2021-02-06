@@ -1,0 +1,48 @@
+mideme-modal-calculation-save {
+    left: calc(50% - 150px)!important;
+    top: 30%!important;
+    position: absolute!important;
+    display: block!important;
+    width: 300px!important;
+    border-radius:6px;
+}
+
+    ion-content {
+        text-align: center!important;
+        height: 320px !important;
+        border-radius:5px;
+        top: 0px;
+        div {
+            width:100%;
+            h1 {
+                font-size:2rem;
+                margin:1.5rem;
+                width:95%;
+            }
+            p {
+                font-size:1.7rem;
+            }
+            .check {
+                margin-top:-2rem;
+                &::before {
+                    font-family: "Ionicons";
+                    content:"\f149";
+                    font-size:50px;
+                    font-weight:900;
+                    color:var(--ion-color-btnGreen);
+                }
+            }
+        }
+        .button {
+            background: transparent;
+            position:relative;
+            height:20px;
+            width:20px;
+            top:-15px;
+            right:-15px;
+            color:initial;
+        }
+    }
+    ion-icon {
+        font-size: 64px;
+    }

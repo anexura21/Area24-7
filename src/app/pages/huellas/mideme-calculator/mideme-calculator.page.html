@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar [color]="color" [ngStyle]="{'background': color}">
+    <ion-buttons slot="start" class="mini">
+      <ion-back-button defaultHref="/inicio" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>CALCULADORA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <div class="colu">
+    <span class="bold">{{instrucciones?.titulo}}</span>
+    <p class="grayText">{{instrucciones?.descripcion}}</p>
+  </div>
+
+  <div>
+    <ion-spinner *ngIf="loading == false"></ion-spinner>
+  </div>
+
+  <!-- Formulario dinamico se envia las preguntas, color de la app e indentificador que es desde mideme -->
+  <!-- #dynamicForm="dynamicForm" -->
+  <dynamic-form  [controls]="controls" [colorApp]="color" [form]="form" [desde]="desde"
+    *ngIf="loading == true">
+  </dynamic-form>
+
+  <div style="text-transform: none;">
+    <ion-button [ngStyle]="{'background': color}" [color]="color" class="botonEnviar" (click)="goToResult()">Calcular Consumo</ion-button>
+  </div>
+
+</ion-content>

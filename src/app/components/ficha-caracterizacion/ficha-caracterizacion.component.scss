@@ -1,0 +1,85 @@
+.container {
+    height: 80%;
+    border-radius:6px;
+    @media screen and (orientation: landscape) {
+      margin-top: 3%;
+      height: 90%;
+      padding-bottom: 1rem;
+    }
+    @media screen and (min-width: 768px) {
+      margin-top: auto;
+    }
+    .ion-md-close, .ion-ios-close {
+      // width: 30px;
+      // margin-left: -15px;
+    }
+    .bar {
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0px 4px 7px -2px #333;
+      background-color: var(Conóceme);
+    }
+    .tag {
+      height: 95%;
+      padding-bottom: 0.5rem;
+      .contenido {
+        text-align: left;
+        font-size: 1.3rem;
+        padding: 0 2rem;
+        overflow-y: scroll;
+        height: inherit;
+        h4,
+        p {
+          margin-top: 20px;
+          text-align: center;
+          font-weight:500;
+        }
+        .capa {
+          padding: 10px 0;
+          border-top: 1px solid rgba(51,51,51,.34);
+          &:last-child {
+            border-bottom: 1px solid rgba(51,51,51,.34);
+          }
+          .categoria {
+            margin-left: 2rem;
+            text-indent: -2.2rem;
+            text-align: justify;
+          }
+          img {
+            top: 0;
+            max-width: 2rem;
+            max-height: 2rem;
+            display: inline;
+            border: none;
+            vertical-align: middle;
+          }
+          > span {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  [icon-only] ion-icon {
+    padding: 0;
+    font-size: 1.8em;
+    /* line-height: .67; */
+    pointer-events: none;
+    color: #ffffff;
+  }
+  .toolbar-title-md, .toolbar-title-ios {
+    padding: 0 6px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ffffff;
+  }
+  .toolbar-background-md, .toolbar-background-ios {
+    background-color: transparent;
+    border-radius:6px 6px 0 0;
+  }
+  .toolbar-ios, .toolbar-md {
+    border-radius: 6px 6px 0 0;
+  }
+  .toolbar-ios ion-title {
+    padding:0;
+  }

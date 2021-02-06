@@ -1,0 +1,38 @@
+<div class="container">
+  <div id="bar-modal" class="bar" [class.backgroundColor]="'green'">
+    
+      <ion-buttons end>
+          <button color="clear" ion-button button-toogle end (click)="closeModal()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+  </div>
+  <img id="img-modal" class="tag" src="{{data.imagen}}">
+  <div id="texto-modal" class="texto">
+      <p>{{data.texto}}</p>
+  </div>
+
+  <div *ngIf="data.tipo"  style = "text-align: center; padding: .20rem; overflow: scroll; max-height:350px; overflow-x: hidden;margin-top: 10%;margin-bottom: 8%;" >
+      <ion-list>
+          <ion-item *ngFor="let comentario of comentarios | async">
+              <h2 style = "color: #009A37;">{{comentario.usuario}} - 20/06/2017</h2>
+              <p>{{comentario.descripcion}}</p>
+          </ion-item>
+      </ion-list>
+  </div>
+  <ion-footer *ngIf="data.tipo" >
+      <ion-item>
+          <ion-input type="text" placeholder="escriba su comentario..." [(ngModel)]="msgVal"></ion-input>
+          <button ion-button clear item-right (click)="chatSend()"><p style = "color: #009A37;">Enviar</p></button>
+      </ion-item>
+  </ion-footer>
+  
+<!--<content-drawer [options]="drawerOptions">
+  <div class="content">
+    The world is your oyster.
+    <p>
+      If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    </p>
+  </div>
+</content-drawer>-->
+
+
+</div>

@@ -1,0 +1,142 @@
+.iconsearch {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 2.3rem;
+  }
+  .btn-busquedas {
+    font-size: 30px;
+    margin-top: 5% !important;
+  }
+  .col-btn-busqueda {
+    margin-top: 4% !important;
+  }
+  .container-busqueda {
+    margin: 10px;
+    background-color: white;
+  }
+  .button-inner {
+    justify-content: flex-start;
+    // background-color:#006FAC !important;
+  } 
+
+  .btn-search{
+    position: absolute;
+    right: 1.5rem;
+    top: 0px;
+    background-image: url('../assets/movilidad/iconos/buscar.svg');
+    width: 4rem;
+    height: 4rem;
+    background-position: center;
+    background-size: cover;
+    margin-top:1.2rem;
+  }
+
+  #btnSeleccionarMapa{
+    height: 30px;
+    border-radius: 5px;
+    font-weight: 200;   
+    margin-bottom: 10px;
+  }
+
+  .searchbar-md .searchbar-input {
+    padding-left: 10px;
+    padding-right: 55px;
+    padding-top: 0px;
+    padding-bottom: 6px;
+    border-radius: 2px;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    background-position: 8px center;
+    box-shadow: none;
+    width: 100% !important;
+  }
+  
+  .searchbar-md .searchbar-search-icon {
+    position: absolute;
+    left: 90%;
+    top: 0px;
+    background-image: url('../assets/movilidad/iconos/ubiacionInp.png');
+    width: 43px;
+    height: 35px;
+  }
+  
+  .searchbar-md .searchbar-clear-icon {
+    display: none !important;
+  }
+
+  .selecMapa {
+    height: 34px;
+    background: rgba(245, 245, 245, 0.79);
+    margin-top: -11px;
+    margin-left: 18px;
+    width: 90%;
+  }
+
+  .btnSelMapa {
+    border-radius: 0;
+    height: 4.6rem;
+    border: 3px solid transparent;
+    font-size: 1.5rem;
+    // color: #0060B6;
+    // text-align: center;
+
+  }
+  .btn-agregar {
+    margin: -1px !important;
+    font-size: 10px !important;
+  }
+  .listaDir {
+    margin-top: -15px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-color: rgba(255, 255, 255, 0.87);
+  }
+  .labelLisDir {
+    margin-left: 12px;
+    font-size: 14px;
+    color: #858585;
+  }
+  .labelsDetalle {
+    color: #0060B6;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  .labelsDes {
+    color: #9b9b9a;
+    font-size: 12px;
+    margin-left: 3px;
+  }
+  .labelNom {
+    color: #0060B6;
+    font-size: 14px;
+    margin-left: 3px;
+    font-weight: 500;
+  }
+  .labelLiRuCi {
+    color: #9b9b9a;
+    font-size: 14px;
+    margin-left: 3px;
+    font-weight: 500;
+    position: relative;
+    top: 6px;
+  }
+  .btnVerMapa {
+    color: #0060B6;
+    font-size: 9px;
+    height: 20px;
+    width: 80px;
+    padding: 0px;
+  }
+  .iconDesplegable {
+    color: #0060B6;
+    position: relative;
+    top: 6px;
+  }

@@ -1,0 +1,30 @@
+<div class="box-card">
+  <div class="header"  [ngStyle]="{'background-color': color}">
+      <img class="icon-header" [src]="info.icono" alt="">
+      <span>{{ tipo }}</span>
+      <div class="buttonsi" (click)="closeModal()">
+          <div id="closeInfoWindow" icon-only=""  class="buttoni disable-hover bar-button bar-button-ios bar-button-default bar-button-default-ios">
+              <span class="button-inner">
+                  <ion-icon name="close" role="img" class="icon icon-ios ion-ios-close" aria-label="close"></ion-icon>
+              </span>
+              <div class="button-effect"></div>
+          </div>
+      </div>
+  </div>
+  <div class="body">
+      <span class="name bold">{{ info.name }}</span>
+      <span class="infoGeneral line">{{ info.address }}</span>
+      <p class="infoTitle"><span [ngStyle]="{'color': color}">Horario:</span> <span class="infoGeneral">{{ info.schedule }}</span></p>
+      <p class="infoTitle"><span [ngStyle]="{'color': color}">Teléfono:</span> <span class="infoGeneral">{{ info.phone }}</span></p>
+      <p class="infoTitle"><span [ngStyle]="{'color': color}">E-mail:</span> <span class="infoGeneral">{{ info.email }}</span></p>
+      <p class="infoTitle"><span [ngStyle]="{'color': color}">Descripción:</span> <span class="infoGeneral"> {{ info.description }}</span></p>
+  </div>
+  <ion-row center="" class="row">
+      <ion-col class="col" text-center="">
+          <ion-button (click)="ir()" id="goToMovilidad" class="button button-md button-default button-default-md">
+              <span class="button-inner">Ir</span><div class="button-effect"></div>
+            </ion-button>
+      </ion-col>
+  </ion-row>
+  <!-- <div class="punta"></div> -->
+</div>

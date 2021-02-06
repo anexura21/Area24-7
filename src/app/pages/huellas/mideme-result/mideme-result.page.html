@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar [color]="color" [ngStyle]="{'background': color}">
+    <ion-title>RESULTADOS</ion-title>
+    <ion-buttons slot="start" class="mini">
+      <ion-back-button defaultHref="/inicio" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <div class="colu">
+    <span class="subtitulo">{{msg?.titulo}}</span>
+    <p class="grayText">{{msg?.descripcion}}</p>
+  </div>
+  <div class="colu">
+    <h1 class="">Tu resultado:</h1>
+    <div [ngClass]="clase" class="resp">
+      <div class="iconoConsumo">
+        <img src="{{resultado.urlIcono}}" alt="">
+      </div>
+      <p [ngStyle]="{'color': resultado.color}">{{resultado.descripcion}}<br /><span class="bold">{{resultado.calculo}}
+          litros/día</span></p>
+    </div>
+  </div>
+  <div class="colu">
+    <span class="">Lista de retos</span>
+  </div>
+
+  <div class="colu">
+    <ion-list class="retos">
+      <ion-item *ngFor="let reto of challenges">
+        <h1 *ngIf="reto.activo == true" (click)="goToCancelChallenge(reto)"><i class="fas fa-circle select" style="margin-right: 4px;"
+            [ngStyle]="{'color': color}"></i> {{reto.nombre}}</h1>
+        <h1 *ngIf="!reto.activo" (click)="goToCancelChallenge(reto)"><i class="fas fa-circle"></i> {{reto.nombre}}</h1>
+        <div *ngFor="let item of reto.retos">
+          <p class="lista retosItemActive" [ngStyle]="{'color': color}" *ngIf="item.activo == true" text-wrap style="text-align: justify;">{{item.nombre}}</p>
+          <p class="lista retosItem" *ngIf="!item.activo" (click)="goToCancelChallenge(reto)" text-wrap style="text-align: justify;">{{item.nombre}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="botones">
+    <!-- <button ion-button (click)="goToPersonalChallenge()">Aceptar un reto</button> -->
+    <ion-button ion-button [ngStyle]="{'background': color}" (click)="goToDeclineChallenge()">Finalizar</ion-button>
+  </div>
+</ion-content>
+

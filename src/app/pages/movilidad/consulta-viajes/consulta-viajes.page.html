@@ -1,0 +1,53 @@
+<barra-navegabilidad [titulo]="titulo" [color]="appLayer.color"></barra-navegabilidad>
+<!-- <ion-content mapa> -->
+  <ion-content>
+  <!-- <div contenido-mapa> -->
+    <div>
+    <ion-grid  style="overflow-x: scroll;overflow-y: hidden;width:100%;white-space: nowrap; left: 0; top: 55px;">
+      <ion-row>
+        <ion-col size="1">
+                      <img class="iconsearch" src="assets/movilidad/iconos/salida.png">
+                    </ion-col>
+                    <ion-col size="7">
+                      <ion-input class="inputBtn" [(ngModel)]="origen.descripcion" placeholder="Origen" readonly (click)="mostrarModal(origen, 'origen')"></ion-input>
+                      <div class="btn-position" [ngStyle]="{'background-color': appLayer.color }"><img src="assets/movilidad/iconos/ubiacionInp.svg" width="40px" height="40px" ></div>
+                  </ion-col>
+                </ion-row>
+                
+                <ion-row>
+                  <ion-col size="1">
+                  </ion-col>
+                  <ion-col size="9">
+                  </ion-col>
+                  <ion-col (click)="cambiarOrigenDestino()" size="2">
+                    <img class="iconsearch3" src="{{origenDestinoIcono}}">
+                  </ion-col>
+              </ion-row>
+              
+              
+              <ion-row>
+                <ion-col size="1">
+                  <img class="iconsearch" src="assets/movilidad/iconos/llegada.png">
+                </ion-col>
+      
+                <ion-col size="10" id="destinoContainer"> 
+                  <ion-input class="inputBtn" [(ngModel)]="destino.descripcion" 
+                    placeholder="Destino" type="text" value="Readonly" readonly (click)="mostrarModal(destino, 'destino')"></ion-input>
+                  <div class="btn-search" (click)="actualizarVista()" [ngStyle]="{'background-color': appLayer.color }" ><img  width="40px" height="40px" src="assets/movilidad/iconos/buscar.svg"></div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      
+            <div *ngIf="cardMinViajesSugeridos">
+              <ion-card (click)="toogleViajesSugeridos()">
+                <ion-card-header class="headerViaSug" style="padding: 0; font-weight:bold;">
+                      <div style="margin-top: -4px;">Viajes sugeridos</div>
+                  </ion-card-header>
+                </ion-card>
+              </div>
+            </div>
+            <!--map div-->
+            <div id="map-selection"></div>
+          </ion-content>
+          <!-- <layer-manager [app]="appLayer" ></layer-manager>  -->
+          

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar [color]="currentApp.color" text-center [ngStyle]="{'background': currentApp.color}">
+      <ion-row>
+          <ion-col col-1>
+              <ion-icon name="close" color="light" menuClose item-left></ion-icon>
+          </ion-col>
+          <ion-col text-center>
+              <ion-title *ngIf="currentApp.id === -1" color="light">CONFIGURACIÓN</ion-title>
+              <ion-title *ngIf="currentApp.id > -1" color="light">CONFIGURACIÓN <p >{{currentApp.name}}</p></ion-title>
+          </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-margin [ngClass]="currentApp.name">
+      <ion-item *ngIf="currentApp.id > -1" class="action-radius">
+        <br/><br/><br/><br/><br/><br/>
+          <ion-label style="margin-bottom: 0;">Radio de Acción</ion-label>
+          <br/><br/>
+          <ion-range [color]="currentApp.color" [min]="currentApp.minRadius" 
+                     [max]="currentApp.maxRadius" 
+                     pin="true" 
+                     step="1" 
+                     [(ngModel)]="currentApp.radius"
+                     style="width: 100%; margin-left: 15px; margin-right:15px; padding-top: 2px;">
+              <ion-icon [color]="currentApp.color" (click)="actionRadiusStepDown()"  slot="start" size="small" name="remove"></ion-icon>
+              <ion-icon [color]="currentApp.color" (click)="actionRadiusStepUp()" slot="end" name="add"></ion-icon>
+          </ion-range>
+      </ion-item>
+      <ion-item *ngIf="currentApp.id > -1" text-center style="border-top: none; min-height: 0">
+          <ion-label>{{currentApp.radius}} metros</ion-label>
+      </ion-item>
+
+      <ion-list *ngIf="currentApp.id === 1" no-margin class="prefTrans">
+          <style type="text/css">
+           .toggle-md.toggle-checked .toggle-icon {
+                  background: red;
+           }
+          </style>
+          <ion-item class="header">
+              <ion-label> Preferencias de transporte</ion-label>
+          </ion-item>
+          <div #options [id]="'sub-item-' + i" scrollY="true">
+              <ng-template ngFor let-item [ngForOf]="transportModes">
+                  <ion-item class="itemMenu">
+                      <ion-avatar item-start>
+                          <img *ngIf="item.active" style="width:auto; height: 3rem;" [src]="item.urlIconEnabled">
+                          <img *ngIf="!item.active" style="width:auto; height: 3rem; filter: grayscale(100%)" [src]="item.urlIconEnabled">
+                      </ion-avatar>
+                      <ion-label> {{ item.name }}</ion-label>
+                      <ion-toggle item-rigth [(ngModel)]="item.active"></ion-toggle>
+                  </ion-item>
+              </ng-template>
+          </div>
+      </ion-list>
+      <general-configuration *ngIf="currentApp.id === -1" class="anim"></general-configuration>
+  </ion-list>
+</ion-content>
+

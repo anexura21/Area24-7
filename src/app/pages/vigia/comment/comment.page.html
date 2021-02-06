@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar #navbar
+  [ngStyle]="{'background':color}" [color]="color">
+    <ion-buttons>
+        <ion-button slot="start">
+            <ion-icon name="arrow-back" (click)="closeModal()"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>Comentarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- TODO: dependiendo del estado de la historia (publicada, pendiente, rechazada) se debe poner un color al card -->
+<ion-content>
+  <div padding class="cargador" *ngIf="loading">
+      <ion-spinner style="vertical-align: middle"></ion-spinner>
+      <span style="color: #444444; font-size: 1.4rem;">Cargando comentarios ...</span>
+  </div>
+  <ion-scroll *ngIf="!loading" scrollY="true" scrollX="false">
+      <ion-grid>
+          <ion-row *ngFor="let comment of comments">
+              <ion-col col-2>
+                  <ion-icon [ngStyle]="{'color': color}" name="contact" style="font-size: 4rem"></ion-icon>
+              </ion-col>
+              <ion-col col-10>
+                  <ion-card>
+                      <ion-row>
+                          <ion-col>
+                              <span [ngStyle]="{'color': color}"
+                                  *ngIf="comment.publicationState==PublicationState.Published">{{ comment.username }}</span>
+                              <span *ngIf="comment.publicationState==PublicationState.Pending"
+                                  style="color: #aaaaaa">{{ comment.username }}</span>
+                              <small> {{ comment.creationDate }} </small>
+                          </ion-col>
+                          <!-- <ion-col>
+                              <ion-label *ngIf="comment.publicationState==PublicationState.Published"
+                                  [ngStyle]="{'color': color}">
+                                  <ion-icon name="done-all"></ion-icon> Publicado
+                              </ion-label>
+                              <ion-label *ngIf="comment.publicationState==PublicationState.Pending" color="gray">
+                                  <ion-icon name="stopwatch"></ion-icon> Pendiente
+                              </ion-label>
+                          </ion-col> -->
+                      </ion-row>
+                      <hr>
+                      <ion-row>
+                          <p color="gray">
+                              <span style="color: #AAAAAA">{{ comment.content }}</span>
+                          </p>
+                      </ion-row>
+                  </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+  </ion-scroll>
+  <form [formGroup]="formGroup" (ngSubmit)="saveComment()" *ngIf="!loading">
+      <ion-row>
+          <ion-col col-10>
+              <ion-textarea type="text" formControlName="contentFormCtrl" placeholder="Agregar comentario">
+              </ion-textarea>
+              <!-- <textarea name="contentFormCtrl" id="contentFormCtrl" placeholder="Escribe un mensaje"></textarea> -->
+          </ion-col>
+          <ion-col col-2>
+              <ion-button [disabled]="!formGroup.valid" ion-button full type="submit"
+              [ngStyle]="{'background':color}">
+                  <ion-icon name="send"></ion-icon>
+              </ion-button>
+          </ion-col>
+      </ion-row>
+
+      <!-- <ion-item *ngIf="formGroup.get('contentFormCtrl').errors && formGroup.get('contentFormCtrl').dirty">
+          <p *ngIf="formGroup.get('contentFormCtrl').hasError('required')">Campo requerido</p>
+          <p *ngIf="formGroup.get('contentFormCtrl').hasError('minlength')">Mínimo 3 caracteres</p>
+          <p *ngIf="formGroup.get('contentFormCtrl').hasError('maxlength')">Máximo 255 caracteres</p>
+      </ion-item> -->
+  </form>
+</ion-content>

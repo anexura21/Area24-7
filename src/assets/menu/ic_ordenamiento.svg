@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1"
+	 xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="-0.5 750.5" i:rulerOrigin="0.5 -150.5" i:pageBounds="-0.5 750.5 599.5 150.5"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="600px" height="600px" viewBox="0 150 600 600" style="enable-background:new 0 150 600 600;"
+	 xml:space="preserve">
+<metadata>
+	<variableSets  xmlns="&ns_vars;">
+		<variableSet  locked="none" varSetName="binding1">
+			<variables></variables>
+			<v:sampleDataSets  xmlns:v="&ns_vars;" xmlns="&ns_custom;"></v:sampleDataSets>
+		</variableSet>
+	</variableSets>
+</metadata>
+<g id="Capa_1" i:layer="yes" i:dimmedPercent="50" i:rgbTrio="#4F008000FFFF">
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="-44.75" y="118.514" width="686.957" height="675.838"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g transform="matrix(1 0 0 1 7.167614e-007 -7.341709e-006)" style="clip-path:url(#SVGID_2_);">
+			
+				<switch id="SVGID_4_" i:objectNS="&ns_imrep;" i:objectType="replaceable-image" transform="matrix(2.2232 0 0 2.2232 -44.75 118.5137)">
+				<foreignObject overflow="visible" requiredExtensions="&ns_imrep;" x="0" y="0" width="309" height="304">
+					
+						<imageReplacement  xmlns="&ns_imrep;" x="0" y="0" width="309" height="304" placementMethod="ratio" align="center" valign="middle" refWidth="309" refHeight="304">
+					</imageReplacement>
+					<x:targetRef  xlink:href="#SVGID_3_" />
+				</foreignObject>
+				
+					<image style="overflow:visible;" width="309" height="304" id="SVGID_3_" xlink:href="95B9600D.png"  i:alphaIsShape="yes" i:knockout="Off">
+				</image>
+			</switch>
+		</g>
+	</g>
+	<path i:knockout="Off" style="fill-rule:evenodd;clip-rule:evenodd;fill:#F7BB00;" d="M560.242,441.313
+		c0,144.61-117.233,261.832-261.838,261.832c-144.607,0-261.84-117.222-261.84-261.832c0-144.608,117.233-261.838,261.84-261.838
+		C443.009,179.476,560.242,296.706,560.242,441.313"/>
+	<path i:knockout="Off" style="fill:#FFFFFF;" d="M425.001,481.534H170.232c-3.023,0-5.542-1.256-6.911-3.446
+		c-1.372-2.191-1.398-5.011-0.072-7.732l40.605-83.417c1.231-2.536,4.172-4.381,6.991-4.381h34.82c2.077,0,4.486,1.107,5.857,2.694
+		c2.348,2.709,4.73,5.351,7.112,7.974c2.291,2.526,4.593,5.072,6.885,7.683l5.08,5.784h-49.023
+		c-0.189,0.024-0.617,0.295-0.735,0.482l-24.456,50.227h202.462l-24.462-50.251c-0.102-0.157-0.535-0.433-0.755-0.458l-49.06,0.001
+		l5.047-5.777c2.234-2.555,4.492-5.049,6.733-7.521c2.553-2.804,4.95-5.451,7.306-8.153c1.367-1.577,3.774-2.683,5.848-2.683h34.888
+		c2.825,0,5.767,1.846,6.997,4.388l40.604,83.41c1.325,2.722,1.295,5.539-0.074,7.73
+		C430.55,480.278,428.028,481.534,425.001,481.534z M169.254,474.43c0.046,0,0.364,0.137,0.979,0.137h254.769
+		c0.658,0,0.979-0.155,1.037-0.21c-0.021-0.008-0.023-0.361-0.309-0.952l-40.607-83.414c-0.108-0.17-0.536-0.439-0.756-0.464
+		l-34.86,0.001c-0.114,0.021-0.487,0.197-0.619,0.318c-2.366,2.716-4.796,5.399-7.225,8.068c-0.555,0.61-1.099,1.212-1.639,1.81
+		h33.64c2.807,0,5.742,1.835,6.985,4.364l29.345,60.282H185.241l29.35-60.271c1.236-2.536,4.173-4.375,6.987-4.375h33.542
+		c-0.548-0.606-1.096-1.21-1.644-1.814c-2.416-2.661-4.834-5.344-7.22-8.097c-0.101-0.088-0.476-0.265-0.652-0.289l-34.757,0.003
+		c-0.186,0.026-0.619,0.298-0.738,0.485l-40.592,83.395c-0.289,0.59-0.29,0.946-0.268,1.024
+		C169.249,474.43,169.251,474.43,169.254,474.43z M297.583,435.532c-3.171,0-5.999-1.904-7.199-4.848
+		c-7.285-17.879-17.952-29.612-28.268-40.959c-11.93-13.123-23.199-25.519-26.682-45.26c-3.191-18.118,1.377-36.904,12.533-51.543
+		c10.75-14.108,26.185-22.778,43.46-24.41c2.043-0.194,4.114-0.292,6.151-0.292c34.863,0,63.227,28.365,63.227,63.231
+		c0,27.722-13.491,42.562-27.776,58.272c-10.317,11.351-20.989,23.086-28.275,40.973
+		C303.563,433.633,300.748,435.532,297.583,435.532z M297.579,275.189c-1.82,0-3.668,0.087-5.496,0.26
+		c-15.316,1.448-29.015,9.153-38.572,21.696c-9.979,13.097-14.067,29.903-11.214,46.109c3.133,17.755,13.255,28.89,24.976,41.782
+		c10.226,11.248,21.814,23.995,29.564,43.017c0.138,0.338,0.39,0.509,0.746,0.509c0.517,0,0.667-0.368,0.717-0.491
+		c7.754-19.034,19.347-31.785,29.573-43.035c13.931-15.323,25.963-28.557,25.963-53.584
+		C353.836,300.429,328.599,275.189,297.579,275.189z M297.576,366.487c-19.321,0-35.04-15.717-35.04-35.035
+		c0-19.321,15.719-35.04,35.04-35.04c19.32,0,35.037,15.719,35.037,35.04C332.612,350.77,316.896,366.487,297.576,366.487z
+		 M297.576,303.381c-15.478,0-28.071,12.593-28.071,28.071c0,15.475,12.593,28.065,28.071,28.065
+		c15.476,0,28.067-12.591,28.067-28.065C325.643,315.974,313.052,303.381,297.576,303.381z"/>
+	<switch i:objectNS="&ns_flows;" i:objectType="pointText">
+		<foreignObject requiredExtensions="&ns_flows;" x="0" y="0" width="1" height="1" style="overflow:visible;">
+			<flowDef  xmlns="&ns_flows;">
+				<region  textMatrix="1 0 0 1 0 0">
+					<path d="M126.006,553.359"/>
+				</region>
+				<flow  xmlns="&ns_flows;"  style="font-family:'Roboto-Regular'; font-size:56.2754;">
+					<p><span  style="fill:#FFFFFF;">O</span><span  style="fill:#FFFFFF; letter-spacing:-10;">r</span><span  style="fill:#FFFFFF; letter-spacing:-10;">denamie</span><span  style="fill:#FFFFFF; letter-spacing:-3;">n</span><span  style="fill:#FFFFFF; letter-spacing:-5;">t</span><span  style="fill:#FFFFFF; letter-spacing:-5;">o</span></p>
+				</flow>
+			</flowDef>
+			<x:targetRef  xlink:href="#SVGID_5_" />
+		</foreignObject>
+		<g>
+			<text id="SVGID_5_" transform="matrix(1 0 0 1 126.0059 553.3594)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:'Roboto-Regular'; font-size:56.2754;">O</tspan><tspan x="38.359" y="0" style="fill:#FFFFFF; font-family:'Roboto-Regular'; font-size:56.2754;">r</tspan><tspan x="57.499" y="0" style="fill:#FFFFFF; font-family:'Roboto-Regular'; font-size:56.2754;">denamie</tspan><tspan x="274.687" y="0" style="fill:#FFFFFF; font-family:'Roboto-Regular'; font-size:56.2754;">n</tspan><tspan x="306.502" y="0" style="fill:#FFFFFF; font-family:'Roboto-Regular'; font-size:56.2754;">t</tspan><tspan x="325.181" y="0" style="fill:#FFFFFF; font-family:'Roboto-Regular'; font-size:56.2754;">o</tspan></text>
+		</g>
+	</switch>
+</g>
+</svg>

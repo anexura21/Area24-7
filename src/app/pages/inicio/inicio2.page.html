@@ -1,0 +1,65 @@
+<ion-content>
+    <div class="divBackground">
+        <!-- TODO: Revisar el color  -->
+        <ion-toolbar [color]="currentApp.color" [ngStyle]="{'background-color': currentApp.color}">
+            <!-- <div> -->
+            <!-- <ion-img item-left src="assets/logo2.png" (click)="onClickHome()"></ion-img> -->
+            <img id="imgHome" width="45px" height="45px" item-left src="./assets/logo2.png" (click)="onClickHome()">
+            <!-- </div> -->
+            <ion-title item-right>
+                {{ currentApp.name | uppercase }} <br>
+            </ion-title>
+
+            <ion-buttons slot="end" class="mini">
+                <button ion-button icon-only  routerLink="/configuracion">
+                    <ion-icon name="settings" ></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
+
+        <h1 class="ion-justify-text-center">App Área 24/7 </h1>
+        <ion-item>
+            <p style="text-align: justify;">Varias aplicaciones móviles integradas en una, con información sobre el
+                territorio.
+                calidad del aire, movilidad sostenible, equipamientos, consumo hídrico y biodiversidad
+                en el valle de aburrá.</p>
+        </ion-item>
+        <br>
+        <br>
+        <br>
+        <ion-grid class="ion-align-items-center">
+            <ion-row style="background-color: transparent;">
+                <ion-item *ngFor="let image of images">
+                    <ion-col style="border: none;" class="ion-no-padding">
+                        <div class="box {{image.border}}">
+                            <ion-img [src]="image.imageUrl"
+                                     style="width: 71px; height: 82px; object-fit: cover; border: 0;"></ion-img>
+                        </div>
+                        <h2 class="ion-justify-text-center">
+                            {{image.title}}
+                        </h2>
+                    </ion-col>
+                </ion-item>
+            </ion-row>
+            <ion-row>
+                <ion-item *ngFor="let imageSR of imagesSecondRow">
+                    <ion-col style="border: none;" class="ion-no-padding">
+                        <div class="box {{imageSR.border}}">
+                            <ion-img [src]="imageSR.imageUrl"x
+                                     style="width: 71px; height: 82px; object-fit: cover; border: 0;"></ion-img>
+                        </div>
+                        <h2 class="ion-justify-text-center">
+                            {{imageSR.title}}
+                        </h2>
+                    </ion-col>
+                </ion-item>
+            </ion-row>
+        </ion-grid>
+        <br>
+        <br>
+
+        <ion-footer class="ion-no-border">
+            <ion-img [src]="'../../../assets/futuro.png'" style="width: 200px; margin-left: 80px"></ion-img>
+        </ion-footer>
+    </div>
+</ion-content>

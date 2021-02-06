@@ -1,0 +1,17 @@
+{
+    "app":{
+        "title": "Movilidad",
+        "inconveniente": "Ocurrió un inconveniente inténtelo nuevamente",
+        "destino_diferente": "El destino debe ser diferente al origen",
+        "viaje_calculo_preferencia": "No se encontraron posibles viajes  con las preferencias seleccionadas",
+        "viaje_no_encuentra_preferencias" : "No fue posible el calculo de posibilidades de viajes teniendo en cuenta únicamente los modos de transportes establecidos,sin embargo se sugieren las siguientes posibilidades de viaje",
+        "no_resultados": "No se encontraron resultados",
+        "no_existen_rutas_cercanas": "No existen rutas cercanas en la ubicacion y preferencias de transportes especificada",
+        "lineas_cercanas_error" : "No existen lineas cercanas en la ubicacion ingresada",
+        "busqueda_campo": "Por favor diligencie el campo de busqueda!",
+        "ubicaciones_max": "Se excedió en el numero de ubicaciones para registrar",
+        "no_resultado_encicla" :"No existen estaciones EnCicla cercanas en la ubicacion ingresada",
+        "no_resultado_recarga" : "No existen puntos de recarga cercanos en la ubicacion ingresada",
+        "no_resultado_rutas": "No existen paraderos de buses cercanos en la ubicacion ingresada "
+    }
+}

@@ -1,0 +1,207 @@
+<!-- Formulario de mideme se toma este HTML -->
+<form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="desde == 'formulario'" class="formulario" padding>
+  <ion-list>
+    <div *ngFor="let control of controls">
+      <h5 [ngStyle]="{'background': colorApp}" style="font-weight:bold;" text-center
+        *ngIf="control.controlType === 'label'">
+        {{control.label}}</h5>
+      <ion-grid>
+
+        <!-- Preguntas tipo numero -->
+        <ion-row *ngIf="control.controlType === 'number'" text-wrap>
+          <ion-col col-9 class="">
+            <ion-label><span class="point" [ngStyle]="{'background': colorApp}">∙</span>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-3 text-center [id]="control.key" text-center>
+            <ion-input [formControlName]="control.key" [ngStyle]="{'color': colorApp}" class="border-input"
+              [placeholder]="control.min" type="number" text-center [max]="control.max"
+              [(ngModel)]="control.value" (ionBlur)="ionBlur(control)">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+        <!-- Preguntas booleanas (si/no)-->
+        <ion-row *ngIf="control.controlType === 'select'" text-wrap class="selectStyle">
+          <ion-col col-9 class="">
+            <ion-label><span class="point" [ngStyle]="{'background': colorApp}">∙</span>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-3 text-center class="">
+            <div class="iconSelector">
+              <ion-icon name="md-arrow-dropdown" *ngIf="control.selected == false"></ion-icon>
+              <ion-icon name="md-arrow-dropup" *ngIf="control.selected == true" [ngStyle]="{'color': colorApp}">
+              </ion-icon>
+            </div>
+            <ion-select [formControlName]="control.key" #pregunta [ngStyle]="{'color': colorApp}" [id]="control.key"
+              [placeholder]="control.placeholder" cancelText="Cerrar" interface="action-sheet" (click)="open(control)"
+              (ionChange)="close(control)" (ionSelect)="closeAndSave()" (ionCancel)="close(control)">
+              <ion-select-option *ngFor="let option of control.options" [value]="option">{{option.label}}
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <!-- Preguntas de seleccion simple-->
+        <ion-row *ngIf="control.controlType === 'radio'" text-wrap class="selectStyle">
+          <ion-col col-9 class="">
+            <ion-label><span class="point" [ngStyle]="{'background': colorApp}">∙</span>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-3 text-center class="">
+            <div class="iconSelector">
+              <ion-icon name="md-arrow-dropdown" *ngIf="control.selected == false"></ion-icon>
+              <ion-icon name="md-arrow-dropup" *ngIf="control.selected == true" [ngStyle]="{'color': colorApp}">
+              </ion-icon>
+            </div>
+            <ion-select [formControlName]="control.key" [ngStyle]="{'color': colorApp}" #preguntaSeleccion
+              [placeholder]="control.placeholder" cancelText="Cerrar" interface="action-sheet" (click)="open(control)"
+              (ionChange)="close(control)" (ionCancel)="close(control)" style="padding-right: 30%;">
+              <ion-select-option *ngFor="let option of control.options" [value]="option">{{option.label}}
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+
+  </ion-list>
+
+</form>
+
+<!--Si es una encuesta se toma este HTML -->
+<form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="desde == 'encuesta'" class="encuestas">
+  <ion-list>
+    <div *ngFor="let control of controls">
+      <!-- Pregunta tipo calificacion -->
+      <div class="stars" *ngIf="control.controlType === 'label'">
+        <ion-col col-12 *ngIf="control.image">
+          <img class="preguntaImg" src="{{control.image}}" alt="">
+        </ion-col>
+        <h5 text-center>{{control.label}}</h5>
+        <fieldset class="rate">
+          <input type="radio" id="rate1-star5" value="5" [formControlName]="control.key" />
+          <label for="rate1-star5" title="Excellent">5</label>
+
+          <input id="rate1-star4" type="radio" value="4" [formControlName]="control.key" />
+          <label for="rate1-star4" title="Good">4</label>
+
+          <input id="rate1-star3" type="radio" value="3" [formControlName]="control.key" />
+          <label for="rate1-star3" title="Satisfactory">3</label>
+
+          <input id="rate1-star2" type="radio" value="2" [formControlName]="control.key" />
+          <label for="rate1-star2" title="Bad">2</label>
+
+          <input id="rate1-star1" type="radio" value="1" [formControlName]="control.key" />
+          <label for="rate1-star1" title="Very bad">1</label>
+        </fieldset>
+      </div>
+
+      <!-- Pregunta tipo fecha -->
+      <ion-grid>
+        <ion-row *ngIf="control.controlType === 'datatime'" text-wrap class="dates">
+          <ion-col col-12 *ngIf="control.image" class="center">
+            <img class="preguntaImg" src="{{control.image}}" alt="">
+          </ion-col>
+          <ion-col col-12>
+            <ion-label>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-12 class="no-padding border-input">
+            <ion-datetime pickerFormat="DD/MM/YYYY" cancelText="Cancelar" doneText="Ok" [formControlName]="control.key"
+              [id]="control.key" placeholder="DD/MM/AAAA">
+            </ion-datetime>
+            <div class="select-icon">
+              <div class="select-icon-inner inner-date"></div>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+        <!-- Pregunta tipo seleccion simple-->
+        <ion-row *ngIf="control.controlType === 'select'" text-wrap class="selectStyle">
+          <ion-col col-12 *ngIf="control.image">
+            <img class="preguntaImg" src="{{control.image}}" alt="">
+          </ion-col>
+          <ion-col col-12>
+            <ion-label>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-12 class="no-padding border-input">
+            <ion-select [formControlName]="control.key" [id]="control.key" [placeholder]="control.placeholder"
+              [multiple]="control.multiple" cancelText="Cerrar" interface="action-sheet" [ngClass]="selected"
+              (click)="cualquiera()" (ionChange)="otros()">
+              <ion-option *ngFor="let option of control.options" [value]="option">{{option.label}}</ion-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <!-- Pregunta seleccion multiple -->
+        <ion-row *ngIf="control.controlType === 'checkbox'" text-wrap class="checkStyle">
+          <ion-col col-12 *ngIf="control.image">
+            <img class="preguntaImg" src="{{control.image}}" alt="">
+          </ion-col>
+          <ion-col col-12>
+            <ion-label>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-12 class="no-padding">
+            <div class="itemsSelect buttons" *ngFor="let option of control.options">
+              <input type="checkbox" [formControlName]="option.key" [id]="option.key">
+              <label class="optionLabel" [for]="option.key"><span>{{option.label}}</span></label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row *ngIf="control.controlType === 'radio'" text-wrap class="radioStyle">
+          <ion-col col-12 *ngIf="control.image">
+            <img class="preguntaImg" src="{{control.image}}" alt="">
+          </ion-col>
+          <ion-col col-12>
+            <ion-label>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-12>
+            <ion-list radio-group [formControlName]="control.key" [id]="control.key">
+              <ion-item *ngFor="let option of control.options">
+                <ion-radio [value]="option" item-left>
+                </ion-radio>
+                <ion-label item-right>{{option.label}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <!-- Pregunta tipo entrada de texto -->
+        <ion-row *ngIf="control.controlType === 'textbox'" text-wrap>
+          <ion-col col-12 *ngIf="control.image">
+            <img class="preguntaImg" src="{{control.image}}" alt="">
+          </ion-col>
+          <ion-col col-12>
+            <ion-label>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-12 class="no-padding border-input">
+            <ion-textarea maxlength="255" [formControlName]="control.key" [id]="control.key" [type]="control.type">
+            </ion-textarea>
+            <!-- <ion-input [formControlName]="control.key" [id]="control.key" [type]="control.type">
+            </ion-input> -->
+          </ion-col>
+        </ion-row>
+
+        <!-- Pregunta tipo numero -->
+        <ion-row *ngIf="control.controlType === 'number'" text-wrap>
+          <ion-col col-12 *ngIf="control.image">
+            <img class="preguntaImg" src="{{control.image}}" alt="">
+          </ion-col>
+          <ion-col col-12>
+            <ion-label>{{control.label}}</ion-label>
+          </ion-col>
+          <ion-col col-12 class="no-padding border-input" [id]="control.key">
+            <ion-input [formControlName]="control.key" [placeholder]="control.placeholder" type="number"
+              (keyup.enter)="validar()">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+
+  </ion-list>
+
+</form>
+

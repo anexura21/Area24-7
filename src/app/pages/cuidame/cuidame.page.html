@@ -1,0 +1,51 @@
+<ion-content>
+  <!-- TODO: Revisar el color  -->
+  <ion-toolbar style="--background: transparent">
+    <img id="imgHome" width="45px" height="45px" style="margin: 10px 15px" item-left src="./assets/logo2.png">
+
+    <ion-buttons slot="end" class="mini">
+      <ion-menu-button menuToggle icon-only style="color: white" class="mini" id="toggle">
+        <ion-icon name="settings" clear></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <h1 class="ion-justify-text-center"><b>CUIDAME</b></h1>
+  <ion-item class="backgroundP">
+    <br>
+    <p style="text-align: justify;">
+      Con diversidad en flora y fauna del valle de Aburrá, ahora identificar especies, realizar
+      y comparte avistamientos es lo más fácil.
+    </p>
+  </ion-item>
+
+  <ion-grid class="ion-align-items-center">
+    <ion-row>
+      <ion-col *ngFor="let cuidame1  of rowCuidame1" style="background: transparent">
+        <div class="box">
+          <br>
+          <ion-img [src]="cuidame1.image" class="icons"></ion-img>
+          <h6 class="setSubtitle">
+            {{cuidame1.title}}
+          </h6>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let cuidame2 of rowCuidame2" style="background: transparent">
+        <div class="box">
+          <br>
+          <ion-img [src]="cuidame2.image" class="icon-reportar"></ion-img>
+          <h6 class="setSubtitle">
+            {{cuidame2.title}}
+          </h6>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-footer class="ion-no-border">
+    <ion-img [src]="'../../../assets/futuro.png'" style="float: left; margin: 3.9em 0 0 4em;"></ion-img>
+  </ion-footer>
+</ion-content>
+
+

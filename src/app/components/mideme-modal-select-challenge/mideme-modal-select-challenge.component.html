@@ -1,0 +1,35 @@
+<ion-content padding [ngStyle]="{'height':modalSize}">
+  <ion-buttons slot="end">
+      <ion-button class="close" icon-only (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+
+  <div>
+      <h1>{{ category.nombre }}</h1>
+  </div>
+  <br>
+
+  <div text-wrap radio-group class="listRadio">
+      <ion-item *ngFor="let item of challenges">
+
+          <h1 *ngIf="item.seleccionado" (click)="tap(item)" style="text-align: justify">
+              <i class="fas fa-circle" [ngStyle]="{'color': color}"></i>
+              {{item.nombre}}
+          </h1>
+
+          <h1 *ngIf="!item.seleccionado" (click)="tap(item)" style="text-align: justify">
+              <i class="fas fa-circle"></i>
+              {{item.nombre}}
+          </h1>
+          <!--ion-radio radio-md [ngStyle]="{'background-color': color}" [value]="item.id" id="radioButton"
+              style="display: inline-table !important;" (click)="selectedRadio(item)" [checked]="item.seleccionado">
+          </ion-radio>
+          <ion-label (click)="tap(item)" style="text-align: justify">{{item.nombre}}</ion-label-->
+      </ion-item>
+  </div>
+
+  <div class="botones">
+      <ion-button ion-button (click)="challengeAccepted()">Iniciar reto</ion-button>
+  </div>
+</ion-content>

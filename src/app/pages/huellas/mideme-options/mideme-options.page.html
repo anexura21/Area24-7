@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar [ngStyle]="{'background': color}" [color]="color">
+    <ion-title text-uppercase>{{layer.name}}</ion-title>
+    <ion-buttons slot="start" class="mini">
+      <ion-back-button defaultHref="/inicio" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <div>
+    <div>
+      <ion-row>
+        <ion-col>
+          <span class="bold">Seleccione una de las opciones</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="grayText">Primero debes calcular tu consumo para acceder a las otras opciones</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div>
+      <ion-row>
+        <ion-col>
+          <ion-button [ngStyle]="{'background': color}"  [color]= "color"
+                      (click)="goToCalculator()" expand="full">
+            <!-- <i class="fas fa-tint"></i> -->
+            <ion-icon name="water"></ion-icon>
+            <ion-label>Calculadora</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button [color]= "color" [ngStyle]="{'background': color}" 
+                      [disabled]="options == false" (click)="goToHistory()" 
+                      expand="full">
+            <!-- <i class="fas fa-list-ul"></i> -->
+            <ion-icon name="list"></ion-icon>
+            Historial
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button [ngStyle]="{'background': color}" [color]= "color"
+                    [disabled]="options == false" (click)="goToChallenge()" 
+                    expand="full">
+            <!-- <i class="fas fa-trophy"></i> -->
+            <ion-icon name="trophy"></ion-icon>
+            Retos
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row>
+        <ion-col>
+          <button ion-button [ngStyle]="{'background': green}" (click)="goToCheckChallenge()">Encuesta</button>
+        </ion-col>
+      </ion-row> -->
+    </div>
+  </div>
+</ion-content>
+
