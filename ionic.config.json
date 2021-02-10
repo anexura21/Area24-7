@@ -1,7 +1,8 @@
 {
   "name": "Area-24-7v2_1",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
