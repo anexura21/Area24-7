@@ -1,20 +1,22 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { ReportarAvistamientoPageRoutingModule } from './reportar-avistamiento-routing.module';
+import { ReportarAvistamientoPageRoutingModule } from "./reportar-avistamiento-routing.module";
 
-import { ReportarAvistamientoPage } from './reportar-avistamiento.page';
+import { ReportarAvistamientoPage } from "./reportar-avistamiento.page";
+import { EspecieSugeridaComponent } from "./especie-sugerida/especie-sugerida.component";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReportarAvistamientoPageRoutingModule
+    ReportarAvistamientoPageRoutingModule,
+    ReactiveFormsModule,
   ],
-  declarations: [ReportarAvistamientoPage]
+  declarations: [ReportarAvistamientoPage, EspecieSugeridaComponent],
 })
 export class ReportarAvistamientoPageModule {}

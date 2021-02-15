@@ -1,0 +1,34 @@
+.header {
+  height: 44px;
+  p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00ab4e;
+  }
+  .button-seleccionar {
+    font-weight: bold;
+    --border-radius: 10px;
+    border-radius: 10px;
+    --border-color: #00ab4e;
+    --background: #00ab4e;
+    color: white;
+    width: 95px;
+    font-size: 10px;
+    height: 33px;
+    float: right;
+  }
+}
+
+.container-custom {
+  color: black;
+  img {
+    width: 100%;
+    height: 90px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  span {
+    color: #00ab4e;
+  }
+}

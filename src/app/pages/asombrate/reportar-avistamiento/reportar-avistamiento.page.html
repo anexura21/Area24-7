@@ -26,62 +26,89 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row *ngIf="dataImage.length === 0">
       <ion-col>
-        <button class="box" (click)="takePicture()">
+        <button class="box" (click)=" presentActionSheet()">
           <ion-icon name="camera-sharp"></ion-icon>
         </button>
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col class="container-custom">
-        <ion-slides class="swiper-container" pager="true" [options]="slideOps">
-          <ion-slide class="swiper-wrapper">
-            <button class="box-button ion-slide-custom" (click)="takePicture()">
-              <ion-icon name="camera-sharp"></ion-icon>
-            </button>
-          </ion-slide>
-          <ion-slide class="ion-slide-custom" *ngFor="let imagen of data">
-            <img class="swiper-slide" [src]="imagen.url" alt="" srcset="">
-            <button>
-              <ion-icon name="create-outline"></ion-icon>
-            </button>
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-    </ion-row>
-    <ion-row class="input-row">
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Ubicación</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Descripción</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+    <div *ngIf="dataImage.length > 0">
+      <ion-row>
+        <ion-col class="container-custom">
+          <ion-slides
+            class="swiper-container"
+            pager="true"
+            [options]="slideOps"
+          >
+            <ion-slide class="swiper-wrapper">
+              <button
+                class="box-button ion-slide-custom"
+                (click)="presentActionSheet()"
+              >
+                <ion-icon name="camera-sharp"></ion-icon>
+              </button>
+            </ion-slide>
+            <ion-slide
+              class="ion-slide-custom"
+              *ngFor="let imagen of dataImage"
+            >
+              <img class="swiper-slide" [src]="imagen.url" alt="" srcset="" />
+              <button class="btn-edit">
+                <ion-icon name="create-outline"></ion-icon>
+              </button>
+              <button class="btn-delete" (click)="borrarImagen(imagen.id)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="formRegistro">
+        <ion-row class="input-row">
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">Nombre común</ion-label>
+              <ion-input formControlName="nombreComun"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Nombre cientifico</ion-label>
+              <ion-input formControlName="nombreCientifico"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Descripción</ion-label>
+              <ion-input formControlName="descripcion"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="especie" class="row-especie-sugerida">
+          <ion-col class="especie-sugerida">
+            <app-especie-sugerida  [especie]="especie" (especieSeleccionada)="seleccionarEspecieIA($event)"></app-especie-sugerida>
+          </ion-col>
+        </ion-row>
 
-    <div class="container-buttons">
-      <ion-row>
-        <ion-col>
-          <ion-button class="button-guardar" expand="block">Guardar</ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button class="button-publicar" expand="block">Publicar</ion-button>
-        </ion-col>
-      </ion-row>
+        <div class="container-buttons">
+          <ion-row>
+            <ion-col>
+              <ion-button
+                class="button-guardar"
+                expand="block"
+                [disabled]="!formRegistro.valid"
+                (click)="guardarRegistro(formRegistro.value)"
+                >Guardar</ion-button
+              >
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button class="button-publicar" expand="block"
+                >Publicar</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </div>
+      </form>
     </div>
-
-
-    <ion-row>
-      <ion-col>
-        <img *ngIf="image" [src]="image">
-      </ion-col>
-    </ion-row>
   </ion-grid>
 </ion-content>

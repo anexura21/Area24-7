@@ -1077,3 +1077,10 @@ cuidame-detail {
   max-height: 900px;
   min-height: 360px;
 }
+
+// * Estilo personalizado para actionSheetController
+.center-align-buttons .action-sheet-button-inner.sc-ion-action-sheet-md,
+.center-align-buttons .action-sheet-title.sc-ion-action-sheet-md {
+  justify-content: center;
+  text-align: center;
+}

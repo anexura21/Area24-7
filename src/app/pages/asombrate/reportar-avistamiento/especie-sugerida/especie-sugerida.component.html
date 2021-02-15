@@ -1,0 +1,23 @@
+<ion-row class="header">
+  <ion-col>
+    <p>Especie sugerida</p>
+  </ion-col>
+  <ion-col>
+    <ion-button class="button-seleccionar" expand="block" (click)="seleccionar(especie)">
+      Seleccionar
+    </ion-button>
+  </ion-col>
+</ion-row>
+<ion-row class="container-custom">
+  <ion-col size="4">
+    <img [src]="especie?.imagen" alt="" srcset="" />
+  </ion-col>
+  <ion-col size="8">
+    <span>Nombre común:</span>
+    <br />
+    {{ especie?.nombreComun }}<br />
+    <span>Nombre científico:</span>
+    <br />
+    {{ especie?.nombreCientifico }}
+  </ion-col>
+</ion-row>
