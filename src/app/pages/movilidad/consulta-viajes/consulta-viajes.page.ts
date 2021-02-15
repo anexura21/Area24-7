@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 import { AppLayer } from '../../../entities/app-layer';
 import { MODOS_BUSQUEDA, Ubicacion } from '../../../entities/movilidad/ubicacion.model';
 import { Common } from '../../../shared/utilidades/common.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OtherLayer } from 'src/app/entities/other-layer';
 import { TransportMode } from 'src/app/entities/transport-mode';
 import { Geoposition } from '@ionic-native/geolocation/ngx';
@@ -70,7 +70,8 @@ export class ConsultaViajesPage implements OnInit, OnDestroy {
               private locationChange: LocationChangeService,
               private router: ActivatedRoute,
               private lavergSvc: LavergService,
-              private modalCtrl: ModalController) {
+              private modalCtrl: ModalController,
+              private route: Router) {
     this.origenDestinoIcono = 'assets/movilidad/iconos/cambiarIcon.png';
     this.origen = new Ubicacion();
     this.destino = new Ubicacion();
@@ -275,8 +276,9 @@ actualizarVista() {
         this.posiblesViajesP.obtenerviajesSugeridos(true)
             .then(data => {
                 GmapsMovilidadService.deletePositionMarker();
-                // const params = { ...data, app: this.appLayer };
+                const params = { data, app: this.appLayer };
                 // this.app.getRootNav().push(VistaViajesPage, params);
+                this.route.navigate(['/vista-viajes', params]);
             })
             .catch(error => {
                 this.common.basicAlert('Movilidad', error);

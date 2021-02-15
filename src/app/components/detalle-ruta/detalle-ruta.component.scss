@@ -1,0 +1,66 @@
+.detalle-ruta {
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+  .labeltitulo{
+      font-weight: bold;
+  color: #051f2d;
+  font-size: 15px;
+}
+
+  .labelEmp{
+  font-weight: bold;
+  color: #006fac;
+  font-size: 16px;
+}
+
+.labelsDetalle {
+  color: #0060B6;
+  font-size: 12px;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+.labelsDes {
+  color: #9b9b9a;
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+.iconFlecha{
+  color:#006fac;
+}
+
+
+.checkbox-ios-dark .checkbox-checked {
+  // border-color: #488aff !important;
+  background-color: #006fac !important;
+}
+
+.checkbox-ios .checkbox-icon {
+  border-radius: 2px;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #006fac;
+  background-color: #fff;
+}
+
+
+.checkbox-ios .checkbox-checked .checkbox-inner {
+  left: 4px;
+  top: 1px;
+  position: absolute;
+  width: 4px;
+  height: 9px;
+  border-width: 1px;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-style: solid;
+  border-color: #fff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

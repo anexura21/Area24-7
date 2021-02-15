@@ -9,9 +9,6 @@ import { ConsultaViajesPageRoutingModule } from './consulta-viajes-routing.modul
 
 import { ConsultaViajesPage } from './consulta-viajes.page';
 
-import { MapaDirective } from './../../../directives/movilidad/mapa.directive';
-import { ContenidoMapaDirective } from './../../../directives/movilidad/contenido-mapa.directive';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +17,6 @@ import { ContenidoMapaDirective } from './../../../directives/movilidad/contenid
     ConsultaViajesPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [ConsultaViajesPage, MapaDirective, ContenidoMapaDirective ]
+  declarations: [ConsultaViajesPage ]
 })
 export class ConsultaViajesPageModule {}

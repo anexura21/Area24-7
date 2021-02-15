@@ -1,0 +1,72 @@
+<div style="text-align: left;">
+  <ion-grid>
+      <ion-row (click)="toggleDetalle()">
+          <ion-col col-auto>
+              <ion-checkbox color="dark" [(ngModel)]="ruta.checked" (ionChange)="checkMostrarRuta($event,ruta)"></ion-checkbox>
+          </ion-col>
+          <ion-col col-8>
+              {{ ruta.descripcion }}
+          </ion-col>
+          <ion-col col-2>
+              <ion-icon class="iconFlecha" name="{{iconClass}}" [ngStyle]="{color:color}"></ion-icon>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <div *ngIf="mostrarDetalle" class="detalle-ruta">
+      <div *ngIf="!ruta.codigoCiclovia">
+
+          <div *ngIf="!ruta.idModoLinea">
+              <span class="labelsDetalle">Empresa: </span>
+              <span *ngIf="ruta.idModoLinea" class="labelsDes"> Metro De Medellin </span>
+              <span *ngIf="ruta.empresa && ruta.empresa.length > 0" class="labelsDes"> {{ruta.empresa}} </span>
+              <span *ngIf="ruta.empresa && ruta.empresa.length == 0" class="labelsDes">
+        {{'N/A'}}
+      </span>
+          </div>
+          <div>
+              <span class="labelsDetalle">Horario:</span>
+              <span *ngIf="ruta.horarios && ruta.horarios.length>0 && ruta.horarios[0].horaInicioOperacion !=null " class="labelsDes">
+      {{utilidades.convertTime24to12(ruta.horarios[0].horaInicioOperacion)+' a '+utilidades.convertTime24to12(ruta.horarios[0].horaFinOperacion)}}
+
+    </span>
+              <span *ngIf="!ruta.horarios || ruta.horarios.length==0 ||ruta.horarios[0].horaInicioOperacion ==null" class="labelsDes">
+        {{'N/A'}}
+      </span>
+          </div>
+
+          <div>
+              <span class="labelsDetalle">Frecuencia: </span>
+              <span class="labelsDes">N/A</span>
+          </div>
+
+          <div>
+              <span class="labelsDetalle">Tarifa: </span>
+              <span *ngIf="ruta.valorTarifa" class="labelsDes"> $ 
+      {{ruta.valorTarifa}}
+    </span>
+              <span *ngIf="ruta.valorTarifaLinea!=null && ruta.valorTarifaLinea!=0" class="labelsDes"> $ 
+        {{ruta.valorTarifaLinea}}
+      </span>
+          </div>
+
+          <div *ngIf="estacionesMetro.length>0">
+              <span class="labelsDetalle">Estaciones: </span>
+              <br>
+              <div *ngFor="let estacion of estacionesMetro">
+                  <span class="labelsDes">
+        - {{estacion}}
+      </span>
+                  <br>
+              </div>
+          </div>
+      </div>
+
+      <div *ngIf="ruta.codigoCiclovia">
+          <div>
+              <span class="labelsDetalle">Descripción: </span>
+              <span class="labelsDes">{{ruta.descripcion}}</span>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<ion-grid id="gridLineasRutas" style="margin-bottom: 5%">
+  <ion-row>
+          <ion-searchbar id="sbLineasRutas" (keydown)="onKeyEnterRutaLinea($event)" (ionInput)="actualizarListado()" [(ngModel)]="criterioBusqueda" (ionFocus)="onFocusSearchBar()" (ionBlur)="onBlurSearchBar()" showCancelButton="false" mode="md" animated="true"
+            placeholder="Rutas y Líneas">
+          </ion-searchbar>
+          <div class="btn-search"  [ngStyle]="{'background-color': appLayer.color}" (click)="clickObtenerRutasLineas()" ></div>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-scroll id="scroll" scrollY="true">
+        <ion-list scroll="true" *ngIf="criterioBusqueda.trim().length>0" class="listaDir listAutocompletado">
+          <div style="padding-top: 0px; padding-bottom: 0px;">
+            <ion-item *ngFor="let item of autocompleteItems" (click)="seleccionarItem(item,1)">
+              <span class="labelLisDir">
+                <img src="assets/movilidad/iconos/marcadorMap.png" [ngStyle]="{'color': appLayer.color}" style="width:10px; float:Left; margin-left: 5px"> {{ item.codigo }} - {{ item.descripcion }}</span>
+            </ion-item>
+          </div>
+        </ion-list>
+      </ion-scroll>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-grid style="width: 100% !important;">
+      <ion-row>
+          <ion-col text-center col-11>
+              <img
+                  src="assets/movilidad/iconos/enciclaPP.png"
+                  style="width: 70px; height: auto; margin-left: 12px; margin-top: 12px;"
+              />
+          </ion-col>
+          <ion-col col-1>
+              <ion-button icon-only slot="end" (click)="closeModal()">
+                  <ion-icon name="close"></ion-icon>
+              </ion-button>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+  <div text-center text-wrap style="width: 100%;">
+      <ion-label
+          style="font-size: 20px; color: black; margin-left: 20px;
+      margin-right: 20px;"
+          ><b>{{ titulo }}</b></ion-label
+      >
+      <ion-label
+          text-wrap
+          style="font-size: 14px; color: #A9A9A9; margin: 10px 20px;"
+          >{{ mensaje1 }} {{ horaInicioSemana }} a {{ horaFinSemana }}
+          {{ mensajePrestamo }} {{ horaPrestamoSenana }}). {{ mensaje2 }}
+          {{ horaInicioSabado }} a {{ horaFinSabado }} {{ mensajePrestamo }}
+          {{ horaPrestamoSabado }}). Domingo no prestamos servicio.</ion-label
+      >
+      <div
+          ion-button
+          style="border-radius: 8px; margin: 12px auto;"
+          [ngStyle]="{ background: appContext.color }"
+          (click)="closeModal()"
+      >
+          Entendido
+  </div>
+  </div>
+</ion-content>

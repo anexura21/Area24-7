@@ -1,0 +1,156 @@
+// estilos para componente de encicla
+.btn-buscar {
+    position: absolute;
+    right:5px;
+    bottom: 5rem;
+    z-index:500
+}
+
+.searchbar-md .searchbar-input ,.searchbar-ios .searchbar-input   {
+    padding:8px 20px;
+}
+
+.Centrarpin {
+    display: block;
+    width: 52px;
+    height: 44px;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    margin-top: -44px;
+    left: 50%;
+    margin-left: -24px;
+    background: url("../assets/movilidad/marker.png") no-repeat
+}
+.itemFav {
+    background: rgba(255, 255, 255, 0.77);
+    padding: 0px !important;
+    height: 6rem;
+    margin:10px 0px;
+}
+.titlefav {
+    font-size: 16px;
+    color: #0060B6;
+    position: relative;
+    left: -19px;
+}
+
+.addbtn {
+    height: 30px;
+    width: 70px;
+    float: right;
+    position: relative;
+    top: -6px;
+    border-radius: 5px !important;
+    font-size: 1.3rem;
+    font-weight: 200;
+    // background-color: #0060B6 !important;
+}
+
+.textDirfav {
+    position: relative;
+    top: 7px;
+    font-size: 14px;
+    color: #858585;
+}
+.textUbifav {
+    position: relative;
+    top: 5px;
+    font-size: 14px;
+    color: #0060B6;
+    text-align: left;
+}
+
+.card-md, .card-ios {
+    margin: 0px auto;
+    border-radius: 1px;
+    width: 90%;
+    font-size: 1.4rem;
+    background: rgba(255, 255, 255, 0.77);
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.label-md {
+    margin: 2px 0px 13px 0;
+}
+
+.labelbtn {
+    color: #fff !important;
+    font-size: 12px !important;
+    margin-top: -3px !important;
+}
+ion-item.item-ios,
+ion-item.item-md,
+ion-item.item-md {
+    padding-left: 2px;
+    padding-right: 2px;
+    min-height: 40px;
+}
+.itemFavo {
+    height: 30px;
+    padding-top: 2px;
+}
+.coloNomFav {
+    border-right-style: solid;
+    border-right-color: #d8d8d8;
+    border-right-width: 1px;
+}
+.item-md {
+    padding-left: 16px;
+    padding-right: 0;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: none;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.74);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.gridFavo {
+    padding: 0px !important;
+}
+
+.imgDetailContainer{
+    img{
+        width: 50%;
+        height: 60%;
+        // max-width: 20px;
+        max-height: 20px;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width: 320px) {
+    .btnList {
+        width: 8px;
+        margin-left: 29px;
+        margin-top: 9px;
+    }
+}
+@media only screen and (min-width: 360px) {}
+@media only screen and (min-width: 412px) {
+    .btnList {
+        width: 8px;
+        margin-left: 39px;
+        margin-top: 9px;
+    }
+}
+
+.iconLisFav {
+    width: 20px;
+    float: right;
+    margin-top: 4px;
+    filter: grayscale(100%);
+}
+
+.listaDir {
+    margin-top: -15px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-color: rgba(255, 255, 255, 0.87);
+}
+
+
+ion-scroll {
+height: 300px;
+}

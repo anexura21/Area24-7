@@ -1,0 +1,171 @@
+<ion-header>
+    <barra-navegabilidad [titulo]="titulo" [color]="appLayer.color"></barra-navegabilidad>
+</ion-header>
+
+<ion-content mapa>
+    <div contenido-mapa>
+        <div class="divMenu2" *ngIf="mostrarRutasLineas" style="width: 100%">
+            <ion-grid style="width: 95vw; margin: 0 auto;">
+                <ion-row>
+                    <ion-col  (click)="onClickRutasLineas(0)" class="typesContainers">
+                        <div class="imgDetailContainer" *ngIf="rutasActive" >
+                                <svg xmln="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 63.8 55.6" style="enable-background:new 0 0 63.8 55.6;" xml:space="preserve" class="iconSvg">
+                                    <style type="text/css">
+                                        .ruta-st0{fill: '{{appLayer.color}}'; }
+                                        .ruta-st1{fill: '{{appLayer.color}}';}
+                                        .ruta-st2{fill: '{{appLayer.color}}';}
+                                        .ruta-st3{fill:#FCFCFC;}
+                                    </style>
+                                    <title>Rutas</title>
+                                    <g>
+                                        <g id="Capa_1-2">
+                                            <path class="ruta-st0" d="M19,55.6C13,45.3,7,36.1,1.9,26.4C-2.2,18.5,0.6,8.8,7.5,3.7c7.2-5.2,17.1-5,24,0.7c6.7,5.7,9,15.1,4.7,22.8    C31,36.6,25.2,45.5,19,55.6z"/>
+                                            <path class="ruta-st0" d="M58.3,28.7c0,6.4,0,12.7,0,19.1c0,4.6-0.8,4.9-5,2.6c-1.2-2-0.4-4.1-0.6-6.2c0-3.6,0-7.2,0-9.3    c-0.3,2.1,0.1,5.7,0,9.3c-0.2,2.1,0.4,4.3-0.4,6.3c-3.4,2.9-5,1.5-5.1-2.3c-0.1-5.3,0.2-10.6,0.2-16c0-1.6,0.6-3.6-2.5-2.8    c-1.6,0.4-2.3-1.1-2.7-2.5c-1-3.9,1.4-11.3,4.9-13.4c3.7-2.4,8.6-2.3,12.1,0.4c3.3,2.4,5.5,10.2,4.1,13.7c-0.8,2-2.2,2.5-4,1.1    C58.2,26.5,59.4,26.5,58.3,28.7z"/>
+                                            <path class="ruta-st1" d="M57.1,5.6c-0.2,2.6-1.4,4.3-4,4.5S48.7,9,48.5,6.4s1.1-4.7,4.1-4.7C55.3,1.6,56.7,3.2,57.1,5.6z"/>
+                                            <path class="ruta-st2" d="M53,44.3c0.1,2,0.2,4,0.3,6l-1,0.1c0-2.1,0-4.1,0-6.2C52.5,43.7,52.7,43.8,53,44.3z"/>
+                                            <path class="ruta-st3" d="M26.2,18.5c-0.2,3.7-3.1,6.8-6.9,7.1c-3.7,0.1-6.6-2.9-6.7-6.9s2.7-6.9,6.6-7C23,11.7,26,14.7,26.2,18.5z"/>
+                                            <path class="ruta-st2" d="M53,44.3h-0.4h-0.4V33.7H53V44.3z"/>
+                                            <path class="ruta-st2" d="M45.6,29.2c0.7-0.6,1.1-1.5,1-2.4c-0.1-0.8-0.1-1.6,0-2.4c0,0,0.9-0.4,0.8,1.3s0,0.6,0,0.6v4"/>
+                                            <path class="ruta-st2" d="M58.2,24.5V28l0.3,0.5l0.3-1.2V25c0-0.6-0.4-0.5-0.4-0.5"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                            <!-- <img src="assets/movilidad/iconos/rutas.svg"> -->
+                        </div>
+                        <div class="labelDetailContainer" *ngIf="rutasActive">
+                            <span class="labelsMenu2" [ngStyle]="{'color':appLayer.color}">Rutas</span>
+                        </div>
+
+
+                        <div class="imgDetailContainer" *ngIf="!rutasActive" style="filter:grayscale(100%)" >
+                                <!-- <img src="assets/movilidad/iconos/rutas.svg"> -->
+                                 <svg xmln="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 63.8 55.6" style="enable-background:new 0 0 63.8 55.6;" xml:space="preserve" class="iconSvg">
+                                    <style type="text/css">
+                                        .ruta-st0{fill:'{{appLayer.color}}';}
+                                        .ruta-st1{fill:'{{appLayer.color}}';}
+                                        .ruta-st2{fill:'{{appLayer.color}}';}
+                                        .ruta-st3{fill:#FCFCFC;}
+                                    </style>
+                                    <title>Rutas</title>
+                                    <g>
+                                        <g id="Capa_1-2">
+                                            <path class="ruta-st0" d="M19,55.6C13,45.3,7,36.1,1.9,26.4C-2.2,18.5,0.6,8.8,7.5,3.7c7.2-5.2,17.1-5,24,0.7c6.7,5.7,9,15.1,4.7,22.8    C31,36.6,25.2,45.5,19,55.6z"/>
+                                            <path class="ruta-st0" d="M58.3,28.7c0,6.4,0,12.7,0,19.1c0,4.6-0.8,4.9-5,2.6c-1.2-2-0.4-4.1-0.6-6.2c0-3.6,0-7.2,0-9.3    c-0.3,2.1,0.1,5.7,0,9.3c-0.2,2.1,0.4,4.3-0.4,6.3c-3.4,2.9-5,1.5-5.1-2.3c-0.1-5.3,0.2-10.6,0.2-16c0-1.6,0.6-3.6-2.5-2.8    c-1.6,0.4-2.3-1.1-2.7-2.5c-1-3.9,1.4-11.3,4.9-13.4c3.7-2.4,8.6-2.3,12.1,0.4c3.3,2.4,5.5,10.2,4.1,13.7c-0.8,2-2.2,2.5-4,1.1    C58.2,26.5,59.4,26.5,58.3,28.7z"/>
+                                            <path class="ruta-st1" d="M57.1,5.6c-0.2,2.6-1.4,4.3-4,4.5S48.7,9,48.5,6.4s1.1-4.7,4.1-4.7C55.3,1.6,56.7,3.2,57.1,5.6z"/>
+                                            <path class="ruta-st2" d="M53,44.3c0.1,2,0.2,4,0.3,6l-1,0.1c0-2.1,0-4.1,0-6.2C52.5,43.7,52.7,43.8,53,44.3z"/>
+                                            <path class="ruta-st3" d="M26.2,18.5c-0.2,3.7-3.1,6.8-6.9,7.1c-3.7,0.1-6.6-2.9-6.7-6.9s2.7-6.9,6.6-7C23,11.7,26,14.7,26.2,18.5z"/>
+                                            <path class="ruta-st2" d="M53,44.3h-0.4h-0.4V33.7H53V44.3z"/>
+                                            <path class="ruta-st2" d="M45.6,29.2c0.7-0.6,1.1-1.5,1-2.4c-0.1-0.8-0.1-1.6,0-2.4c0,0,0.9-0.4,0.8,1.3s0,0.6,0,0.6v4"/>
+                                            <path class="ruta-st2" d="M58.2,24.5V28l0.3,0.5l0.3-1.2V25c0-0.6-0.4-0.5-0.4-0.5"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                        </div>
+                            <div class="labelDetailContainer" *ngIf="!rutasActive">
+                                <span class="labelsMenu2">Rutas</span>
+                            </div>
+                    </ion-col>
+
+                    <div class="separador"></div>
+                    
+                    <ion-col  (click)="onClickRutasLineas(1)" class="typesContainers">
+                        <div class="imgDetailContainer" *ngIf="lineasActive"  >
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 185.2 247.2" style="enable-background:new 0 0 185.2 247.2;" xml:space="preserve" class="iconSvg">
+                                <style type="text/css">
+                                    .bus-st0{fill:'{{appLayer.color}}';}
+                                    .bus-st1{fill:#FFFFFF;}
+                                </style>
+                                <title>Recurso 1</title>
+                                <g>
+                                    <g id="Capa_1-2">
+                                        <path class="bus-st0" d="M185.1,116c0,21.3-0.1,42.6,0,64c0.1,10.8-3.1,20.2-10,28.4c-1.3,1.5-2,3.4-1.9,5.4c0.1,6.7,0.1,13.3,0,20    c-0.1,8.3-5,13.1-13.3,13.1c-3.5,0-7,0.1-10.5,0c-5.3-0.3-9.7-4.1-10.6-9.3c-0.3-1.8-0.6-3.6-0.6-5.4    c-0.3-11.3-0.3-11.3-11.4-11.3c-24.7,0-49.3,0.1-74-0.1c-4,0-5.8,0.8-5.4,5.2c1.2,14.1-1.2,22-20.8,21.2    c-9.4-0.4-15.2-7.3-15-15.2c0-2.2-0.1-4.3,0-6.5c0.4-8.5,0.4-16.5-5.8-23.9c-5-5.9-5.5-14.2-5.5-21.8c-0.2-42.1-0.4-84.3,0-126.4    c0.3-26.7,12.2-42.2,42-48.7c12.3-2.7,24.6-2.8,36.9-4c14.5-1.5,28.9,0,43.2,0.8c16.6,0.9,33.1,4,47,14.6    c7.7,5.9,11.6,14,14.3,23.2c2.2,7.9,1.4,15.8,1.5,23.7C185.3,80.7,185.1,98.3,185.1,116z"/>
+                                        <path class="bus-st1" d="M93,111.9c-21,0-42-0.2-62.9,0.1c-4.9,0.1-5.8-1.5-5.7-6c0.3-17.6,0.3-35.3,0-52.9c-0.1-4.5,2-4.3,5.1-4.3    c30,0.1,60,0.1,89.9,0c12.3,0,24.6,0.1,37-0.1c3.3,0,4.6,0.6,4.6,4.4c-0.2,18.1-0.2,36.3,0,54.4c0,3.3-0.7,4.5-4.4,4.5    C135.3,111.7,114.1,111.9,93,111.9z"/>
+                                        <path class="bus-st1" d="M162.1,168.5c-0.1,9.4-8.7,18.7-17.2,18.6s-17.1-9.7-16.4-19.1c0.9-12.2,8-18.6,17.3-18.7    C154.3,149.2,161.9,158.3,162.1,168.5z"/>
+                                        <path class="bus-st1" d="M24.3,165.9c-0.3-11.4,8.8-18.6,16.8-18.4c8.6,0.2,16.3,8.9,16.4,19.2c0.1,9.6-8.5,18.7-17.1,18.5    C31.5,185,24.3,176.4,24.3,165.9z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="labelDetailContainer" *ngIf="lineasActive">
+                            <span class="labelsMenu2"  [ngStyle]="{'color':appLayer.color}">Lineas</span>
+                        </div>
+
+                        <div class="imgDetailContainer" *ngIf="!lineasActive" style="filter: grayscale(100%)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 185.2 247.2" style="enable-background:new 0 0 185.2 247.2;" xml:space="preserve" class="iconSvg">
+                                        <style type="text/css">
+                                            .bus-st0{fill:'{{appLayer.color}}';}
+                                            .bus-st1{fill:#FFFFFF;}
+                                        </style>
+                                        <title>Recurso 1</title>
+                                        <g>
+                                            <g id="Capa_1-2">
+                                                <path class="bus-st0" d="M185.1,116c0,21.3-0.1,42.6,0,64c0.1,10.8-3.1,20.2-10,28.4c-1.3,1.5-2,3.4-1.9,5.4c0.1,6.7,0.1,13.3,0,20    c-0.1,8.3-5,13.1-13.3,13.1c-3.5,0-7,0.1-10.5,0c-5.3-0.3-9.7-4.1-10.6-9.3c-0.3-1.8-0.6-3.6-0.6-5.4    c-0.3-11.3-0.3-11.3-11.4-11.3c-24.7,0-49.3,0.1-74-0.1c-4,0-5.8,0.8-5.4,5.2c1.2,14.1-1.2,22-20.8,21.2    c-9.4-0.4-15.2-7.3-15-15.2c0-2.2-0.1-4.3,0-6.5c0.4-8.5,0.4-16.5-5.8-23.9c-5-5.9-5.5-14.2-5.5-21.8c-0.2-42.1-0.4-84.3,0-126.4    c0.3-26.7,12.2-42.2,42-48.7c12.3-2.7,24.6-2.8,36.9-4c14.5-1.5,28.9,0,43.2,0.8c16.6,0.9,33.1,4,47,14.6    c7.7,5.9,11.6,14,14.3,23.2c2.2,7.9,1.4,15.8,1.5,23.7C185.3,80.7,185.1,98.3,185.1,116z"/>
+                                                <path class="bus-st1" d="M93,111.9c-21,0-42-0.2-62.9,0.1c-4.9,0.1-5.8-1.5-5.7-6c0.3-17.6,0.3-35.3,0-52.9c-0.1-4.5,2-4.3,5.1-4.3    c30,0.1,60,0.1,89.9,0c12.3,0,24.6,0.1,37-0.1c3.3,0,4.6,0.6,4.6,4.4c-0.2,18.1-0.2,36.3,0,54.4c0,3.3-0.7,4.5-4.4,4.5    C135.3,111.7,114.1,111.9,93,111.9z"/>
+                                                <path class="bus-st1" d="M162.1,168.5c-0.1,9.4-8.7,18.7-17.2,18.6s-17.1-9.7-16.4-19.1c0.9-12.2,8-18.6,17.3-18.7    C154.3,149.2,161.9,158.3,162.1,168.5z"/>
+                                                <path class="bus-st1" d="M24.3,165.9c-0.3-11.4,8.8-18.6,16.8-18.4c8.6,0.2,16.3,8.9,16.4,19.2c0.1,9.6-8.5,18.7-17.1,18.5    C31.5,185,24.3,176.4,24.3,165.9z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                            </div>
+    
+                            <div class="labelDetailContainer" *ngIf="!lineasActive">
+                                <span class="labelsMenu2">Lineas</span>
+                            </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <ion-grid id="gridLineasRutas">
+            <ion-row>
+                <ion-col col-12>
+                    <ion-searchbar id="sbLineasRutas" (keydown)="onKeyEnterRutaLinea($event)" (ionInput)="actualizarListado()" [(ngModel)]="criterioBusqueda" (ionFocus)="onFocusSearchBar()" (ionBlur)="onBlurSearchBar()" showCancelButton="false" mode="md" animated="true"
+                        placeholder="Rutas y Líneas">
+                    </ion-searchbar>
+                    <div class="btn-search" [ngStyle]="{'background': appLayer.color}" (click)="clickObtenerRutasLineas()" ><img src="assets/movilidad/iconos/buscar.svg"></div>
+                </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="autocompleteItems.length != 0">
+                <ion-col>
+                    <ion-scroll id="scroll" scrollY="true">
+                        <ion-list *ngIf="criterioBusqueda.trim().length > 0" scroll="true" class="listaDir listAutocompletado">
+                            <div style="padding-top: 5px; padding-bottom: 5px;">
+                                <ion-item *ngFor="let item of autocompleteItems" (click)="seleccionarItem(item,1)" style="border-bottom: 1px solid #ccc;">
+                                    <span class="labelLisDir">
+                                    <img src="assets/movilidad/iconos/marcadorMap.png" [ngStyle]="{'color': appLayer.color}" style="width:10px; float:Left; margin-left: 5px"> {{ item.codigo }} - {{ item.descripcion }}</span> </ion-item>
+                            </div>
+                        </ion-list>
+                    </ion-scroll>
+                </ion-col>
+
+            </ion-row>
+
+        </ion-grid>
+
+        <ion-card *ngIf="showDetalle && autocompleteItems.length == 0 && criterioBusqueda.trim().length > 0" class="cardDetalle2">
+            <ion-card-header class="headerDetalle">
+                <ion-grid>
+                    <ion-row class="rowBorder">
+                        <ion-col col-auto>
+                            <img src="{{imgDetalle}}" style="height: 20px; width: auto;" />
+                        </ion-col>
+                        <ion-col col-6 wider>
+                            <div class="labelHeader">{{txtDetalle}}</div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+
+            <ion-scroll scrollY="true">
+                <div *ngFor="let item of rutasLineas">
+                    <detalle-ruta (mostrarRuta)="mostrarRuta($event)" [color]="appLayer.color" [ruta]="item">
+
+                    </detalle-ruta>
+                </div>
+            </ion-scroll>
+
+        </ion-card>
+    </div>
+
+</ion-content>

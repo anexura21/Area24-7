@@ -1,3 +1,5 @@
+import { MapaDirective } from './directives/movilidad/mapa.directive';
+import { ContenidoMapaDirective } from './directives/movilidad/contenido-mapa.directive';
 import { PipesModule } from './pipes/pipes.module';
 import { ImageResizer } from '@ionic-native/image-resizer/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
@@ -96,7 +98,7 @@ const getConfig = () => {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MapaDirective, ContenidoMapaDirective],
   entryComponents: [AppComponent],
   imports: [BrowserModule,
   IonicModule.forRoot(getConfig()),

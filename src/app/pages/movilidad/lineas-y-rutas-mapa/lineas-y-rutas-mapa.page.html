@@ -1,0 +1,11 @@
+<ion-header>
+  <barra-navegabilidad [titulo]="titulo" [color]="appLayer.color"></barra-navegabilidad>
+</ion-header>
+
+<!-- <layer-manager [app]="appLayer"></layer-manager> -->
+
+<ion-content mapa>
+  <div contenido-mapa>
+      <autocompletado-lineas-rutas (responseAutocompletado)="onResponseAutocompletado($event)" [criterioBusqueda]="criterioBusqueda" [appLayer]="appLayer"></autocompletado-lineas-rutas>
+  </div>
+</ion-content>

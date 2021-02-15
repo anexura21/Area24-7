@@ -1,0 +1,541 @@
+<ion-header>
+  <barra-navegabilidad
+      [titulo]="titulo"
+      [color]="appLayer.color"
+  ></barra-navegabilidad>
+</ion-header>
+
+<!-- <layer-manager [app]="appLayer"></layer-manager> -->
+
+<ion-content mapa>
+  <div contenido-mapa>
+      <!-- Menu filtros -->
+      <div class="divMenu" *ngIf="showMenu" style="width: 100%">
+          <ion-grid
+              style="width: 100%; margin: 0 auto; padding:0px; overflow-x: scroll; display: flex;"
+          >
+              <ion-row style="overflow-x: scroll;">
+                  <ion-col
+                      col-2
+                      style="display: inline;"
+                      text-center
+                      id="2"
+                  >
+                      <div (click)="onClickRutas()" id="rutasCard" style="margin-left: 6px;">
+                          <div class="imgDetailContainer">
+                              <svg
+                                  xmln="http://www.w3.org/2000/svg"
+                                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  version="1.1"
+                                  id="Capa_1"
+                                  x="0px"
+                                  y="0px"
+                                  viewBox="0 0 63.8 55.6"
+                                  style="enable-background:new 0 0 63.8 55.6;"
+                                  xml:space="preserve"
+                                  class="iconSvg"
+                              >
+                                  <style type="text/css">
+                                      .ruta-st0{fill:'{{appLayer.color}}';}
+                                      .ruta-st1{fill:'{{appLayer.color}}';}
+                                      .ruta-st2{fill:'{{appLayer.color}}';}
+                                      .ruta-st3{fill:#FCFCFC;}
+                                  </style>
+                                  <title>Recurso 18</title>
+                                  <g>
+                                      <g id="Capa_1-2">
+                                          <path
+                                              class="ruta-st0"
+                                              d="M19,55.6C13,45.3,7,36.1,1.9,26.4C-2.2,18.5,0.6,8.8,7.5,3.7c7.2-5.2,17.1-5,24,0.7c6.7,5.7,9,15.1,4.7,22.8    C31,36.6,25.2,45.5,19,55.6z"
+                                          />
+                                          <path
+                                              class="ruta-st0"
+                                              d="M58.3,28.7c0,6.4,0,12.7,0,19.1c0,4.6-0.8,4.9-5,2.6c-1.2-2-0.4-4.1-0.6-6.2c0-3.6,0-7.2,0-9.3    c-0.3,2.1,0.1,5.7,0,9.3c-0.2,2.1,0.4,4.3-0.4,6.3c-3.4,2.9-5,1.5-5.1-2.3c-0.1-5.3,0.2-10.6,0.2-16c0-1.6,0.6-3.6-2.5-2.8    c-1.6,0.4-2.3-1.1-2.7-2.5c-1-3.9,1.4-11.3,4.9-13.4c3.7-2.4,8.6-2.3,12.1,0.4c3.3,2.4,5.5,10.2,4.1,13.7c-0.8,2-2.2,2.5-4,1.1    C58.2,26.5,59.4,26.5,58.3,28.7z"
+                                          />
+                                          <path
+                                              class="ruta-st1"
+                                              d="M57.1,5.6c-0.2,2.6-1.4,4.3-4,4.5S48.7,9,48.5,6.4s1.1-4.7,4.1-4.7C55.3,1.6,56.7,3.2,57.1,5.6z"
+                                          />
+                                          <path
+                                              class="ruta-st2"
+                                              d="M53,44.3c0.1,2,0.2,4,0.3,6l-1,0.1c0-2.1,0-4.1,0-6.2C52.5,43.7,52.7,43.8,53,44.3z"
+                                          />
+                                          <path
+                                              class="ruta-st3"
+                                              d="M26.2,18.5c-0.2,3.7-3.1,6.8-6.9,7.1c-3.7,0.1-6.6-2.9-6.7-6.9s2.7-6.9,6.6-7C23,11.7,26,14.7,26.2,18.5z"
+                                          />
+                                          <path
+                                              class="ruta-st2"
+                                              d="M53,44.3h-0.4h-0.4V33.7H53V44.3z"
+                                          />
+                                          <path
+                                              class="ruta-st2"
+                                              d="M45.6,29.2c0.7-0.6,1.1-1.5,1-2.4c-0.1-0.8-0.1-1.6,0-2.4c0,0,0.9-0.4,0.8,1.3s0,0.6,0,0.6v4"
+                                          />
+                                          <path
+                                              class="ruta-st2"
+                                              d="M58.2,24.5V28l0.3,0.5l0.3-1.2V25c0-0.6-0.4-0.5-0.4-0.5"
+                                          />
+                                      </g>
+                                  </g>
+                              </svg>
+                          </div>
+                          <div class="labelDetailContainer">
+                              <span
+                                  *ngIf="txtRutas"
+                                  class="labelsMenu"
+                                  [ngStyle]="{ color: appLayer.color }"
+                                  >{{ txtRutas.nombre }}</span
+                              >
+                          </div>
+                      </div>
+                  </ion-col>
+
+                  <ion-col col-1 style="display: inline;">
+                      <img
+                          src="assets/movilidad/iconos/separador.png"
+                          class="separador"
+                      />
+                  </ion-col>
+
+                  <ion-col
+                      col-2
+                      style="display: inline;"
+                      text-center
+                      id="2"
+                  >
+                      <div (click)="onClickLineas()" id="lineaCard">
+                          <div class="imgDetailContainer">
+                              <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  version="1.1"
+                                  id="Capa_1"
+                                  x="0px"
+                                  y="0px"
+                                  viewBox="0 0 185.2 247.2"
+                                  style="enable-background:new 0 0 185.2 247.2;"
+                                  xml:space="preserve"
+                                  class="iconSvg"
+                              >
+                                  <style type="text/css">
+                                      .bus-st0{fill:'{{appLayer.color}}';}
+                                      .bus-st1{fill:#FFFFFF;}
+                                  </style>
+                                  <title>Recurso 1</title>
+                                  <g>
+                                      <g id="Capa_1-2">
+                                          <path
+                                              class="bus-st0"
+                                              d="M185.1,116c0,21.3-0.1,42.6,0,64c0.1,10.8-3.1,20.2-10,28.4c-1.3,1.5-2,3.4-1.9,5.4c0.1,6.7,0.1,13.3,0,20    c-0.1,8.3-5,13.1-13.3,13.1c-3.5,0-7,0.1-10.5,0c-5.3-0.3-9.7-4.1-10.6-9.3c-0.3-1.8-0.6-3.6-0.6-5.4    c-0.3-11.3-0.3-11.3-11.4-11.3c-24.7,0-49.3,0.1-74-0.1c-4,0-5.8,0.8-5.4,5.2c1.2,14.1-1.2,22-20.8,21.2    c-9.4-0.4-15.2-7.3-15-15.2c0-2.2-0.1-4.3,0-6.5c0.4-8.5,0.4-16.5-5.8-23.9c-5-5.9-5.5-14.2-5.5-21.8c-0.2-42.1-0.4-84.3,0-126.4    c0.3-26.7,12.2-42.2,42-48.7c12.3-2.7,24.6-2.8,36.9-4c14.5-1.5,28.9,0,43.2,0.8c16.6,0.9,33.1,4,47,14.6    c7.7,5.9,11.6,14,14.3,23.2c2.2,7.9,1.4,15.8,1.5,23.7C185.3,80.7,185.1,98.3,185.1,116z"
+                                          />
+                                          <path
+                                              class="bus-st1"
+                                              d="M93,111.9c-21,0-42-0.2-62.9,0.1c-4.9,0.1-5.8-1.5-5.7-6c0.3-17.6,0.3-35.3,0-52.9c-0.1-4.5,2-4.3,5.1-4.3    c30,0.1,60,0.1,89.9,0c12.3,0,24.6,0.1,37-0.1c3.3,0,4.6,0.6,4.6,4.4c-0.2,18.1-0.2,36.3,0,54.4c0,3.3-0.7,4.5-4.4,4.5    C135.3,111.7,114.1,111.9,93,111.9z"
+                                          />
+                                          <path
+                                              class="bus-st1"
+                                              d="M162.1,168.5c-0.1,9.4-8.7,18.7-17.2,18.6s-17.1-9.7-16.4-19.1c0.9-12.2,8-18.6,17.3-18.7    C154.3,149.2,161.9,158.3,162.1,168.5z"
+                                          />
+                                          <path
+                                              class="bus-st1"
+                                              d="M24.3,165.9c-0.3-11.4,8.8-18.6,16.8-18.4c8.6,0.2,16.3,8.9,16.4,19.2c0.1,9.6-8.5,18.7-17.1,18.5    C31.5,185,24.3,176.4,24.3,165.9z"
+                                          />
+                                      </g>
+                                  </g>
+                              </svg>
+                          </div>
+                          <div class="labelDetailContainer">
+                              <span
+                                  *ngIf="txtLineas"
+                                  class="labelsMenu"
+                                  style="margin-left: 0px; margin-top: 0px;"
+                                  [ngStyle]="{ color: appLayer.color }"
+                                  >{{ txtLineas.nombre }}</span
+                              >
+                          </div>
+                      </div>
+                  </ion-col>
+
+                  <ion-col col-1 style="display: inline;">
+                      <img
+                          src="assets/movilidad/iconos/separador.png"
+                          class="separador"
+                      />
+                  </ion-col>
+
+                  <!--
+              <div
+                  text-center
+                  id="3"
+                  style="min-width: 20%; margin-right: 1rem; display: inline;"
+              >
+                  <div (click)="onClickBikes()" id="bikeCard">
+                      <div center class="imgDetailContainer">
+                          <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1"
+                              id="Capa_1"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 29.8 26.3"
+                              style="enable-background:new 0 0 29.8 26.3;"
+                              xml:space="preserve"
+                              class="iconSvg"
+                          >
+                              <style type="text/css">
+                                  .bike-st0{fill:{{appLayer.color}};}
+                              </style>
+                              <title>enCiclaIcon</title>
+                              <g id="XMLID_1_">
+                                  <g>
+                                      <path
+                                          class="bike-st0"
+                                          d="M29.4,16.4c0.4,0.5,0.4,1.2-0.1,1.6c-0.2,0.2-0.5,0.3-0.8,0.3c-0.3,0-0.7-0.1-0.9-0.4c-0.3-0.4-0.7-0.7-1.1-1    c-0.4-0.3-0.9-0.4-1.3-0.5c-0.7-0.1-1.4,0-2,0.3l-0.8-2.2c0.4-0.2,0.9-0.3,1.3-0.4c0.3-0.1,0.7-0.1,1-0.1c1.2,0,2.3,0.3,3.2,0.9    C28.5,15.4,29,15.8,29.4,16.4L29.4,16.4C29.4,16.4,29.4,16.4,29.4,16.4z"
+                                      />
+                                      <path
+                                          class="bike-st0"
+                                          d="M29.1,23.1c0.3,0.4,0.2,1-0.2,1.4c-0.6,0.6-1.4,1.1-2.2,1.4c-0.9,0.3-1.9,0.5-2.8,0.3    c-2.6-0.3-4.7-2.3-5.2-4.8c-0.1-0.3-0.1-0.6-0.1-1c0,0,0-0.1,0-0.1c0-0.6,0.1-1.2,0.2-1.8c0.4-1.4,1.3-2.6,2.4-3.4l0.8,2.1l0.1,0    c0,0,0,0.1,0,0.1l0,0.1c-0.2,0.2-0.4,0.4-0.6,0.7c-0.2,0.3-0.4,0.6-0.4,1c-0.1,0.4-0.2,0.8-0.1,1.2c0,0.2,0,0.4,0,0.5    c0.3,1.6,1.7,2.8,3.3,3c0.1,0,0.3,0,0.5,0c0.5,0,1.1-0.1,1.6-0.3c0.4-0.2,0.8-0.5,1.1-0.8c0,0,0,0,0,0    C28,22.4,28.8,22.6,29.1,23.1z"
+                                      />
+                                      <path
+                                          class="bike-st0"
+                                          d="M16.4,18.1l4.1-5.8L20,10.9c-0.1-0.2-0.1-0.4,0-0.6c0.1-0.2,0.3-0.4,0.5-0.5c-0.2-0.4-0.3-0.7-0.4-0.9    c-0.1-0.2-0.3-0.2-0.4-0.2l-0.9,0.3c0-0.1,0-0.1,0-0.2v0c0-0.1,0-0.2-0.1-0.3l0.8-0.3c0.4-0.1,0.9,0.1,1,0.5    c0.1,0.1,0.1,0.3,0.2,0.5c0-0.1-0.4-1.1,1-1.3s2.6-0.3,2.6-0.3l0.2,4.6c-0.1,0-1.6,0.2-2.2,0.2c-0.4,0.1-0.8-0.1-1.1-0.5    c0,0-0.3-0.8-0.6-1.6c-0.1,0.1-0.2,0.1-0.2,0.2c0,0,0,0.1,0,0.1c0,0.1,0,0.1,0,0.1l2.4,6.2l1.6,2.6l0-0.1c0.3,0,0.6,0.3,0.6,0.6    c0,0.4-0.3,0.6-0.6,0.6c-0.4,0-0.6-0.3-0.6-0.6c0-0.2,0.1-0.3,0.2-0.4L22.4,17L21,13.7l-3.3,4.9L16,21.3L16.4,18.1z"
+                                      />
+                                      <path
+                                          class="bike-st0"
+                                          d="M13.4,1.9C13.5,3,12.7,4,11.6,4.1h-0.2c-1,0-1.9-0.8-2-1.9C9.3,1.1,10.1,0.1,11.3,0h0.2    C12.5,0.1,13.3,0.9,13.4,1.9z"
+                                      />
+                                      <path
+                                          class="bike-st0"
+                                          d="M13.2,18.6l-0.5,3.6l-0.1,0.3c-0.9-0.1-2-0.3-3-0.4c-1.4-0.2-2.7-0.4-3.1-0.4c-0.9,0-1.6-0.7-1.6-1.6    c0-0.8,0.7-1.5,1.5-1.5l3.6,0l2.4,0l0,0H13.2z"
+                                      />
+                                      <path
+                                          class="bike-st0"
+                                          d="M17.7,7.9C18,8,18.3,8.3,18.3,8.7c0,0.5-0.4,0.9-0.9,1h-0.1c-0.1,0-0.2,0-0.3-0.1c0,0-0.1,0-0.1,0l-5-2.3    l-0.8,4.8l4.5,2.2h0.1c0.4,0.2,0.6,0.6,0.6,0.9c0,0.1,0,0.1,0,0.2v0.1L16,18.1l-0.6,4.4c0,0.6-0.5,1.1-1.1,1.2h-0.1    c-0.6,0-1.1-0.5-1.2-1.1c0-0.1,0-0.2,0-0.3l0.8-5.9l-5.3-2.6l-0.2-0.1c-0.3-0.2-0.5-0.5-0.6-0.9c0-0.1,0-0.1,0-0.2v-0.2l1.3-6.9    V5.3c0.1-0.5,0.5-0.8,1-0.9h0.1h0c0.1,0,0.3,0,0.4,0.1l0.2,0.1L17.7,7.9z"
+                                      />
+                                      <path
+                                          class="bike-st0"
+                                          d="M10.6,23.1c0.3,0.5,0.2,1.1-0.3,1.4c-0.6,0.6-1.4,1.1-2.2,1.4c-0.3,0.1-0.6,0.2-1,0.3c-3.3,0.6-6.4-1.5-7-4.7    c-0.1-0.3-0.1-0.6-0.1-1c0,0,0-0.1,0-0.1c0-0.6,0.1-1.2,0.2-1.8c0.6-2.3,2.6-4.1,5-4.4c0.3-0.1,0.7-0.1,1-0.1    c1.2,0,2.3,0.3,3.2,0.9c0.6,0.4,1.1,0.9,1.5,1.4c0,0,0.1,0,0.1,0.1c0.4,0.5,0.4,1.2-0.1,1.6c-0.2,0.2-0.5,0.3-0.8,0.3    c-0.3,0-0.7-0.1-0.9-0.4c-0.3-0.4-0.7-0.7-1.1-1c-0.4-0.3-0.8-0.4-1.3-0.5c-0.7-0.1-1.4,0-2.1,0.3c-0.1,0.1-0.3,0.1-0.4,0.2    c-0.5,0.3-1,0.7-1.3,1.2c-0.2,0.3-0.3,0.6-0.4,1c-0.1,0.4-0.2,0.8-0.1,1.2c0,0.2,0,0.4,0,0.5c0.3,1.6,1.7,2.8,3.3,3    c0.2,0,0.3,0,0.5,0c0.5,0,1.1-0.1,1.6-0.3c0.4-0.2,0.8-0.5,1.2-0.8c0,0,0,0,0,0c0.2-0.1,0.4-0.2,0.6-0.2    C9.9,22.5,10.3,22.8,10.6,23.1z"
+                                      />
+                                  </g>
+                                  <g></g>
+                              </g>
+                          </svg>
+                      </div>
+
+                      <div class="labelDetailContainer">
+                          <span
+                              *ngIf="txtCiclovias"
+                              class="labelsMenu"
+                              style="margin-left: 4px; margin-top: 0px;"
+                              [ngStyle]="{ color: appLayer.color }"
+                              >{{ txtCiclovias.nombre }}</span
+                          >
+                      </div>
+                  </div>
+              </div> 
+
+              <div style="display: inline;">
+                  <img
+                      src="assets/movilidad/iconos/separador.png"
+                      class="separador"
+                  />
+              </div> -->
+
+                  <ion-col
+                      col-2
+                      style="display: inline;"
+                      text-center
+                      id="4"
+                  >
+                      <div (click)="onClickPuntos()" id="puntosCard">
+                          <div
+                              style="margin-left: -3px;"
+                              class="imgDetailContainer"
+                          >
+                              <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  version="1.1"
+                                  id="Capa_1"
+                                  x="0px"
+                                  y="0px"
+                                  viewBox="0 0 44.2 70.3"
+                                  style="enable-background:new 0 0 44.2 70.3;"
+                                  xml:space="preserve"
+                                  class="iconSvg"
+                              >
+                                  <style type="text/css">
+                                      .card-st2{fill:#FEFEFE;}
+                                      .card-st1{fill: '{{appLayer.color}}'; }
+                                  </style>
+                                  <title>Recurso 5</title>
+                                  <g id="Capa_1-2">
+                                      <g id="XMLID_1_">
+                                          <g>
+                                              <path
+                                                  class="card-st2"
+                                                  d="M27.1,8.4c0-0.8,0.2-1.2,1.1-1.2s1.2,0.3,1.2,1.1c-0.1,1.3,0,2.5,0,3.8c0,1.1,0,2.2,0,3.3     c0,0.8-0.2,1.2-1.1,1.2s-1.2-0.3-1.2-1.1C27.1,13.1,27.1,10.8,27.1,8.4z"
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M29.3,28.7c0,1.2,0,2.4,0,3.6c0,1-0.5,1.1-1.2,1.1c-0.8,0-1-0.3-1-1c0-2.3,0-4.6,0-6.9c0-1,0.4-1.1,1.2-1.1     s1.1,0.3,1,1C29.3,26.4,29.3,27.6,29.3,28.7z"
+                                              />
+                                              <path
+                                                  class="card-st1"
+                                                  d="M28.7,55.4c0.7,0,1,0.2,1.1,1c0.2,2.4,1.7,3.8,3.9,4.6c0.6,0.2,1.1,0.6,1.4-0.2c0.3-0.6,0.1-1.3-0.5-1.7     c0,0-0.1-0.1-0.2-0.1c-2.5-0.7-3.1-2.6-2.8-4.8c0.2-1.8-0.5-3.6-1.9-4.6c-1.5-1.3-2.8-2.7-4.2-4.1c-1.2-1.2-1.6-3-0.9-4.5     c0.8-2.3,1.6-2.4,3.3-0.8c0.9,0.8,1.7,1.7,2.5,2.6c1.4,1.9,3.3,1.3,5.1,1.3c1.1,0,1-1.1,1-1.9c0-3,0-6,0-9l0.4-0.3     c2,2.1,4,4.2,6.1,6.3c0.8,1,1.2,2.2,1.1,3.5c0,8.6,0,17.2,0,25.8c0,1.4-0.3,1.8-1.7,1.8c-5-0.1-10-0.1-15.1,0     c-1.4,0-1.9-0.4-1.7-1.8c0.1-0.7-0.1-1.5,0-2.2c0.2-2-0.2-3.3-2.5-3.8c-2.1-0.4-3.5-4.7-2.4-6.7c0.2-0.4,0.6-0.4,0.9-0.4     C24,55.4,26.3,55.4,28.7,55.4z"
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M24.4,27.8c0.2,1-0.5,1-1.2,1c-1,0-1-0.5-1.1-1.2c0-1,0.5-1,1.2-1.1C24.3,26.5,24.5,27,24.4,27.8z"
+                                              />
+                                              <path
+                                                  class="card-st1"
+                                                  d="M27.1,32.3c0,0.7,0.2,1,1,1c0.8,0,1.2-0.1,1.2-1.1c0-1.2,0-2.4,0-3.6c0-1.1,0-2.2,0-3.3c0.1-0.7-0.2-1-1-1     s-1.2,0.1-1.2,1.1C27.1,27.7,27.1,30,27.1,32.3z M23.2,18.9c0.6,0,1.3,0.2,1.2-0.9c0.2-0.8-0.4-0.9-1-0.9c-0.6,0-1.2-0.2-1.2,0.8     C22.1,18.7,22.4,19,23.2,18.9z M24.4,13c0-1-0.5-0.9-1.2-0.9c-0.7,0-1.1,0.1-1.1,1c0,0.9,0.6,0.8,1.4,0.8     C24.1,14.1,24.4,13.7,24.4,13z M23.3,23.9c0.9,0,1.1-0.3,1.1-1.2s-0.4-1.2-1.2-1.1c-0.9-0.2-1.1,0.3-1.1,1.2     C22.1,23.7,22.4,23.9,23.3,23.9z M24.4,32.4c0.1-0.8-0.5-1-1.1-1c-0.6,0-1.2,0-1.2,0.9c0,0.9,0.5,1,1.1,1     C23.8,33.3,24.5,33.4,24.4,32.4z M23.2,28.8c0.7,0,1.4,0,1.2-1c0.1-0.8-0.1-1.3-1-1.2c-0.8,0.1-1.2,0.1-1.2,1.1     C22.2,28.3,22.2,28.8,23.2,28.8z M23.4,9.5c0.9,0,1.1-0.4,1-1.3c0.2-1-0.5-0.9-1.2-1c-1-0.1-1.1,0.5-1.1,1.2     C22.1,9.4,22.6,9.5,23.4,9.5z M28.2,7.2c-0.9,0-1.1,0.4-1.1,1.2c0,2.4,0,4.8,0,7.1c0,0.9,0.3,1.1,1.2,1.1s1.1-0.4,1.1-1.2     c0-1.1,0-2.2,0-3.3c0-1.3,0-2.5,0-3.8C29.4,7.4,29.1,7.2,28.2,7.2z M34.3,40.9c0,0.5,0.3,1.1-0.4,1.3c-0.6,0.2-1.2,0.1-1.6-0.4     c-1.3-1.3-2.7-2.6-4-4c-1.3-1.4-2.4-1.2-3.8,0c-2.6,2-3,5.7-1,8.3c0.3,0.3,0.6,0.7,0.9,0.9c1.8,1.6,3.5,3.5,5.2,5.3     c0.1,0.1,0,0.3,0,0.5c-0.5,0.5-1.3,0.3-1.9,0.3c-7.7,0-15.3,0-23,0c-1.3,0-2.1-0.2-2.1-1.8c0-11.8,0-23.6,0-35.4     C7,17.6,11,17.3,14,14.1s3.9-7.4,1.4-11.9c5.9,0,11.4,0,17,0c1.5,0,1.9,0.5,1.9,2C34.3,16.5,34.3,28.7,34.3,40.9z"
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M23.5,13.9c-0.7,0-1.3,0.1-1.4-0.8c0-0.9,0.4-1,1.1-1c0.7,0,1.2-0.1,1.2,0.9C24.4,13.7,24.1,14.1,23.5,13.9z     "
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M24.4,8.2c0.1,0.9-0.1,1.3-1,1.3c-0.8,0-1.3-0.1-1.2-1.1c0-0.8,0.1-1.3,1.1-1.2C23.9,7.2,24.6,7.2,24.4,8.2z     "
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M23.4,17.1c0.6,0,1.2,0.1,1,0.9c0.1,1.1-0.7,0.9-1.2,0.9c-0.7,0.1-1-0.2-1-1C22.2,17,22.8,17.1,23.4,17.1z"
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M23.2,21.6c0.8-0.1,1.2,0.2,1.2,1.1s-0.2,1.2-1.1,1.2c-0.9,0-1.2-0.2-1.2-1.1C22.1,21.9,22.3,21.5,23.2,21.6     z"
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M23.3,31.5c0.6,0,1.2,0.1,1.1,1c0.1,0.9-0.6,0.8-1.2,0.9c-0.6,0-1.1-0.1-1.1-1     C22.1,31.4,22.7,31.5,23.3,31.5z"
+                                              />
+                                              <path
+                                                  class="card-st1"
+                                                  d="M8.1,5.3C8.5,5.4,9.2,5.4,9,4.8C8.7,3.7,7.4,3.5,6.7,2.8c-0.5,1-2,0.7-2.3,2c0,0,0,0.1,0,0.1     C4.1,5.7,4.5,6.5,5.2,6.8c1.5,0.7,1.3,1.7,1,3.1C5.9,9.5,5.7,9.4,5.6,9.2c-0.3-0.8-0.9-1-1.3-0.5C3.8,9.3,4.6,9.7,4.9,10     c1,0.8,1.9,1.3,3.2,0.4C8.9,10,9.4,9.3,9.4,8.5c0-0.6-0.3-1.6-1.2-1.7C6.4,6.6,6.9,5.4,6.9,4.3C7.8,4.3,7.7,5.2,8.1,5.3z M7.4,0     c2.9,0,7.3,3.3,6.6,7.3c0,3.8-3.1,7-6.9,7.1c-3.8,0-6.8-3.2-7.1-7.2C-0.2,4,3.1,0,7.4,0z"
+                                              />
+                                              <path
+                                                  class="card-st2"
+                                                  d="M8.2,6.8c0.9,0.1,1.2,1.1,1.2,1.7C9.4,9.3,8.9,10,8.2,10.4c-1.3,0.9-2.3,0.4-3.2-0.4     C4.6,9.7,3.8,9.3,4.3,8.8c0.4-0.5,1.1-0.3,1.3,0.5c0.1,0.2,0.3,0.3,0.6,0.6c0.3-1.3,0.5-2.4-1-3.1C4.5,6.5,4.1,5.7,4.3,4.9     c0,0,0-0.1,0-0.1c0.3-1.3,1.8-1,2.3-2c0.8,0.7,2,0.9,2.3,1.9c0.2,0.7-0.5,0.6-0.9,0.5c-0.4-0.1-0.3-1-1.2-1     C6.9,5.4,6.4,6.6,8.2,6.8z"
+                                              />
+                                          </g>
+                                          <g></g>
+                                      </g>
+                                  </g>
+                              </svg>
+                          </div>
+                          <div class="labelDetailContainer">
+                              <span
+                                  *ngIf="txtpuntos"
+                                  class="labelsMenu"
+                                  style="margin-right: 6px;"
+                                  [ngStyle]="{ color: appLayer.color }"
+                                  >{{ txtpuntos.nombre }}</span
+                              >
+                          </div>
+                      </div>
+                  </ion-col>
+
+                  <!-- Ciclo parqueaderos -->
+                  <ion-col col-1 style="display: inline;">
+                      <img
+                          src="assets/movilidad/iconos/separador.png"
+                          class="separador"
+                      />
+                  </ion-col>
+
+                  <ion-col col-3 style="display: inline;" text-center id="5">
+                      <div
+                          (click)="onClickCicloParqueaderos()"
+                          id="cicloParqueaderosCard"
+                      >
+                          <div
+                              style="margin-left: 3px;"
+                              class="imgDetailContainer"
+                          >
+                              <svg
+                                  id="Capa_1"
+                                  data-name="Capa 1"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 268 268"
+                                  x="0px"
+                                  y="0px"
+                                  style="enable-background:new 0 0 44.2 70.3;"
+                                  xml:space="preserve"
+                                  class="iconSvg"
+                              >
+                                  <defs>
+                                      <style>
+                                          .cls-1 {
+                                              fill:'{{appLayer.color}}';
+                                          }
+                                      </style>
+                                  </defs>
+                                  <title>cicloparqueaderos</title>
+                                  <path
+                                      class="cls-1"
+                                      d="M38.57,197.47v22.88c0,.27,0,.52,0,.78H59.27c0-.27,0-.52,0-.78V197.47ZM64.24,71.06a22.32,22.32,0,0,0-20.73,2.74c-.5.35-1,.71-1.44,1.09a45.41,45.41,0,0,0-3.5,17.47v71.17H59.29V92.36a24.43,24.43,0,0,1,9.63-19.61ZM227,95.93,99.61,49.6A45.41,45.41,0,0,0,73.91,48L200.2,93.94a47.74,47.74,0,0,1,27.47,26,24.83,24.83,0,0,1,8.61,18.76v27h-4.73v29.7h4.73v25c0,.27,0,.52,0,.78H257c0-.27,0-.52,0-.78V138.7A45.64,45.64,0,0,0,227,95.93Z"
+                                  />
+                                  <path
+                                      class="cls-1"
+                                      d="M199.47,95.94,72,49.59A45.51,45.51,0,0,0,11,92.36v128c0,.27,0,.52,0,.78H31.69c0-.27,0-.52,0-.78v-25h177v25c0,.27,0,.52,0,.78H229.4c0-.27,0-.52,0-.78V138.7A45.63,45.63,0,0,0,199.47,95.94ZM31.72,165.66V92.36A24.77,24.77,0,0,1,65,69.07l127.42,46.34a24.85,24.85,0,0,1,16.32,23.29v27Z"
+                                  />
+                              </svg>
+                          </div>
+                          <div class="labelDetailContainer">
+                              <span
+                                  class="labelsMenu"
+                                  style="margin-right: 3px;"
+                                  [ngStyle]="{ color: appLayer.color }"
+                                  >Cicloparqueaderos</span
+                              >
+                          </div>
+                      </div>
+                  </ion-col>
+              </ion-row>
+              <!-- fin Ciclo parqueaderos -->
+              <!-- </div> -->
+          </ion-grid>
+      </div>
+
+      <div *ngIf="mostrarCampoBusqueda">
+          <!-- Barra de busqueda -->
+          <ion-grid>
+              <ion-row>
+                  <ion-col class="colsearch" (click)="clearValues()">
+                      <ion-searchbar
+                          id="sbDireccion"
+                          (keydown)="buscarDireccion($event)"
+                          [(ngModel)]="ubicacion.descripcion"
+                          (ionInput)="updateSearch()"
+                          type="text"
+                          mode="md"
+                          animated="true"
+                          placeholder="{{ ubicacion.txtPlaceholder }}"
+                      >
+                      </ion-searchbar>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+
+          <!-- Ubicaciones favoritas  -->
+          <ion-card
+              *ngIf="ubicacion.descripcion == '' || !ubicacion.descripcion"
+          >
+              <ubicaciones-favoritas
+                  [app]="appLayer"
+                  (onEstablecerUbicacion)="establecerUbicacion($event)"
+              ></ubicaciones-favoritas>
+          </ion-card>
+      </div>
+
+      <!-- Google predictions -->
+      <ion-list class="listaDir">
+          <ion-item
+              *ngFor="let item of autocompleteItems"
+              (click)="seleccionarPrediccion(item)"
+              style="border-bottom: 1px solid #ccc;"
+          >
+              <span class="labelLisDir"
+                  ><img
+                      src="assets/movilidad/iconos/marcadorMap.png"
+                      style="width:10px; float:Left; margin:0px .5rem"
+                  />
+                  {{ item.description }}</span
+              >
+          </ion-item>
+      </ion-list>
+
+      <!-- Detalle de la busqueda -->
+      <ion-card *ngIf="showDetalle" class="cardDetalle">
+          <ion-card-header class="headerDetalle">
+              <ion-grid>
+                  <ion-row class="rowBorder">
+                      <ion-col col-auto>
+                          <img
+                              [src]="imgDetalle"
+                              style="height: 20px; width: auto;"
+                          />
+                      </ion-col>
+                      <ion-col col-6 wider>
+                          <div class="labelHeader">{{ txtDetalle }}</div>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-card-header>
+          <ion-scroll scrollY="true">
+              <div *ngFor="let item of items">
+                  <detalle-ruta
+                      (mostrarRuta)="mostrarRuta($event)"
+                      [color]="appLayer.color"
+                      [ruta]="item"
+                  ></detalle-ruta>
+              </div>
+          </ion-scroll>
+      </ion-card>
+
+      <ion-card *ngIf="showPuntos" class="cardDetalle">
+          <ion-card-header class="headerDetalle">
+              <ion-grid>
+                  <ion-row class="rowBorder">
+                      <ion-col col-auto>
+                          <img
+                              [src]="imgDetalle"
+                              style="height: 20px; width: auto;"
+                          />
+                      </ion-col>
+                      <ion-col col-6 wider>
+                          <div class="labelHeader">{{ txtDetalle }}</div>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-card-header>
+          <ion-scroll scrollY="true">
+              <div *ngFor="let item of items; let i = index">
+                  <div style="text-align: left;">
+                      <ion-grid>
+                          <ion-row>
+                              <ion-col col-2>
+                                  <ion-checkbox
+                                      [(ngModel)]="item.checked"
+                                      (ionChange)="
+                                          checkMostrarRuta($event, item, i)
+                                      "
+                                      color="dark"
+                                  ></ion-checkbox>
+                              </ion-col>
+                              <ion-col col-10>
+                                  {{ item.descripcion }}
+                              </ion-col>
+                          </ion-row>
+                      </ion-grid>
+                  </div>
+              </div>
+          </ion-scroll>
+      </ion-card>
+  </div>
+
+  <!-- My location button -->
+  <div class="btn-buscar">
+      <!-- <ion-button
+          ion-fab
+          mini
+          right
+          (click)="onClickMyLocationButton($event)"
+          [ngStyle]="{ 'background-color': appLayer.color }"
+      >
+          <ion-icon name="locate"></ion-icon>
+      </ion-button> -->
+      <ion-fab horizontal="end" 
+          vertical="bottom" slot="fixed">
+        <ion-fab-button size="small" (click)="onClickMyLocationButton($event)"
+            [color]="appLayer.color" [ngStyle]="{'background-color': appLayer.color}">
+            <ion-icon name="locate"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+  </div>
+</ion-content>

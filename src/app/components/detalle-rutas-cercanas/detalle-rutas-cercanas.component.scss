@@ -1,0 +1,264 @@
+.detailContainer {
+    left: 13vw !important;
+    position: absolute !important;
+    margin: 20% auto;
+    display: block !important;
+    width: 75vw !important;
+    height: 75vh !important;
+    min-height: 300px;
+    border-radius: 6px;
+}
+
+.toolbar-background-md,
+.toolbar-background-ios {
+    background: transparent;
+}
+.bar-button-md[icon-only] ion-icon {
+    color: #ffffff;
+}
+.toolbar-title-md,
+.toolbar-title-ios {
+    color: #ffffff;
+}
+.icon-header {
+    border-radius: 50%;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    vertical-align: middle;
+}
+.imagen-modal {
+    width: 270px;
+    height: 170px;
+    border-radius: 6px;
+}
+.descripcion-modal {
+    line-height: 1.3;
+    font-size: 1.3rem;
+    z-index: 1;
+    display: block;
+    overflow-x: hidden;
+}
+.ubicacion-modal {
+    font-size: 1.5rem;
+    margin: 5px 0;
+    span {
+        color: var(--ion-color-gray);
+        font-size: 1.3rem;
+    }
+}
+.button-md,
+.button-ios {
+    background: var(--ion-color-Recórreme);
+    text-align: center;
+    border-radius: 6px;
+}
+.scroll-content {
+    overflow-y: none !important;
+}
+.toolbar-ios ion-title {
+    padding: 0;
+}
+
+.toolbar-ios,
+.toolbar-md {
+}
+
+.toolbar-title-ios {
+    text-align: left;
+    margin-left: 1.3rem;
+}
+.bar-button-default-ios {
+    color: #fff;
+}
+
+.titulo {
+    position: absolute;
+    top: 11px;
+    left: calc(5rem + 10px);
+}
+
+.iconFlecha {
+    color: #0060b6;
+    float: right;
+    filter: grayscale(100%);
+}
+
+.row-table {
+    margin: 10px auto;
+    width: 100%;
+    background-color: white;
+    font-weight: 400;
+}
+
+.labelsDetalle {
+    // color: #0060B6;
+    font-size: 12px;
+    margin-left: 4px;
+    font-weight: 500;
+}
+
+.labelsDes {
+    color: #9b9b9a;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.hideDetalle {
+    display: none;
+}
+
+#titleTable {
+    margin: 5px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#tableDetail {
+    height: 100%;
+    min-height: 200px;
+    background-color: rgba(244, 244, 244, 0.5);
+    border-radius: 6px;
+    padding: 10px;
+
+    #titulo {
+        font-size: 1.7rem;
+    }
+}
+
+#titleModal {
+    margin-bottom: 10px;
+}
+.detalle-ruta {
+    margin-left: 5%;
+    margin-bottom: 0%;
+    padding: 5px;
+    font-size: 1.2rem !important;
+}
+
+#iconEnCicla {
+    height: 130px;
+    margin: 0px auto;
+    position: absolute;
+    right: 30%;
+    margin-top: 10%;
+}
+
+.textBanner {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #707070;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin: 5px 0px;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.servicio {
+    display: flex;
+    flex-direction: row;
+    div {
+        margin-left: 10px;
+    }
+}
+
+#bicicletas {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2177");
+    width: 72px;
+    height: 48px;
+}
+
+#puestos {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2178");
+    width: 25px;
+    height: 48px;
+}
+
+.iconDetail {
+    background-size: cover;
+    background-position: center;
+    margin: 2rem auto;
+    margin-top: 0px;
+}
+
+.banner-icon,
+.banner-icon-civica {
+    width: 100%;
+    height: 10rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 30px 0px;
+}
+
+#civica {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2169");
+}
+
+#iconMetro {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2170");
+}
+
+#iconMetroCable {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2171");
+}
+
+#iconTranvia {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2173");
+}
+
+#iconMetroPlus {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2172");
+}
+
+#iconRutas {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2202");
+}
+
+#iconCicloParqueadero {
+    background-image: url("https://drive.google.com/uc?export=view&id=1sF68bkkGl4cJFV3_K2DRm9mAe-Oe7WSX");
+}
+
+.bannerManual {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2174");
+}
+
+.bannerAuto {
+    background-image: url("https://area247.metropol.gov.co/api/icono/2176");
+}
+
+#actionsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .detailContainer {
+        margin: 0% auto;
+        width: 80% !important;
+        height: 80vh !important;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .detailContainer {
+        left: 13vw !important;
+        position: absolute !important;
+        top: 0px;
+        margin: 0% auto;
+        width: 80% !important;
+        height: 80vh !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .detailContainer {
+        width: 70% !important;
+        height: 80vh !important;
+    }
+}

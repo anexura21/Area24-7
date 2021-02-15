@@ -1,0 +1,73 @@
+<ion-header>
+  <barra-navegabilidad
+      [titulo]="titulo"
+      [color]="appLayer.color"
+  ></barra-navegabilidad>
+</ion-header>
+
+<!-- <layer-manager [app]="appLayer"></layer-manager> -->
+
+<ion-content mapa>
+  <div contenido-mapa>
+      <!-- Barra de busqueda -->
+      <ion-grid>
+          <ion-row>
+              <ion-col class="colsearch" (click)="clearValues()">
+                  <ion-searchbar
+                      id="sbDireccion"
+                      (keydown)="buscarDireccion($event)"
+                      [(ngModel)]="ubicacion.descripcion"
+                      (ionInput)="updateSearch()"
+                      type="text"
+                      mode="md"
+                      animated="true"
+                      placeholder="{{ ubicacion.txtPlaceholder }}"
+                  >
+                  </ion-searchbar>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <!-- Ubicaciones favoritas  -->
+      <ion-card *ngIf="ubicacion.descripcion == '' || !ubicacion.descripcion">
+          <ubicaciones-favoritas
+              [app]="appLayer"
+              (onEstablecerUbicacion)="establecerUbicacion($event)"
+          ></ubicaciones-favoritas>
+      </ion-card>
+
+      <!-- Google predictions -->
+      <ion-list class="listaDir">
+          <ion-item
+              *ngFor="let item of autocompleteItems"
+              (click)="seleccionarPrediccion(item)"
+              style="border-bottom: 1px solid #ccc;"
+          >
+              <span class="labelLisDir"
+                  ><img
+                      src="assets/movilidad/iconos/marcadorMap.png"
+                      style="width:10px; float:Left; margin:0px .5rem"
+                  />
+                  {{ item.description }}</span
+              >
+          </ion-item>
+      </ion-list>
+  </div>
+
+  <!-- My location button -->
+  <!-- <my-location
+      [color]="appLayer.color"
+      [actionRadius]="appLayer.radius"
+      (clickMyLocationButton)="onClickMyLocationButton($event)"
+  ></my-location> -->
+
+  <div class="btn-buscar">
+    <ion-fab horizontal="end" 
+      vertical="bottom" slot="fixed">
+      <ion-fab-button size="small" (click)="onClickMyLocationButton($event)"
+          [color]="appLayer.color" [ngStyle]="{'background-color': appLayer.color}">
+          <ion-icon name="locate"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

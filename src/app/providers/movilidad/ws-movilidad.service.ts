@@ -46,7 +46,7 @@ export class WsMovilidadService {
       '/' +
       data.radio +
       '/' +
-      data.modosTransporte, this.options);
+      data.modosTransporte, { headers: this.options });
   }
 
   obtenerDisponibilidadEncicla(data: DisponibilidadEnciclaRequest) {
@@ -56,7 +56,7 @@ export class WsMovilidadService {
         CONFIG_ENV.REST_BASE_URL +
           '/rutas/encicla/disponibilidad/' +
           data.idEstacion,
-        this.options
+          { headers: this.options }
       );
   }
 
@@ -65,7 +65,7 @@ export class WsMovilidadService {
     return new Promise((resolve, reject) => {
       this
         .http
-          .get(CONFIG_ENV.REST_BASE_URL + '/rutas/encicla/disponibilidad/' + data.idEstacion, this.options)
+          .get(CONFIG_ENV.REST_BASE_URL + '/rutas/encicla/disponibilidad/' + data.idEstacion, { headers: this.options })
             .subscribe((result: any) => {
               resolve(result);
             }, error => {
@@ -77,7 +77,7 @@ export class WsMovilidadService {
   public obtenerRutasyLineas(data: any) {
     this.resetRequestOptions( 'application/json' );
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/rutas/lineas/' + data, this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/rutas/lineas/' + data, { headers: this.options });
   }
 
   public obtenerRutaLineaDetalle(tipo: any, id: any) {
@@ -85,7 +85,7 @@ export class WsMovilidadService {
     return this.http
       .get(
         CONFIG_ENV.REST_BASE_URL + '/rutas/lineas/' + id + '/' + tipo,
-        this.options
+        { headers: this.options }
       );
   }
 
@@ -94,7 +94,7 @@ export class WsMovilidadService {
     return this.http
       .get(
         CONFIG_ENV.REST_BASE_URL + '/rutas/autocompletado/' + data,
-        this.options
+        { headers: this.options }
       );
   }
 
@@ -110,7 +110,7 @@ export class WsMovilidadService {
     this.resetRequestOptions('application/x-www-form-urlencoded');
 
     return this.http
-      .post(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/add', body, this.options);
+      .post(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/add', body, { headers: this.options });
   }
 
   public updateListUbicaciones(id){
@@ -124,7 +124,7 @@ export class WsMovilidadService {
   public obtenerUbicacionesFavoritas(data: any) {
     this.resetRequestOptions('application/json');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/' + data, this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/' + data, { headers: this.options });
   }
 
   public eliminarUbicacionFavorita(data: any) {
@@ -133,7 +133,7 @@ export class WsMovilidadService {
     return this.http
       .delete(
         CONFIG_ENV.REST_BASE_URL + '/ubicaciones/delete/' + data,
-        this.options
+        { headers: this.options }
       );
   }
 
@@ -151,13 +151,13 @@ export class WsMovilidadService {
     const body = urlSearchParams.toString();
 
     return this.http
-        .put(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/update', body, this.options);
+        .put(CONFIG_ENV.REST_BASE_URL + '/ubicaciones/update', body, { headers: this.options });
   }
 
   obtenerPosiblesViajes(data) {
     this.resetRequestOptions('application/json;charset=UTF-8');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/viajes/' + data, this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/viajes/' + data, { headers: this.options });
   }
 
   obtenerPronosticoSiata(data) {
@@ -165,7 +165,7 @@ export class WsMovilidadService {
     // debugger;
     this.resetRequestOptions('application/json;charset=UTF-8');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/pronostico/' + data, this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/pronostico/' + data, { headers: this.options });
   }
 
   public obtenerHuellaCarbno(data: any) {
@@ -174,7 +174,7 @@ export class WsMovilidadService {
       .post(
         CONFIG_ENV.REST_BASE_URL + '/api/huellas/carbono/emision',
         data,
-        this.options
+        { headers: this.options }
       );
   }
 
@@ -192,6 +192,7 @@ export class WsMovilidadService {
       this.obtenerEquipamientos(),
       this.obtenerParques()
     ];
+    return forkJoin(obsList);
   }
 
   // servicio para consultar estaciones de encicla y ciclo rutas
@@ -201,7 +202,7 @@ export class WsMovilidadService {
       .get(
         // "http://104.42.236.218/ApiEstacionesEncicla/estaciones",
         CONFIG_ENV.REST_BASE_URL + '/rutas/encicla/',
-        this.options
+        { headers: this.options }
       );
       // .pipe( map (res => res['obj'].test));
   }
@@ -209,31 +210,31 @@ export class WsMovilidadService {
   obtenerPuntosEspacioPublico(){
     this.resetRequestOptions('application/json;charset=UTF-8');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/861', this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/861', { headers: this.options });
   }
 
   obtenerEstacionesSITVA(){
     this.resetRequestOptions('application/json;charset=UTF-8');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/863', this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/863', { headers: this.options });
   }
 
   obtenerEspaciosDeportivos(){
     this.resetRequestOptions('application/json;charset=UTF-8');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/864', this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/864', { headers: this.options });
   }
 
   obtenerEquipamientos(){
     this.resetRequestOptions('application/json;charset=UTF-8');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/881', this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/881', { headers: this.options });
   }
 
   obtenerParques(){
     this.resetRequestOptions('application/json;charset=UTF-8');
     return this.http
-      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/882', this.options);
+      .get(CONFIG_ENV.REST_BASE_URL + '/api/contenedora/markers/CATEGORIA/882', { headers: this.options });
   }
 
   obtenerCategoriasUbcacionFavorita() {
@@ -242,7 +243,7 @@ export class WsMovilidadService {
     return this.http.post(
       CONFIG_ENV.REST_BASE_URL + '/ubicaciones/categorias',
       body,
-      this.options
+      { headers: this.options }
     );
   }
 

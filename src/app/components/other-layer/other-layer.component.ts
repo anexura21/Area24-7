@@ -136,7 +136,7 @@ export class OtherLayerComponent extends LayerComponent implements OnInit {
 
       case 'MAPA DE VIAJES':
           console.log('Viajes');
-        //   OtherLayerComponent.layerTypeCurrentlyActive = 'MAPA DE VIAJES';
+          OtherLayerComponent.layerTypeCurrentlyActive = 'MAPA DE VIAJES';
           const navigateParams: NavigationExtras = {
             queryParams: {
                 // app: JSON.stringify(this.app),
@@ -156,19 +156,6 @@ export class OtherLayerComponent extends LayerComponent implements OnInit {
           ){
               return; }
           if (OtherLayerComponent.layerTypeCurrentlyActive) {
-              // this.navCtrl.popToRoot({ animate: false }).then(() => {
-              //     OtherLayerComponent.layerTypeCurrentlyActive =
-              //         "MAPA DE RUTAS CERCANAS";
-              //     this.navCtrl.push(
-              //         MenuRutasPage,
-              //         {
-              //             "page-name": 2,
-              //             color: this.color,
-              //             app: this.app
-              //         },
-              //         { animate: false }
-              //     );
-              // });
               return;
           }
           OtherLayerComponent.layerTypeCurrentlyActive =
@@ -178,6 +165,14 @@ export class OtherLayerComponent extends LayerComponent implements OnInit {
           //     { 'page-name': 2, color: this.color, app: this.app },
           //     { animate: false }
           // );
+          const navigateParamsRC: NavigationExtras = {
+            queryParams: {
+                nomApp: this.app.children.find((layer: OtherLayer) => layer.layerType === 'MAPA DE RUTAS CERCANAS').name,
+                color: this.app.color,
+                appId: this.app.id
+            }
+          };
+          this.router.navigate([`/menu-rutas`], navigateParamsRC);
           break;
 
       case 'MAPA DE LÍNEAS Y RUTAS':
@@ -211,6 +206,14 @@ export class OtherLayerComponent extends LayerComponent implements OnInit {
           //     { "page-name": 3, color: this.color, app: this.app },
           //     { animate: false }
           // );
+          const navigateParamsLR: NavigationExtras = {
+            queryParams: {
+                nomApp: this.app.children.find((layer: OtherLayer) => layer.layerType === 'MAPA DE LÍNEAS Y RUTAS').name,
+                color: this.app.color,
+                appId: this.app.id
+            }
+          };
+          this.router.navigate([`/lineas-y-rutas-mapa`], navigateParamsLR);
           break;
 
       case 'MAPA ENCICLA':
@@ -244,7 +247,14 @@ export class OtherLayerComponent extends LayerComponent implements OnInit {
           //     { 'page-name': 4, color: this.color, app: this.app },
           //     { animate: false }
           // );
-
+          const navigateParamsE: NavigationExtras = {
+            queryParams: {
+                nomApp: this.app.children.find((layer: OtherLayer) => layer.layerType === 'MAPA ENCICLA').name,
+                color: this.app.color,
+                appId: this.app.id
+            }
+          };
+          this.router.navigate([`/encicla`], navigateParamsE);
           break;
         }
     }

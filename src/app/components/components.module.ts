@@ -1,3 +1,7 @@
+import { HorariosEnciclaModalComponent } from './horarios-encicla-modal/horarios-encicla-modal.component';
+import { DetalleRutaComponent } from './detalle-ruta/detalle-ruta.component';
+import { AutocompletadoLineasRutasComponent } from './autocompletado-lineas-rutas/autocompletado-lineas-rutas.component';
+import { DetalleRutasCercanasComponent } from './detalle-rutas-cercanas/detalle-rutas-cercanas.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { MenuFavoritoPopoverComponent } from './menu-favorito-popover/menu-favorito-popover.component';
 import { SeleccionarMapaComponent } from './seleccionar-mapa/seleccionar-mapa.component';
@@ -108,7 +112,11 @@ import { MidemeModalChangeChallengeComponent } from './mideme-modal-change-chall
     BuscarUbicacionComponent,
     SeleccionarMapaComponent,
     MenuFavoritoPopoverComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    DetalleRutasCercanasComponent,
+    DetalleRutaComponent,
+    AutocompletadoLineasRutasComponent,
+    HorariosEnciclaModalComponent
   ],
   exports: [
     GeneralConfigurationComponent,
@@ -160,7 +168,11 @@ import { MidemeModalChangeChallengeComponent } from './mideme-modal-change-chall
     BuscarUbicacionComponent,
     SeleccionarMapaComponent,
     MenuFavoritoPopoverComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    DetalleRutasCercanasComponent,
+    DetalleRutaComponent,
+    AutocompletadoLineasRutasComponent,
+    HorariosEnciclaModalComponent
   ],
   imports: [
     CommonModule,

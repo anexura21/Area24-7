@@ -408,7 +408,7 @@ export class GmapsMovilidadService {
                 (response: any) => {
                     this.agregarInfoCicloParqueadero(
                         marker,
-                        JSON.parse(response._body)
+                        response
                     );
                 },
                 (error: any) => {

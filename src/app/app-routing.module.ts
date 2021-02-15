@@ -70,6 +70,11 @@ const routes: Routes = [
             .then(m => m.EstablecerUbicacionPageModule)
     },
     {
+        path: 'ubicacion-favorita',
+        loadChildren: () => import('./pages/ubicacion-favorita/ubicacion-favorita.module')
+            .then(m => m.UbicacionFavoritaPageModule)
+    },
+    {
         path: 'detalle-viaje',
         loadChildren: () => import('./pages/movilidad/detalle-viaje/detalle-viaje.module').then(m => m.DetalleViajePageModule)
     },
@@ -112,7 +117,27 @@ const routes: Routes = [
     {
         path: 'usuario',
         loadChildren: () => import('./pages/usuario/usuario.module').then(m => m.UsuarioPageModule)
-    }
+    },
+  {
+    path: 'menu-rutas',
+    loadChildren: () => import('./pages/movilidad/menu-rutas/menu-rutas.module').then( m => m.MenuRutasPageModule)
+  },
+  {
+    path: 'lineas-y-rutas-mapa',
+    loadChildren: () => import('./pages/movilidad/lineas-y-rutas-mapa/lineas-y-rutas-mapa.module').then( m => m.LineasYRutasMapaPageModule)
+  },
+  {
+    path: 'lineas-y-rutas-detalle',
+    loadChildren: () =>
+        import('./pages/movilidad/lineas-y-rutas-detalle/lineas-y-rutas-detalle.module').then( m => m.LineasYRutasDetallePageModule)
+  },  {
+    path: 'encicla',
+    loadChildren: () => import('./pages/movilidad/encicla/encicla.module').then( m => m.EnciclaPageModule)
+  }
+
+
+
+
 
 ];
 
