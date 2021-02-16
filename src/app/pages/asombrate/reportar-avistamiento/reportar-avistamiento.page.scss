@@ -129,5 +129,12 @@ ion-content {
       --background: #00ab4e;
       color: white;
     }
+
+    .progress-bar-custom {
+      ion-progress-bar {
+        --buffer-background: #cbcbcb;
+        --progress-background: #00ab4e;
+      }
+    }
   }
 }

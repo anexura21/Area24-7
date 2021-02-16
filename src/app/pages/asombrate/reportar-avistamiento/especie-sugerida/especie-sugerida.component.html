@@ -3,21 +3,29 @@
     <p>Especie sugerida</p>
   </ion-col>
   <ion-col>
-    <ion-button class="button-seleccionar" expand="block" (click)="seleccionar(especie)">
+    <ion-button
+      class="button-seleccionar"
+      expand="block"
+      (click)="seleccionar(especieSugeridaIA)"
+    >
       Seleccionar
     </ion-button>
   </ion-col>
 </ion-row>
 <ion-row class="container-custom">
   <ion-col size="4">
-    <img [src]="especie?.imagen" alt="" srcset="" />
+    <img
+      [src]="'data:image/jpeg;base64,' + especieSugeridaIA?.Imagen.Foto"
+      alt=""
+      srcset=""
+    />
   </ion-col>
   <ion-col size="8">
     <span>Nombre común:</span>
     <br />
-    {{ especie?.nombreComun }}<br />
+    {{ especieSugeridaIA?.Imagen.NombreComun }}<br />
     <span>Nombre científico:</span>
     <br />
-    {{ especie?.nombreCientifico }}
+    {{ especieSugeridaIA?.Imagen.NombreCientifico }}
   </ion-col>
 </ion-row>

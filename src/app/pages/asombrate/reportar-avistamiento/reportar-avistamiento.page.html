@@ -78,31 +78,41 @@
             </ion-item>
             <ion-item>
               <ion-label position="floating">Descripción</ion-label>
-              <ion-input formControlName="descripcion"></ion-input>
+              <ion-textarea rows="5" formControlName="descripcion"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
-        <ion-row *ngIf="especie" class="row-especie-sugerida">
+        <ion-row *ngIf="especieSugeridaIA" class="row-especie-sugerida">
           <ion-col class="especie-sugerida">
-            <app-especie-sugerida  [especie]="especie" (especieSeleccionada)="seleccionarEspecieIA($event)"></app-especie-sugerida>
+            <app-especie-sugerida  [especieSugeridaIA]="especieSugeridaIA" (especieSeleccionada)="seleccionarEspecieIA($event)"></app-especie-sugerida>
           </ion-col>
         </ion-row>
 
         <div class="container-buttons">
           <ion-row>
             <ion-col>
+              <!-- [disabled]="!formRegistro.valid" 
+              (click)="guardarRegistro(formRegistro.value)"
+              -->
               <ion-button
+                *ngIf="!peticionesServicios"
                 class="button-guardar"
                 expand="block"
-                [disabled]="!formRegistro.valid"
-                (click)="guardarRegistro(formRegistro.value)"
+                
+                (click)="consultarIASugerenciaEspecie()"
                 >Guardar</ion-button
               >
+
+              <div *ngIf="peticionesServicios" class="progress-bar-custom ion-text-center">
+                <ion-progress-bar type="indeterminate" value="0.5"></ion-progress-bar>
+              </div>
+
+
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-button class="button-publicar" expand="block"
+              <ion-button *ngIf="!peticionesServicios" class="button-publicar" expand="block"
                 >Publicar</ion-button
               >
             </ion-col>

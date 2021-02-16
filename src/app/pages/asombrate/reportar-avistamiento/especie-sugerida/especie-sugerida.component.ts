@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Especie } from "src/app/entities/especie";
+import { EspecieSugeridaIA } from "src/app/entities/especieSugeridaIA";
 
 @Component({
   selector: "app-especie-sugerida",
@@ -7,8 +7,8 @@ import { Especie } from "src/app/entities/especie";
   styleUrls: ["./especie-sugerida.component.scss"],
 })
 export class EspecieSugeridaComponent {
-  @Input() especie: Especie;
-  @Output() especieSeleccionada: EventEmitter<Especie> = new EventEmitter();
+  @Input() especieSugeridaIA: EspecieSugeridaIA;
+  @Output() especieSeleccionada: EventEmitter<EspecieSugeridaIA> = new EventEmitter();
 
   constructor() {}
 

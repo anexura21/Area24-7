@@ -1,6 +1,7 @@
 export class Especie {
-  imagen?: string;
+  foto?: string;
   nombreComun: string;
   nombreCientifico: string;
   descripcion: string;
+  NombreArchivo?: string;
 }
