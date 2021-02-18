@@ -78,13 +78,19 @@
             </ion-item>
             <ion-item>
               <ion-label position="floating">Descripción</ion-label>
-              <ion-textarea rows="5" formControlName="descripcion"></ion-textarea>
+              <ion-textarea
+                rows="5"
+                formControlName="descripcion"
+              ></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
         <ion-row *ngIf="especieSugeridaIA" class="row-especie-sugerida">
           <ion-col class="especie-sugerida">
-            <app-especie-sugerida  [especieSugeridaIA]="especieSugeridaIA" (especieSeleccionada)="seleccionarEspecieIA($event)"></app-especie-sugerida>
+            <app-especie-sugerida
+              [especieSugeridaIA]="especieSugeridaIA"
+              (especieSeleccionada)="seleccionarEspecieIA($event)"
+            ></app-especie-sugerida>
           </ion-col>
         </ion-row>
 
@@ -98,21 +104,28 @@
                 *ngIf="!peticionesServicios"
                 class="button-guardar"
                 expand="block"
-                
-                (click)="consultarIASugerenciaEspecie()"
+                (click)="guardarRegistro(formRegistro.value)"
                 >Guardar</ion-button
               >
 
-              <div *ngIf="peticionesServicios" class="progress-bar-custom ion-text-center">
-                <ion-progress-bar type="indeterminate" value="0.5"></ion-progress-bar>
+              <div
+                *ngIf="peticionesServicios"
+                class="progress-bar-custom ion-text-center"
+              >
+                <ion-progress-bar
+                  type="indeterminate"
+                  value="0.5"
+                ></ion-progress-bar>
               </div>
-
-
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-button *ngIf="!peticionesServicios" class="button-publicar" expand="block"
+              <ion-button
+                *ngIf="!peticionesServicios"
+                class="button-publicar"
+                expand="block"
+                (click)="consultarIASugerenciaEspecie()"
                 >Publicar</ion-button
               >
             </ion-col>
